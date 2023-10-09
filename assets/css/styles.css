@@ -217,7 +217,18 @@ img {
 }
 
 /* Navigation for mobile devices */
-
+@media screen and (max-width:1150px){
+  .nav__menu{
+    position:fixed;
+    top: 0;
+    left: 0;
+    background-color: hsla(0, 0%, 0%, .75);
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    transition:top .4;
+  }
+}
 
 /* Show menu */
 
