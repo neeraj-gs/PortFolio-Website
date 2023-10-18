@@ -852,9 +852,20 @@ img {
 
 
 /* Opaque placeholder */
+.contact__input:focus::placeholder{
+  opacity: 0;
+}
 
 
 /* Move label up & sticky label */
+.contact__input:focus + .contact__label,
+.contact__input:not(:placeholder-shown).contact__inpput:not(:focus)+.contact__label{
+  opacity: 1;
+  top: -16px;
+}
+
+
+
 
 
 /*=============== FOOTER ===============*/
