@@ -729,6 +729,7 @@ img {
   padding: 3rem 1.5rem 3.5rem;
   margin-left: auto;
   border-bottom: 4px solid var(--first-color);
+  z-index: 5;
   transition: background-color .4s;
 }
 
@@ -739,7 +740,7 @@ img {
 
 }
 
-.contact__description{
+.contact__description-1{
   color:var(--title-color);
   font-weight: var(--font-medium);
   margin-bottom: 2rem;
@@ -748,6 +749,7 @@ img {
 .contact__description-2{
   color: var(--title-color);
   font-size: var(--small-font-size);
+  margin-bottom: 1.5rem;
 }
 
 .contact__data .geometric-box{
@@ -859,7 +861,7 @@ img {
 
 /* Move label up & sticky label */
 .contact__input:focus + .contact__label,
-.contact__input:not(:placeholder-shown).contact__inpput:not(:focus)+.contact__label{
+.contact__input:not(:placeholder-shown).contact__input:not(:focus)+.contact__label{
   opacity: 1;
   top: -16px;
 }
@@ -877,7 +879,7 @@ img {
   margin: 0 auto;
 }
 
-.contact__socail-data{
+.contact__social-data{
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
