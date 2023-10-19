@@ -1096,7 +1096,7 @@ body.dark-theme{
     margin-inline: 1rem;
   }
 
-  .home__iamge{
+  .home__image{
     width: 180px;
   }
 
@@ -1185,7 +1185,7 @@ body.dark-theme{
   }
 
   .nav{
-    height:calc(var(--header-height)+2rem);
+    height:calc(var(--header-height) + 2rem);
     column-gap: 4rem;
   }
   .nav__close,
@@ -1297,7 +1297,7 @@ body.dark-theme{
     font-size: var(--smaller-font-size);
     font-weight: var(--font-medium); 
   }
-  .home_scroll-box{
+  .home__scroll-box{
     width: 44px;
     height: 44px;
   }
@@ -1503,7 +1503,4 @@ body.dark-theme{
     column-gap: 3rem;
     order: 1;
   }
-
-
-
 }
