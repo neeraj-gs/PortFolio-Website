@@ -133,7 +133,7 @@ const sr = ScrollReveal({
    // reset:true//Animations repeat
 })
 
-sr.reveal(`.home__perfil`,{origin:'right'})
-sr.reveal(`.home__name, .home__info`,{origin:'left'})
+sr.reveal(`.home__perfil, .about__image`,{origin:'right'})
+sr.reveal(`.home__name, .home__info, .about__container, .section__title-1, .about__info, .contact__socail, .contact__data`,{origin:'left'})
 
 
