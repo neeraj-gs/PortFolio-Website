@@ -1466,9 +1466,33 @@ body.dark-theme{
     transform: translateX(-6.5rem);
 
   }
-  
+  .contact__social{
+    margin-left: 8rem;
+    text-align: initial;
 
+  }
 
+  .contact__social-data{
+    flex-direction: row;
+    align-items: center;
+    column-gap: 1.25rem;
+  }
+  .contact__social-arrow{
+    width: 40px;
+  }
+
+  .contact__social-link{
+    font-size: 1.5rem;
+    padding: .5rem;
+  }
+
+  .contact__message{
+    bottom: -2.5rem;
+
+  }
+  .dark-theme .contact__data{
+    box-shadow: 4px 0 8px hsla(0,0%,4%,.3);
+  }
 
 
 
