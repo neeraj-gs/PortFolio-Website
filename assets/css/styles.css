@@ -68,6 +68,7 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
+  transition: background-color .4s;
 }
 
 h1, h2, h3, h4 {
@@ -123,7 +124,55 @@ body.dark-theme{
 	Color changes in some parts of 
 	the website, in dark theme
 ==========*/
+.dark-theme .shadow-header{
+  box-shadow: 0 1px 12px hsla(0,0%,0%,.6);
+}
 
+.dark-theme .section__title-1::after,
+.dark-theme .section__title-2::after{
+  background-color: hsla(14,70%,50%,.2);
+}
+
+.dark-theme :is(.home__arrow,.home__line,.about__line){
+  filter: none;
+}
+
+.dark-theme .home__description b{
+  background: linear-gradient(90deg,
+  hsla(14,80%,50%,.3),
+  hsla(14,80%,50%,0));
+}
+
+.dark-theme :is(.button__ghost){
+  color: var(--white-color);
+}
+
+.dark-theme .projects__card:hover{
+  background-color: var(--body-color);
+}
+
+
+.dark-theme :is(.contact__mail,.contact__input,.contact__label){
+  background-color: var(--container-color);
+}
+
+.dark-theme .footer{
+  background-color: hsl(0,0%,4%);
+}
+
+
+.dark-theme::-webkit-scrollbar{
+  background-color: hsl(0,0%,20%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb{
+  background-color: hsl(0,0%,20%);
+}
+
+
+.dark-theme::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(0,0%,20%);
+}
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
@@ -200,7 +249,7 @@ body.dark-theme{
   left:0;
   background-color: var(--body-color);
   z-index: var(--z-fixed);
-  transition: box-shadow .4s;
+  transition: box-shadow .4s, background-color .4s;;
 }
 
 .nav{
