@@ -1404,5 +1404,25 @@ body.dark-theme{
     font-size: 1.5rem;
   }
 
+  .projects__container{
+    grid-template-columns: repeat(3.352px);
+    padding-block: 3rem 1rem;
+  }
+
+  .projects__card{
+    padding: 1.25rem 1.25rem 2.5rem;
+  }
+  .projects__image{
+    margin-bottom: 1rem;
+
+  }
+  .projects__content{
+    margin-bottom: 2rem;
+  }
+  .projects__button{
+    right: 1.25rem;
+  }
+  
+
 
 }
