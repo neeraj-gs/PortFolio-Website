@@ -1291,5 +1291,45 @@ body.dark-theme{
     align-items: center;
     column-gap: .75rem;
   }
+  .home__scroll-text{
+    display: block;
+    color: var(--text-color);
+    font-size: var(--smaller-font-size);
+   font-weight: var(--font-medium); 
+  }
+  .home_scroll-box{
+    width: 44px;
+    height: 44px;
+  }
+  .home__scroll-box i{
+    font-size: 1.2rem;
+  }
+  .home__perfil .geometric-box{
+    top: 15rem;
+  }
+  .home__arrow{
+    top: 4.5rem;
+    left: -8rem;
+    rotate: 80deg;
+    width: 80px;
+  }
+  .home__line{
+    left: -15rem;
+    bottom: 4rem;
+    width: 80px;
+    rotate: 30deg;
+
+  }
+  .home__social{
+    left: initial;
+    right: -6rem;
+  }
+
+  .home__social-link{
+    font-size: 1.5rem;
+    padding: .5rem;
+  }
+
+  
 
 }
