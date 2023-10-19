@@ -324,6 +324,14 @@ img {
 }
 
 /* Active link */
+.active-link{
+  color:var(--white-color);
+}
+
+.active-link{
+  width: 25%;
+}
+
 
 
 /*=============== HOME ===============*/
