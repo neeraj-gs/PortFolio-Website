@@ -246,6 +246,7 @@ body.dark-theme{
 .header{
   position: fixed;
   width: 100%;
+  height: max-content;
   top:0;
   left:0;
   background-color: var(--body-color);
