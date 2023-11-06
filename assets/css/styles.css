@@ -791,8 +791,9 @@ body.dark-theme{
 
 
 .all-projects {
-  text-align: center;
-  margin-top: 35rem; /* Adjust the margin-top as needed for spacing */
+  margin: 0 auto;
+  text-align: center; /* Adjust the margin-top as needed for spacing */
+  width: 40%;
 }
 
 
