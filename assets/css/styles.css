@@ -369,11 +369,12 @@ body.dark-theme{
 }
 
 .nav__link:hover{
-  color:var(--white-color)
+  color:var(--first-color)
+  
 }
 
 .nav__link:hover:after{
-  color: var(--white-color);
+  color: var(--first-color);
 }
 
 .nav__link:hover::after{
