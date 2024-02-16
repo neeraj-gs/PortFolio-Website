@@ -137,3 +137,29 @@ sr.reveal(`.home__perfil, .about__image`,{origin:'right'})
 sr.reveal(`.home__name, .home__info, .about__container, .section__title-1, .about__info, .contact__socail, .contact__data`,{origin:'left'})
 
 
+// Project Filtering
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projects = document.querySelectorAll('.projects__card');
+
+filterButtons.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    // Remove active class from all buttons and add to the current clicked one
+    filterButtons.forEach(button => button.classList.remove('active'));
+    e.target.classList.add('active');
+
+    // Filter projects based on the clicked button
+    const filter = e.target.dataset.filter;
+    projects.forEach((project) => {
+      if (filter === 'all') {
+        project.style.display = 'block'; // Show all projects under "All Projects"
+      } else {
+        // Check if project has a category that matches the filter
+        if (project.dataset.category === filter) {
+          project.style.display = 'block';
+        } else {
+          project.style.display = 'none';
+        }
+      }
+    });
+  });
+});

@@ -139,7 +139,14 @@
          <!--==================== PROJECTS ====================-->
          <section class="projects section" id="projects">
             <h2 class="section__title-1"><span>My Recent Projects</span></h2>
+            <div class="projects__filters">
+               <button class="filter-btn active" data-filter="all">All Projects</button>
+               <button class="filter-btn" data-filter="blockchain">Blockchain Projects</button>
+               <button class="filter-btn" data-filter="fullstack">Full Stack Projects</button>
+             </div>
+             
             <div class="projects__container container grid">
+
 
                <!-- PROJECT-1 -->
                
@@ -433,7 +440,7 @@
 
 
                <!-- #PROJECT-8 -->
-               <article class="projects__card">
+               <article class="projects__card" data-category="blockchain">
                   <div class="projects__image">
                      <img src="assets/img/TicTacToe.png" alt="project-image-1" class="projects__img">
                      <a href="https://tic-tac-toe-eta-olive.vercel.app/" class="projects__button button" target="_blank">
@@ -471,7 +478,7 @@
               
 
                <!-- #PROJECT-12  -->
-               <article class="projects__card">
+               <article class="projects__card" data-category="fullstack">
                   <div class="projects__image">
                      <img src="assets/img/PortfolioWebsite.png" alt="project-image-1" class="projects__img">
                      <!-- <a href="#" class="projects__button button">
