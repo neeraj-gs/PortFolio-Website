@@ -1514,3 +1514,21 @@ body.dark-theme{
     order: -1;
   }
 }
+
+
+/* Filtering of Projects */
+/* Projects Filters Container */
+.projects__filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Adjust the gap between buttons as needed */
+  margin-bottom: 50px; /* Space below the filters */
+}
+
+.button.filter-btn:hover,
+.button.filter-btn.active {
+  cursor: pointer;
+  background-color: var(--first-color); /* Orange background on hover and active */
+  color: var(--white-color); /* White text on hover and active */
+  border-color: var(--first-color); /* Orange border on hover and active */
+}
