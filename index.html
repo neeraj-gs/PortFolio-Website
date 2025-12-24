@@ -9,7 +9,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="assets/css/styles.css">
-      <title>Neeraj Portfolio &nbsp; 🌐</title>
+      <title>Neeraj GS | Full Stack Developer</title>
    </head>
    <body>
       <!--==================== HEADER ====================-->
@@ -27,13 +27,16 @@
                      <a href="#home" class="nav__link">Home</a>
                   </li>
                   <li class="nav__item">
-                     <a href="#about" class="nav__link">About Me</a>
+                     <a href="#experience" class="nav__link">Experience</a>
                   </li>
                   <li class="nav__item">
-                     <a href="#contact" class="nav__link">Connect With Me</a>
+                     <a href="#about" class="nav__link">About</a>
                   </li>
                   <li class="nav__item">
-                     <a href="#projects" style="background-color: black;" onmouseover="this.style.backgroundColor='hsl(14, 80%, 50%)'" onmouseout="this.style.backgroundColor='black'" class="nav__link nav__link-button">My Projects</a>
+                     <a href="#projects" class="nav__link">Projects</a>
+                  </li>
+                  <li class="nav__item">
+                     <a href="#skills" style="background-color: black;" onmouseover="this.style.backgroundColor='hsl(14, 80%, 50%)'" onmouseout="this.style.backgroundColor='black'" class="nav__link nav__link-button">Skills</a>
                  </li>
                  
                </ul>
@@ -70,6 +73,7 @@
                   <div class="home__social">
                      <a href="https://github.com/neeraj-gs" target="_blank" class="home__social-link"><i class="ri-github-fill"></i></a>
                      <a href="https://www.linkedin.com/in/neeraj-gs/" target="_blank" class="home__social-link"><i class="ri-linkedin-box-line"></i></a>
+                     <a href="mailto:gsneeraj2002@gmail.com" class="home__social-link"><i class="ri-mail-line"></i></a>
                      <a href="https://twitter.com/neeraj_gs_05" target="_blank" class="home__social-link"><i class="ri-twitter-line"></i></a>
                      <a href="https://neerajgs.hashnode.dev/" target="_blank" class="contact__social-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M3 9.00886C3 5.69022 5.69071 2.99951 9.00935 2.99951H12C15.3093 2.99951 17.9942 5.67508 18.0093 8.98082H18.9533C20.1037 8.98082 21 9.87713 21 11.0275V14.9902C21 18.3088 18.3093 20.9995 14.9907 20.9995H9.00935C5.69071 20.9995 3 18.3088 3 14.9902V9.00886ZM9.00935 4.99951C6.79528 4.99951 5 6.79479 5 9.00886V14.9902C5 17.2042 6.79528 18.9995 9.00935 18.9995H14.9907C17.2047 18.9995 19 17.2042 19 14.9902V11H18C16.9243 11 16 10.0756 16 9C16 6.78593 14.2141 4.99951 12 4.99951H9.00935ZM8 9C8 8.44772 8.44772 8 9 8H12.5C13.0523 8 13.5 8.44772 13.5 9C13.5 9.55228 13.0523 10 12.5 10H9C8.44772 10 8 9.55228 8 9ZM9 14C8.44772 14 8 14.4477 8 15C8 15.5523 8.44772 16 9 16H15C15.5523 16 16 15.5523 16 15C16 14.4477 15.5523 14 15 14H9Z"></path></svg></a>
                      <a href="https://www.instagram.com/neeraj_gs/" target="_blank" class="home__social-link"><i class="ri-instagram-line"></i></a>
@@ -77,10 +81,9 @@
                </div>
                <div class="home__info">
                   <p class="home__description">
-                     <b>A Full Stack Developer</b> <br> <br>  Currently building projects and expanding knowledge in Web3.0 and AI. <br> <br>
-                     <span style="font-weight: bold;">TechStack:</span> <span style="font-weight: 500; font-size: smaller;">| Next.js | React.js  Typescript | Node.js | MongoDB | SQL | Prisma ORM | Docker| AWS | GraphQL | Tailwind CSS |</span>
+                     <b>Full Stack Developer</b> specializing in building scalable web applications and blockchain solutions. Passionate about transforming complex ideas into elegant, user-centric products.
                   </p>
-                  <a href="#about" class="home__scroll">
+                  <a href="#experience" class="home__scroll">
                      <div class="home__scroll-box">
                         <i class="ri-arrow-down-s-line"></i>
                      </div>
@@ -90,52 +93,269 @@
             </div>
          </section>
 
-         <!--==================== ABOUT ====================-->
-         <section class="about section" id="about">
-            <div class="about__container container grid">
-               <h2 class="section__title-1">About Me</h2>
-               <div class="about__perfil">
-                  <div class="about__image">
-                     <img src="/assets/img/aboutimg.jpeg" alt="about image" class="about__img">
-                     <div class="about__shadow"></div>
-                     <div class="geometric-box"></div>
-                     <img src="/assets/img/random-lines.svg" alt="" class="about__line">
-                     <div class="about__box"></div>
+         <!--==================== EXPERIENCE ====================-->
+         <section class="experience section" id="experience">
+            <h2 class="section__title-1"><span>Work Experience</span></h2>
+
+            <div class="experience__container container">
+               <!-- Company Block -->
+               <div class="experience__company-block">
+                  <!-- Company Header -->
+                  <div class="experience__company-header">
+                     <div class="experience__company-logo-large">
+                        <img src="./assets/img/penomo_logo.jpeg" alt="Penomo logo" class="experience__logo-img-large">
+                     </div>
+                     <div class="experience__company-info">
+                        <h3 class="experience__company-name">Penomo</h3>
+                        <p class="experience__company-desc">Tokenized Finance Platform for Renewable Energy Infrastructure</p>
+                        <div class="experience__company-meta">
+                           <span><i class="ri-calendar-line"></i> Mar 2024 - Present</span>
+                           <span><i class="ri-map-pin-line"></i> Remote</span>
+                           <span><i class="ri-building-line"></i> Fintech / Web3</span>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Positions Timeline -->
+                  <div class="experience__positions">
+                     <!-- Position 1 - Current -->
+                     <div class="experience__position experience__position--current">
+                        <div class="experience__position-marker">
+                           <div class="experience__position-dot"></div>
+                           <div class="experience__position-line"></div>
+                        </div>
+                        <div class="experience__position-content">
+                           <div class="experience__position-header">
+                              <h4 class="experience__position-title">Project Development Manager</h4>
+                              <span class="experience__badge">Current</span>
+                           </div>
+                           <div class="experience__position-meta">
+                              <span><i class="ri-calendar-line"></i> Mar 2025 - Present</span>
+                              <span><i class="ri-briefcase-line"></i> Full-time</span>
+                           </div>
+                           <p class="experience__position-desc">
+                              Building CredOS from the ground up - Penomo's AI-powered operating system for infrastructure private credit. Owning the full product lifecycle: customer discovery, requirements gathering, technical architecture, and cross-functional team coordination.
+                           </p>
+                           <div class="experience__position-skills">
+                              <span>Product Development</span>
+                              <span>Product Strategy</span>
+                              <span>LLM</span>
+                              <span>Prompt Engineering</span>
+                              <span>N8N</span>
+                              <span>React.js</span>
+                              <span>TypeScript</span>
+                           </div>
+                        </div>
+                     </div>
+
+                     <!-- Position 2 -->
+                     <div class="experience__position">
+                        <div class="experience__position-marker">
+                           <div class="experience__position-dot"></div>
+                           <div class="experience__position-line"></div>
+                        </div>
+                        <div class="experience__position-content">
+                           <div class="experience__position-header">
+                              <h4 class="experience__position-title">Full Stack Blockchain Developer</h4>
+                              <span class="experience__duration-badge">9 months</span>
+                           </div>
+                           <div class="experience__position-meta">
+                              <span><i class="ri-calendar-line"></i> Jun 2024 - Feb 2025</span>
+                              <span><i class="ri-briefcase-line"></i> Full-time</span>
+                           </div>
+                           <p class="experience__position-desc">
+                              Led development of Penomo's tokenized finance platform connecting global capital to renewable energy infrastructure. Architected smart contracts for real-world asset tokenization and built RESTful APIs for seamless blockchain integration.
+                           </p>
+                           <div class="experience__position-skills">
+                              <span>React.js</span>
+                              <span>TypeScript</span>
+                              <span>Solidity</span>
+                              <span>Smart Contracts</span>
+                              <span>Tokenization</span>
+                              <span>AWS</span>
+                              <span>Docker</span>
+                           </div>
+                        </div>
+                     </div>
+
+                     <!-- Position 3 -->
+                     <div class="experience__position">
+                        <div class="experience__position-marker">
+                           <div class="experience__position-dot"></div>
+                        </div>
+                        <div class="experience__position-content">
+                           <div class="experience__position-header">
+                              <h4 class="experience__position-title">Full Stack Blockchain Developer Intern</h4>
+                              <span class="experience__duration-badge">3 months</span>
+                           </div>
+                           <div class="experience__position-meta">
+                              <span><i class="ri-calendar-line"></i> Mar 2024 - May 2024</span>
+                              <span><i class="ri-briefcase-line"></i> Internship</span>
+                           </div>
+                           <p class="experience__position-desc">
+                              Contributed to the development of Penomo's decentralized application - a platform enabling on-chain capital financing for real-world renewable energy infrastructure through tokenization. Gained hands-on experience with Web3 technologies and smart contract development.
+                           </p>
+                           <div class="experience__position-skills">
+                              <span>React.js</span>
+                              <span>JavaScript</span>
+                              <span>web3.js</span>
+                              <span>IPFS</span>
+                              <span>Material-UI</span>
+                              <span>Hardhat</span>
+                           </div>
+                        </div>
+                     </div>
                   </div>
                </div>
 
-               <div class="about__info">
-                  <p class="about__description">
-                     Full Stack Developer with an immense knowledge in various frameworks, databses, and languages with best code practices. <br>
-                     Passionate about <b>Blockchain, AI</b> and <b>Open Source</b>. <br>
-                     Worked on various software development projects and I am currently looking to expand and apply my knowledge in a professional setting.
-                  </p>
-
-                  <ul class="about__list">
-                     <li class="about__item">
-                        <span style="font-size: xx-large;"><b>My Skills:</b></span> <br> <br>
-                        <b>❖ Languages :</b> TypeScript, Solidity ,JavaScript, Java ,Python   <br>
-                        <b>❖ Frameworks :</b> React.js , Next.js ,GraphQL, Node.js ,Tailwind <br>
-                        <b>❖ Databases :</b> PostgreSQL , MongoDB , MySQL , PrismaORM ,Redis  <br>
-                        <b>❖ Other Tools:</b> Linux , AWS , Docker, CI/CD,OpenAI API <br>
-                     </li>
-                  </ul>
-                  <div class="about__buttons">
-                     <a href="#contact" class="button ">
-                        <i class="ri-send-plane-line"></i>Connect With Me.
-                     </a>
-
-                     <a href="https://www.linkedin.com/" target="_blank" class="button__ghost">
-                        <i class="ri-linkedin-box-line"></i>
-                     </a>
-                     <a href="https://twitter.com/neeraj_gs_05" target="_blank" class="button__ghost">
-                        <i class="ri-twitter-line"></i>
-                     </a>
+               <!-- Experience Summary Stats -->
+               <div class="experience__stats">
+                  <div class="experience__stat-item">
+                     <span class="experience__stat-number">2+</span>
+                     <span class="experience__stat-label">Years Experience</span>
+                  </div>
+                  <div class="experience__stat-item">
+                     <span class="experience__stat-number">3</span>
+                     <span class="experience__stat-label">Promotions</span>
+                  </div>
+                  <div class="experience__stat-item">
+                     <span class="experience__stat-number">20+</span>
+                     <span class="experience__stat-label">Projects Delivered</span>
                   </div>
                </div>
-
             </div>
          </section>
+
+         <!-- Section Divider -->
+         <div class="section__divider"></div>
+
+         <!--==================== ABOUT ====================-->
+         <section class="about section about--redesigned" id="about">
+            <div class="about__container container">
+               <h2 class="section__title-1"><span>About Me</span></h2>
+
+               <div class="about__content">
+                  <!-- Introduction -->
+                  <div class="about__intro">
+                     <div class="about__intro-text">
+                        <h3 class="about__subtitle">Building the Future, One Line of Code at a Time</h3>
+                        <p class="about__lead">
+                           I'm a <strong>Full Stack Developer</strong> and <strong>Project Development Manager</strong> with a passion for creating impactful digital solutions. With expertise spanning web development, blockchain technology, and artificial intelligence, I transform complex ideas into elegant, production-ready applications.
+                        </p>
+                        <p class="about__text">
+                           Currently leading product development at <strong>Penomo</strong>, where I'm building CredOS — an AI-powered operating system revolutionizing infrastructure private credit. I own the complete product lifecycle from customer discovery to deployment, coordinating cross-functional teams to deliver exceptional results.
+                        </p>
+                        <p class="about__text">
+                           My journey in tech has been driven by curiosity and a relentless desire to solve real-world problems. Whether it's architecting smart contracts for tokenized assets, developing AI-powered applications, or building autonomous AI agents, I approach every project with the goal of creating lasting value.
+                        </p>
+                     </div>
+                  </div>
+
+                  <!-- What I Do - 4 Cards -->
+                  <div class="about__specializations">
+                     <h3 class="about__section-title">What I Specialize In</h3>
+                     <div class="about__cards">
+                        <div class="about__card">
+                           <div class="about__card-icon">
+                              <i class="ri-stack-line"></i>
+                           </div>
+                           <h4 class="about__card-title">Full Stack Development</h4>
+                           <p class="about__card-text">
+                              Building end-to-end web applications using React, Next.js, Node.js, and TypeScript. I focus on clean architecture, performance optimization, and delivering seamless user experiences across the entire stack.
+                           </p>
+                           <div class="about__card-tags">
+                              <span>React.js</span>
+                              <span>Next.js</span>
+                              <span>Node.js</span>
+                              <span>TypeScript</span>
+                           </div>
+                        </div>
+
+                        <div class="about__card">
+                           <div class="about__card-icon">
+                              <i class="ri-links-line"></i>
+                           </div>
+                           <h4 class="about__card-title">Blockchain & Web3</h4>
+                           <p class="about__card-text">
+                              Developing smart contracts and decentralized applications on EVM-compatible chains. Specialized in real-world asset tokenization, DeFi protocols, and building secure on-chain solutions for enterprise clients.
+                           </p>
+                           <div class="about__card-tags">
+                              <span>Solidity</span>
+                              <span>Smart Contracts</span>
+                              <span>Tokenization</span>
+                              <span>web3.js</span>
+                           </div>
+                        </div>
+
+                        <div class="about__card">
+                           <div class="about__card-icon">
+                              <i class="ri-robot-2-line"></i>
+                           </div>
+                           <h4 class="about__card-title">AI Agents & Automation</h4>
+                           <p class="about__card-text">
+                              Designing and deploying autonomous AI agents that can reason, plan, and execute complex tasks. Building intelligent workflows using LLMs, custom tool integrations, and multi-agent orchestration systems.
+                           </p>
+                           <div class="about__card-tags">
+                              <span>AI Agents</span>
+                              <span>LangChain</span>
+                              <span>n8n</span>
+                              <span>Automation</span>
+                           </div>
+                        </div>
+
+                        <div class="about__card">
+                           <div class="about__card-icon">
+                              <i class="ri-sparkling-line"></i>
+                           </div>
+                           <h4 class="about__card-title">AI Integration & LLMs</h4>
+                           <p class="about__card-text">
+                              Integrating cutting-edge AI capabilities into applications using OpenAI, Claude, and other LLM providers. Expert in prompt engineering, RAG systems, and building AI-powered features that enhance user productivity.
+                           </p>
+                           <div class="about__card-tags">
+                              <span>OpenAI API</span>
+                              <span>Prompt Engineering</span>
+                              <span>RAG</span>
+                              <span>LLMs</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Philosophy & CTA -->
+                  <div class="about__philosophy">
+                     <div class="about__philosophy-content">
+                        <h3 class="about__section-title">My Approach</h3>
+                        <p class="about__text">
+                           I believe great software is built at the intersection of technical excellence and user empathy. Every line of code I write is guided by three principles: <strong>scalability</strong>, <strong>maintainability</strong>, and <strong>impact</strong>. I'm not just building features—I'm solving problems that matter.
+                        </p>
+                        <p class="about__text">
+                           When I'm not coding, you'll find me exploring the latest in AI research, contributing to open-source projects, or writing about technology on my blog.
+                        </p>
+                     </div>
+                     <div class="about__cta">
+                        <a href="#contact" class="button">
+                           <i class="ri-send-plane-line"></i>Let's Work Together
+                        </a>
+                        <a href="mailto:gsneeraj2002@gmail.com" class="button__ghost">
+                           <i class="ri-mail-line"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/neeraj-gs/" target="_blank" class="button__ghost">
+                           <i class="ri-linkedin-box-line"></i>
+                        </a>
+                        <a href="https://github.com/neeraj-gs" target="_blank" class="button__ghost">
+                           <i class="ri-github-line"></i>
+                        </a>
+                        <a href="https://neerajgs.hashnode.dev/" target="_blank" class="button__ghost">
+                           <i class="ri-article-line"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Section Divider -->
+         <div class="section__divider"></div>
 
          <!--==================== PROJECTS ====================-->
          <section class="projects section" id="projects">
@@ -169,8 +389,8 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <a href="https://coursegen-x-ai.vercel.app/"  target="_blank" target="_blank" class="projects__link"><i class="ri-global-line">Go Live</i></a>
-                     <a href="https://github.com/neeraj-gs/CourseGen-AI" target="_blank" class="projects__link"><i class="ri-github-line">View Code.</i></a>
+                     <a href="https://coursegen-x-ai.vercel.app/"  target="_blank" class="projects__link"><i class="ri-global-line"></i> Live Demo</a>
+                     <a href="https://github.com/neeraj-gs/CourseGen-AI" target="_blank" class="projects__link"><i class="ri-github-line"></i> GitHub</a>
                      
                   </div>
                </article>
@@ -198,8 +418,8 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <a href="https://live-coverme-ai.vercel.app/"  target="_blank" target="_blank" class="projects__link"><i class="ri-global-line">Go Live</i></a>
-                     <a href="https://github.com/neeraj-gs/CoverMe-AI-Chrome-Extension" target="_blank" class="projects__link"><i class="ri-github-line">View Code.</i></a>
+                     <a href="https://live-coverme-ai.vercel.app/"  target="_blank" class="projects__link"><i class="ri-global-line"></i> Live Demo</a>
+                     <a href="https://github.com/neeraj-gs/CoverMe-AI-Chrome-Extension" target="_blank" class="projects__link"><i class="ri-github-line"></i> GitHub</a>
                      
                   </div>
                </article>
@@ -225,8 +445,8 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <a href="https://genx-ai-neeraj-gs.vercel.app/"  target="_blank" target="_blank" class="projects__link"><i class="ri-global-line">Go Live</i></a>
-                     <a href="https://github.com/neeraj-gs/GenXAI" target="_blank" class="projects__link"><i class="ri-github-line">View Code.</i></a>
+                     <a href="https://genx-ai-neeraj-gs.vercel.app/"  target="_blank" class="projects__link"><i class="ri-global-line"></i> Live Demo</a>
+                     <a href="https://github.com/neeraj-gs/GenXAI" target="_blank" class="projects__link"><i class="ri-github-line"></i> GitHub</a>
                      
                   </div>
                </article>
@@ -253,8 +473,8 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <a href="https://climatify-mocha.vercel.app/" target="_blank" class="projects__link"><i class="ri-global-line">Go Live</i></a>
-                     <a href="https://github.com/neeraj-gs/Climatify" target="_blank" class="projects__link"><i class="ri-github-line">View Code.</i></a>
+                     <a href="https://climatify-mocha.vercel.app/" target="_blank" class="projects__link"><i class="ri-global-line"></i> Live Demo</a>
+                     <a href="https://github.com/neeraj-gs/Climatify" target="_blank" class="projects__link"><i class="ri-github-line"></i> GitHub</a>
                      
                   </div>
                </article>
@@ -281,8 +501,8 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <a href="https://sociolize.vercel.app/"  target="_blank" target="_blank" class="projects__link"><i class="ri-global-line">Go Live</i></a>
-                     <a href="https://github.com/neeraj-gs/Sociolize" target="_blank" class="projects__link"><i class="ri-github-line">View Code.</i></a>
+                     <a href="https://sociolize.vercel.app/"  target="_blank" class="projects__link"><i class="ri-global-line"></i> Live Demo</a>
+                     <a href="https://github.com/neeraj-gs/Sociolize" target="_blank" class="projects__link"><i class="ri-github-line"></i> GitHub</a>
                      
                   </div>
                </article>
@@ -308,8 +528,8 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <a href="https://note-x-ai.vercel.app/" target="_blank" class="projects__link"><i class="ri-global-line">Go Live</i></a>
-                     <a href="https://github.com/neeraj-gs/NoteX-AI" target="_blank" class="projects__link"><i class="ri-github-line">View Code.</i></a>
+                     <a href="https://note-x-ai.vercel.app/" target="_blank" class="projects__link"><i class="ri-global-line"></i> Live Demo</a>
+                     <a href="https://github.com/neeraj-gs/NoteX-AI" target="_blank" class="projects__link"><i class="ri-github-line"></i> GitHub</a>
                      
                   </div>
                </article>
@@ -337,8 +557,8 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <a href="https://share-box-amber.vercel.app/"  target="_blank" target="_blank" class="projects__link"><i class="ri-global-line">Go Live</i></a>
-                     <a href="https://github.com/neeraj-gs/ShareBox" target="_blank" class="projects__link"><i class="ri-github-line">View Code.</i></a>
+                     <a href="https://share-box-amber.vercel.app/"  target="_blank" class="projects__link"><i class="ri-global-line"></i> Live Demo</a>
+                     <a href="https://github.com/neeraj-gs/ShareBox" target="_blank" class="projects__link"><i class="ri-github-line"></i> GitHub</a>
                   </div>
                </article>
 
@@ -362,8 +582,8 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <!-- <a href="" target="_blank" class="projects__link"><i class="ri-global-line">Go Live</i></a> -->
-                     <a href="https://github.com/neeraj-gs/Threads-App-Backend-GraphQL" target="_blank" class="projects__link"><i class="ri-github-line">View Code.</i></a>
+                     <!-- <a href="" target="_blank" class="projects__link"><i class="ri-global-line"></i> Live Demo</a> -->
+                     <a href="https://github.com/neeraj-gs/Threads-App-Backend-GraphQL" target="_blank" class="projects__link"><i class="ri-github-line"></i> GitHub</a>
                      
                   </div>
                </article>
@@ -389,8 +609,8 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <!-- <a href="" target="_blank" class="projects__link"><i class="ri-global-line">Go Live</i></a> -->
-                     <a href="https://github.com/neeraj-gs/Gmail-Auto-Reply" target="_blank" class="projects__link"><i class="ri-github-line">View Code.</i></a>
+                     <!-- <a href="" target="_blank" class="projects__link"><i class="ri-global-line"></i> Live Demo</a> -->
+                     <a href="https://github.com/neeraj-gs/Gmail-Auto-Reply" target="_blank" class="projects__link"><i class="ri-github-line"></i> GitHub</a>
                      
                   </div>
                </article>
@@ -416,8 +636,8 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <a href="https://shoe-store-sandy.vercel.app/"  target="_blank" target="_blank" class="projects__link"><i class="ri-global-line">Go Live</i></a>
-                     <a href="https://github.com/neeraj-gs/ShoeBox-TailwindCSS" target="_blank" class="projects__link"><i class="ri-github-line">View Code.</i></a>
+                     <a href="https://shoe-store-sandy.vercel.app/"  target="_blank" class="projects__link"><i class="ri-global-line"></i> Live Demo</a>
+                     <a href="https://github.com/neeraj-gs/ShoeBox-TailwindCSS" target="_blank" class="projects__link"><i class="ri-github-line"></i> GitHub</a>
                   </div>
                </article>
 
@@ -442,8 +662,8 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <a href="https://tic-tac-toe-eta-olive.vercel.app/" target="_blank" class="projects__link"><i class="ri-global-line">Go Live</i></a>
-                     <a href="https://github.com/neeraj-gs/TicTac-Toe" target="_blank" class="projects__link"><i class="ri-github-line">View Code.</i></a>
+                     <a href="https://tic-tac-toe-eta-olive.vercel.app/" target="_blank" class="projects__link"><i class="ri-global-line"></i> Live Demo</a>
+                     <a href="https://github.com/neeraj-gs/TicTac-Toe" target="_blank" class="projects__link"><i class="ri-github-line"></i> GitHub</a>
                      
                   </div>
                </article>
@@ -470,8 +690,8 @@
                </div>
 
                <div class="projects__buttons">
-                  <!-- <a href="" target="_blank" class="projects__link"><i class="ri-global-line">Go Live</i></a> -->
-                  <a href="https://github.com/neeraj-gs/Solidity-Smart-Contracts/tree/main/FlashLoans" target="_blank" class="projects__link"><i class="ri-github-line">View Code.</i></a>
+                  <!-- <a href="" target="_blank" class="projects__link"><i class="ri-global-line"></i> Live Demo</a> -->
+                  <a href="https://github.com/neeraj-gs/Solidity-Smart-Contracts/tree/main/FlashLoans" target="_blank" class="projects__link"><i class="ri-github-line"></i> GitHub</a>
                   
                </div>
             </article>
@@ -496,8 +716,8 @@
                </div>
 
                <div class="projects__buttons">
-                  <a href="" target="_blank" class="projects__link"><i class="ri-global-line">Go Live</i></a>
-                  <a href="https://github.com/dappuniversity/dappazon" target="_blank" class="projects__link"><i class="ri-github-line">View Code.</i></a>
+                  <a href="" target="_blank" class="projects__link"><i class="ri-global-line"></i> Live Demo</a>
+                  <a href="https://github.com/dappuniversity/dappazon" target="_blank" class="projects__link"><i class="ri-github-line"></i> GitHub</a>
                   
                </div>
             </article> -->
@@ -523,8 +743,8 @@
                </div>
 
                <div class="projects__buttons">
-                  <!-- <a href="" target="_blank" class="projects__link"><i class="ri-global-line">Go Live</i></a> -->
-                  <a href="https://github.com/neeraj-gs/BuyMeCoffe-Daap" target="_blank" class="projects__link"><i class="ri-github-line">View Code.</i></a>
+                  <!-- <a href="" target="_blank" class="projects__link"><i class="ri-global-line"></i> Live Demo</a> -->
+                  <a href="https://github.com/neeraj-gs/BuyMeCoffe-Daap" target="_blank" class="projects__link"><i class="ri-github-line"></i> GitHub</a>
                   
                </div>
             </article>
@@ -550,8 +770,8 @@
                </div>
 
                <div class="projects__buttons">
-                  <a href="" target="_blank" class="projects__link"><i class="ri-global-line">Go Live</i></a>
-                  <a href="https://github.com/neeraj-gs/Solidity-Smart-Contracts" target="_blank" class="projects__link"><i class="ri-github-line">View Code.</i></a>
+                  <a href="" target="_blank" class="projects__link"><i class="ri-global-line"></i> Live Demo</a>
+                  <a href="https://github.com/neeraj-gs/Solidity-Smart-Contracts" target="_blank" class="projects__link"><i class="ri-github-line"></i> GitHub</a>
                   
                </div>
             </article> -->
@@ -576,8 +796,8 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <!-- <a href="" target="_blank" class="projects__link"><i class="ri-global-line">Go Live</i></a> -->
-                     <a href="https://github.com/neeraj-gs/PortFolio-Website" target="_blank" class="projects__link"><i class="ri-github-line">View Code.</i></a>
+                     <!-- <a href="" target="_blank" class="projects__link"><i class="ri-global-line"></i> Live Demo</a> -->
+                     <a href="https://github.com/neeraj-gs/PortFolio-Website" target="_blank" class="projects__link"><i class="ri-github-line"></i> GitHub</a>
                      
                   </div>
                </article>
@@ -604,8 +824,8 @@
                   </div>
 
                   <div class="projects__buttons">
-                     <!-- <a href="" target="_blank" class="projects__link"><i class="ri-global-line">Go Live</i></a> -->
-                     <a href="https://github.com/neeraj-gs/ERC-20-Token" target="_blank" class="projects__link"><i class="ri-github-line">View Code.</i></a>
+                     <!-- <a href="" target="_blank" class="projects__link"><i class="ri-global-line"></i> Live Demo</a> -->
+                     <a href="https://github.com/neeraj-gs/ERC-20-Token" target="_blank" class="projects__link"><i class="ri-github-line"></i> GitHub</a>
                      
                   </div>
                </article>
@@ -613,30 +833,298 @@
             </div>
 
             <div class="all-projects">
-               <a href="https://github.com/neeraj-gs" target="_blank" class="button ">
-                  <i class="ri-arrow-right-up-line"></i>All Projects
+               <a href="https://github.com/neeraj-gs" target="_blank" class="button">
+                  <i class="ri-github-line"></i>View All Projects on GitHub
                </a>
             </div>
          </section>
+
+         <!-- Section Divider -->
+         <div class="section__divider"></div>
+
+         <!--==================== SKILLS ====================-->
+         <section class="skills section" id="skills">
+            <h2 class="section__title-1"><span>Technical Skills</span></h2>
+
+            <div class="skills__container container">
+               <!-- Skills Categories -->
+               <div class="skills__content">
+                  <!-- Frontend -->
+                  <div class="skills__category">
+                     <h3 class="skills__category-title">
+                        <i class="ri-layout-line"></i> Frontend Development
+                     </h3>
+                     <div class="skills__grid">
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                           </div>
+                           <span class="skills__name">React.js</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js">
+                           </div>
+                           <span class="skills__name">Next.js</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+                           </div>
+                           <span class="skills__name">TypeScript</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                           </div>
+                           <span class="skills__name">JavaScript</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind">
+                           </div>
+                           <span class="skills__name">Tailwind CSS</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" alt="Material-UI">
+                           </div>
+                           <span class="skills__name">Material-UI</span>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Backend -->
+                  <div class="skills__category">
+                     <h3 class="skills__category-title">
+                        <i class="ri-server-line"></i> Backend Development
+                     </h3>
+                     <div class="skills__grid">
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                           </div>
+                           <span class="skills__name">Node.js</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js">
+                           </div>
+                           <span class="skills__name">Express.js</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GraphQL">
+                           </div>
+                           <span class="skills__name">GraphQL</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                           </div>
+                           <span class="skills__name">Python</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                           </div>
+                           <span class="skills__name">Java</span>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Blockchain -->
+                  <div class="skills__category">
+                     <h3 class="skills__category-title">
+                        <i class="ri-links-line"></i> Blockchain & Web3
+                     </h3>
+                     <div class="skills__grid">
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Solidity">
+                           </div>
+                           <span class="skills__name">Solidity</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/hardhat/hardhat-original.svg" alt="Hardhat">
+                           </div>
+                           <span class="skills__name">Hardhat</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ethereum/ethereum-original.svg" alt="web3.js">
+                           </div>
+                           <span class="skills__name">web3.js</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <i class="ri-folder-shield-2-line" style="font-size: 40px; color: var(--title-color);"></i>
+                           </div>
+                           <span class="skills__name">IPFS</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <i class="ri-coin-line" style="font-size: 40px; color: var(--title-color);"></i>
+                           </div>
+                           <span class="skills__name">Tokenization</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <i class="ri-file-code-line" style="font-size: 40px; color: var(--title-color);"></i>
+                           </div>
+                           <span class="skills__name">Smart Contracts</span>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- Databases -->
+                  <div class="skills__category">
+                     <h3 class="skills__category-title">
+                        <i class="ri-database-2-line"></i> Databases & ORM
+                     </h3>
+                     <div class="skills__grid">
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                           </div>
+                           <span class="skills__name">PostgreSQL</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                           </div>
+                           <span class="skills__name">MongoDB</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                           </div>
+                           <span class="skills__name">MySQL</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">
+                           </div>
+                           <span class="skills__name">Redis</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg" alt="Prisma">
+                           </div>
+                           <span class="skills__name">Prisma ORM</span>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- DevOps & Cloud -->
+                  <div class="skills__category">
+                     <h3 class="skills__category-title">
+                        <i class="ri-cloud-line"></i> DevOps & Cloud
+                     </h3>
+                     <div class="skills__grid">
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">
+                           </div>
+                           <span class="skills__name">AWS</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                           </div>
+                           <span class="skills__name">Docker</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+                           </div>
+                           <span class="skills__name">Linux</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                           </div>
+                           <span class="skills__name">Git</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="CI/CD">
+                           </div>
+                           <span class="skills__name">CI/CD</span>
+                        </div>
+                     </div>
+                  </div>
+
+                  <!-- AI & Tools -->
+                  <div class="skills__category">
+                     <h3 class="skills__category-title">
+                        <i class="ri-robot-line"></i> AI & Automation
+                     </h3>
+                     <div class="skills__grid">
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <i class="ri-openai-fill" style="font-size: 40px; color: var(--title-color);"></i>
+                           </div>
+                           <span class="skills__name">OpenAI API</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <i class="ri-robot-2-line" style="font-size: 40px; color: var(--title-color);"></i>
+                           </div>
+                           <span class="skills__name">AI Agents</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <i class="ri-chat-3-line" style="font-size: 40px; color: var(--title-color);"></i>
+                           </div>
+                           <span class="skills__name">Prompt Engineering</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <i class="ri-brain-line" style="font-size: 40px; color: var(--title-color);"></i>
+                           </div>
+                           <span class="skills__name">LLMs</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <i class="ri-flow-chart" style="font-size: 40px; color: var(--title-color);"></i>
+                           </div>
+                           <span class="skills__name">n8n</span>
+                        </div>
+                        <div class="skills__item">
+                           <div class="skills__icon">
+                              <i class="ri-link" style="font-size: 40px; color: var(--title-color);"></i>
+                           </div>
+                           <span class="skills__name">LangChain</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <!-- Section Divider -->
+         <div class="section__divider"></div>
 
          <!--==================== CONTACT ====================-->
          <section class="contact section" id="contact">
             <div class="contact__container grid">
 
                <div class="contact__data">
-                  <h2 class="section__title-2"><span>Connect With Me</span></h2>
+                  <h2 class="section__title-2"><span>Let's Connect</span></h2>
                   <p class="contact__description-1">
-                     Lets All Connect and Grow Together!!.
+                     Open to discussing new opportunities, collaborations, or just connecting with fellow developers.
                   </p>
                   <p class="contact__description-2">
-                     <span style="font-weight: 800;">For a Formal Conversation:</span> Type In your Message Below a Mail is Automatically Sent.
+                     Fill out the form and I'll get back to you as soon as possible.
                   </p>
                   <div class="geometric-box"></div>
                </div>
 
 
                <div class="contact__mail">
-                  <h2 class="contact__title">Write Here ! Mail is sent Automatically</h2>
+                  <h2 class="contact__title">Send Me a Message</h2>
                   <form action="" id="contact-form" class="contact__form">
                      <div class="contact__group">
                         <div class="contact__box">
@@ -674,14 +1162,15 @@
                   <div class="contact__social-data">
                      <div>
                         <p class="contact__social-description-1">
-                           Want to Have an informal conversation With Me?
+                           Prefer social media?
                         </p>
                         <p class="contact__social-description-2">
-                           Write on My Social Networks..
+                           Connect with me on these platforms
                         </p>
                      </div>
 
                      <div class="contact__social-links">
+                        <a href="mailto:gsneeraj2002@gmail.com" class="contact__social-link"><i class="ri-mail-line"></i></a>
                         <a href="https://twitter.com/neeraj_gs_05" target="_blank" class="contact__social-link"><i class="ri-twitter-line"></i></a>
                         <a href="https://github.com/neeraj-gs" target="_blank" class="contact__social-link"><i class="ri-github-line"></i></a>
                         <a href="https://www.linkedin.com/in/neeraj-gs/" target="_blank" class="contact__social-link"><i class="ri-linkedin-box-line"></i></a>
@@ -697,25 +1186,28 @@
 
       <!--==================== FOOTER ====================-->
       <footer class="footer">
-         <div class="footer">
-            <div class="footer__container container grid">
-               <ul class="footer__links">
-                  <li>
-                     <a href="#home" class="footer__link">Home</a>
-                  </li>
-                  <li>
-                     <a href="#about" class="footer__link">About</a>
-                  </li>
-                  <li>
-                     <a href="#projects" class="footer__link">Projects</a>
-                  </li>
-               </ul>
+         <div class="footer__container container grid">
+            <ul class="footer__links">
+               <li>
+                  <a href="#home" class="footer__link">Home</a>
+               </li>
+               <li>
+                  <a href="#experience" class="footer__link">Experience</a>
+               </li>
+               <li>
+                  <a href="#about" class="footer__link">About</a>
+               </li>
+               <li>
+                  <a href="#projects" class="footer__link">Projects</a>
+               </li>
+               <li>
+                  <a href="#skills" class="footer__link">Skills</a>
+               </li>
+            </ul>
 
-               <span class="footer__copy">
-                  &#169; Created with Love❤️️ By 
-                  <a href="http://github.com/neeraj-gs" target="_blank">Neeraj GS.</a> | <a href="https://github.com/neeraj-gs/PortFolio-Website" target="_blank">Download Source Code</a>
-               </span>
-            </div>
+            <span class="footer__copy">
+               &copy; 2024 Neeraj GS. All Rights Reserved.
+            </span>
          </div>
       </footer>
 
