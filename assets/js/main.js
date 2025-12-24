@@ -166,23 +166,25 @@ filterBtns.forEach((btn) => {
   });
 });
 
-// Video Autoplay on Hover
+// Loom Video Lazy Load on Hover
 const projectMediaCards = document.querySelectorAll('.project-card');
 
 projectMediaCards.forEach((card) => {
-  const video = card.querySelector('.project-card__video');
+  const loomIframe = card.querySelector('.project-card__loom');
 
-  if (video) {
+  if (loomIframe) {
     card.addEventListener('mouseenter', () => {
-      video.play().catch(err => {
-        // Video might not be available, silently fail
-        console.log('Video not available');
-      });
+      // Load the iframe src on first hover
+      if (!loomIframe.src && loomIframe.dataset.src) {
+        loomIframe.src = loomIframe.dataset.src;
+      }
     });
 
     card.addEventListener('mouseleave', () => {
-      video.pause();
-      video.currentTime = 0;
+      // Remove src to stop video and save resources
+      if (loomIframe.src) {
+        loomIframe.src = '';
+      }
     });
   }
 });
