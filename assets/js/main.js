@@ -137,29 +137,98 @@ sr.reveal(`.home__perfil, .about__image`,{origin:'right'})
 sr.reveal(`.home__name, .home__info, .about__container, .section__title-1, .about__info, .contact__socail, .contact__data`,{origin:'left'})
 
 
-// Project Filtering
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projects = document.querySelectorAll('.projects__card');
+// Project Filtering (New Design)
+const filterBtns = document.querySelectorAll('.projects-new__filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
 
-filterButtons.forEach((btn) => {
+filterBtns.forEach((btn) => {
   btn.addEventListener('click', (e) => {
     // Remove active class from all buttons and add to the current clicked one
-    filterButtons.forEach(button => button.classList.remove('active'));
+    filterBtns.forEach(button => button.classList.remove('active'));
     e.target.classList.add('active');
 
     // Filter projects based on the clicked button
     const filter = e.target.dataset.filter;
-    projects.forEach((project) => {
+    projectCards.forEach((project) => {
       if (filter === 'all') {
-        project.style.display = 'block'; // Show all projects under "All Projects"
+        project.classList.remove('hidden');
+        project.style.display = '';
       } else {
-        // Check if project has a category that matches the filter
         if (project.dataset.category === filter) {
-          project.style.display = 'block';
+          project.classList.remove('hidden');
+          project.style.display = '';
         } else {
+          project.classList.add('hidden');
           project.style.display = 'none';
         }
       }
     });
   });
+});
+
+// Video Autoplay on Hover
+const projectMediaCards = document.querySelectorAll('.project-card');
+
+projectMediaCards.forEach((card) => {
+  const video = card.querySelector('.project-card__video');
+
+  if (video) {
+    card.addEventListener('mouseenter', () => {
+      video.play().catch(err => {
+        // Video might not be available, silently fail
+        console.log('Video not available');
+      });
+    });
+
+    card.addEventListener('mouseleave', () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+  }
+});
+
+// Video Modal Functionality
+const videoModal = document.getElementById('video-modal');
+const modalVideo = document.getElementById('modal-video');
+const modalClose = document.getElementById('video-modal-close');
+const modalOverlay = document.querySelector('.video-modal__overlay');
+const expandButtons = document.querySelectorAll('.project-card__expand');
+
+// Open modal when expand button is clicked
+expandButtons.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const videoSrc = btn.dataset.video;
+    if (videoSrc) {
+      modalVideo.src = videoSrc;
+      videoModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      modalVideo.play();
+    }
+  });
+});
+
+// Close modal function
+const closeVideoModal = () => {
+  videoModal.classList.remove('active');
+  document.body.style.overflow = '';
+  modalVideo.pause();
+  modalVideo.currentTime = 0;
+};
+
+// Close modal on X button click
+if (modalClose) {
+  modalClose.addEventListener('click', closeVideoModal);
+}
+
+// Close modal on overlay click
+if (modalOverlay) {
+  modalOverlay.addEventListener('click', closeVideoModal);
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+    closeVideoModal();
+  }
 });
