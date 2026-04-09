@@ -1,207 +1,292 @@
-/*=============== SHOW MENU ===============*/
-const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
-
-if(navToggle){
-   navToggle.addEventListener('click',()=>{
-      navMenu.classList.add('show-menu')
-   })
-}
-
-if(navClose){
-   navClose.addEventListener('click',()=>{
-      navMenu.classList.remove('show-menu')
-   })
-}
-
-/*=============== REMOVE MENU MOBILE ===============*/
-const navLink = document.querySelectorAll('.nav__link')
-
-const linkAction=()=>{
-   const navMenu = document.getElementById('nav-menu')
-   navMenu.classList.remove('show-menu')
-}
-navLink.forEach(n=>n.addEventListener('click',linkAction))
-
-/*=============== SHADOW HEADER ===============*/
-const shadowHeader = ()=>{
-   const header = document.getElementById('header')
-   this.scrollY >= 50 ? header.classList.add('shadow-header'): header.classList.remove('shadow-header')            
-}
-window.addEventListener('scroll',shadowHeader)
-
-
-
-/*=============== SHOW SCROLL UP ===============*/ 
-// const scrollUp = () =>{
-// 	const scrollUp = document.getElementById('scroll-up')
-//     // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
-// 	this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
-// 						: scrollUp.classList.remove('show-scroll')
-// }
-// window.addEventListener('scroll', scrollUp)
-
-
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-const sections = document.querySelectorAll('section[id]')
-    
-const scrollActive = () =>{
-  	const scrollDown = window.scrollY
-
-	sections.forEach(current =>{
-		const sectionHeight = current.offsetHeight,
-			  sectionTop = current.offsetTop - 58,
-			  sectionId = current.getAttribute('id'),
-			  sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
-
-		if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
-			sectionsClass.classList.add('active-link')
-		}else{
-			sectionsClass.classList.remove('active-link')
-		}                                                    
-	})
-}
-window.addEventListener('scroll', scrollActive)
-
-
-/*=============== DARK LIGHT THEME ===============*/ 
-const themeButton = document.getElementById('theme-button')
-const darkTheme = 'dark-theme'
-const iconTheme = 'ri-sun-line'
-
-// Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem('selected-theme')
-const selectedIcon = localStorage.getItem('selected-icon')
-
-// We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line'
-
-// We validate if the user previously chose a topic
-if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === 'bx bx-moon' ? 'add' : 'remove'](iconTheme)
-}
-
-// Activate / deactivate the theme manually with the button
-themeButton.addEventListener('click', () => {
-    // Add or remove the dark / icon theme
-    document.body.classList.toggle(darkTheme)
-    themeButton.classList.toggle(iconTheme)
-    // We save the theme and the current icon that the user chose
-    localStorage.setItem('selected-theme', getCurrentTheme())
-    localStorage.setItem('selected-icon', getCurrentIcon())
-})
-
-/*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr = ScrollReveal({
-   origin:'top',
-   distance:'60px',
-   duration:2500,
-   delay:400,
-   // reset:true//Animations repeat
-})
-
-sr.reveal(`.home__perfil, .about__image`,{origin:'right'})
-sr.reveal(`.home__name, .home__info, .about__container, .section__title-1, .about__info, .contact__socail, .contact__data`,{origin:'left'})
-
-
-// Project Filtering (New Design)
-const filterBtns = document.querySelectorAll('.projects-new__filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
-
-filterBtns.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    // Remove active class from all buttons and add to the current clicked one
-    filterBtns.forEach(button => button.classList.remove('active'));
-    e.target.classList.add('active');
-
-    // Filter projects based on the clicked button
-    const filter = e.target.dataset.filter;
-    projectCards.forEach((project) => {
-      if (filter === 'all') {
-        project.classList.remove('hidden');
-        project.style.display = '';
-      } else {
-        if (project.dataset.category === filter) {
-          project.classList.remove('hidden');
-          project.style.display = '';
-        } else {
-          project.classList.add('hidden');
-          project.style.display = 'none';
-        }
-      }
+/*=============== CURSOR GLOW ===============*/
+const cursorGlow = document.getElementById('cursor-glow');
+if (cursorGlow && window.matchMedia('(hover: hover)').matches) {
+  let raf = null;
+  document.addEventListener('mousemove', (e) => {
+    if (raf) return;
+    raf = requestAnimationFrame(() => {
+      document.documentElement.style.setProperty('--mx', e.clientX + 'px');
+      document.documentElement.style.setProperty('--my', e.clientY + 'px');
+      raf = null;
     });
+  });
+  document.addEventListener('mousemove', () => cursorGlow.classList.add('active'), { once: true });
+}
+
+/*=============== MOBILE NAV ===============*/
+const navMenu = document.getElementById('nav-menu');
+const navToggle = document.getElementById('nav-toggle');
+const navClose = document.getElementById('nav-close');
+const navOverlay = document.getElementById('nav-overlay');
+
+const openMenu = () => {
+  navMenu.classList.add('show-menu');
+  if (navOverlay) navOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+};
+const closeMenu = () => {
+  navMenu.classList.remove('show-menu');
+  if (navOverlay) navOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+};
+
+if (navToggle) navToggle.addEventListener('click', openMenu);
+if (navClose) navClose.addEventListener('click', closeMenu);
+if (navOverlay) navOverlay.addEventListener('click', closeMenu);
+document.querySelectorAll('.nav__link').forEach(l => l.addEventListener('click', closeMenu));
+
+/*=============== HEADER SCROLL ===============*/
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY >= 50);
+});
+
+/*=============== ACTIVE NAV LINK ===============*/
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  sections.forEach(s => {
+    const top = s.offsetTop - 100;
+    const h = s.offsetHeight;
+    const id = s.getAttribute('id');
+    const link = document.querySelector(`.nav__link[href*="${id}"]`);
+    if (link) link.classList.toggle('active-link', y > top && y <= top + h);
   });
 });
 
-// Loom Video Lazy Load on Hover
-const projectMediaCards = document.querySelectorAll('.project-card');
+/*=============== THEME TOGGLE ===============*/
+const themeBtn = document.getElementById('theme-button');
+const saved = localStorage.getItem('theme');
+if (saved === 'light') {
+  document.body.classList.add('light-theme');
+  themeBtn.querySelector('i').classList.replace('ri-moon-line', 'ri-sun-line');
+}
 
-projectMediaCards.forEach((card) => {
-  const loomIframe = card.querySelector('.project-card__loom');
+themeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light-theme');
+  const icon = themeBtn.querySelector('i');
+  icon.classList.toggle('ri-moon-line');
+  icon.classList.toggle('ri-sun-line');
+  localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+});
 
-  if (loomIframe) {
-    card.addEventListener('mouseenter', () => {
-      // Load the iframe src on first hover
-      if (!loomIframe.src && loomIframe.dataset.src) {
-        loomIframe.src = loomIframe.dataset.src;
-      }
+/*=============== SCROLL REVEAL ===============*/
+const revealObs = new IntersectionObserver(
+  (entries) => entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  }),
+  { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
+);
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger').forEach(el => {
+  revealObs.observe(el);
+});
+
+/*=============== TEXT REVEAL ===============*/
+document.querySelectorAll('.text-reveal').forEach(el => {
+  // Keep child elements (like spans with classes) intact
+  const children = el.children;
+  if (children.length === 0) {
+    // Pure text — split words
+    const text = el.textContent.trim();
+    el.innerHTML = text.split(' ').map(w => `<span>${w}&nbsp;</span>`).join('');
+  } else {
+    // Already has children — wrap each child's text
+    Array.from(children).forEach(child => {
+      child.style.display = 'inline-block';
+      child.style.transform = 'translateY(115%)';
+      child.style.transition = 'transform 0.9s cubic-bezier(0.16, 1, 0.3, 1)';
+    });
+  }
+  revealObs.observe(el);
+});
+
+// When text-reveal becomes visible, animate children
+const origAdd = DOMTokenList.prototype.add;
+DOMTokenList.prototype.add = function(...tokens) {
+  origAdd.apply(this, tokens);
+  if (tokens.includes('visible') && this._element && this._element.classList.contains('text-reveal')) {
+    Array.from(this._element.children).forEach((child, i) => {
+      setTimeout(() => { child.style.transform = 'translateY(0)'; }, i * 60);
+    });
+  }
+};
+// Patch _element reference
+document.querySelectorAll('.text-reveal').forEach(el => {
+  el.classList._element = el;
+});
+
+/*=============== COUNTER ANIMATION ===============*/
+const counterObs = new IntersectionObserver(
+  (entries) => entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target;
+      const target = parseInt(el.dataset.target);
+      let cur = 0;
+      const step = target / 35;
+      const timer = setInterval(() => {
+        cur += step;
+        if (cur >= target) {
+          el.textContent = target + '+';
+          clearInterval(timer);
+        } else {
+          el.textContent = Math.floor(cur) + '+';
+        }
+      }, 35);
+      counterObs.unobserve(el);
+    }
+  }),
+  { threshold: 0.5 }
+);
+document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
+
+/*=============== 3D TILT ON PROJECT CARDS ===============*/
+if (window.matchMedia('(hover: hover)').matches) {
+  document.querySelectorAll('.tilt-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      card.style.transform = `perspective(800px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-6px)`;
     });
 
     card.addEventListener('mouseleave', () => {
-      // Remove src to stop video and save resources
-      if (loomIframe.src) {
-        loomIframe.src = '';
-      }
+      card.style.transform = 'perspective(800px) rotateY(0) rotateX(0) translateY(0)';
+      card.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+    });
+
+    card.addEventListener('mouseenter', () => {
+      card.style.transition = 'transform 0.1s ease';
+    });
+  });
+}
+
+/*=============== TERMINAL AUTO-SCROLL ANIMATION ===============*/
+const terminalScroll = document.getElementById('terminal-scroll');
+if (terminalScroll) {
+  const agents = [
+    // Agent Teams
+    { name: 'DevAgent-Lead', status: 'running', team: 'dev-team', desc: 'code review & architecture' },
+    { name: 'DevAgent-Frontend', status: 'running', team: 'dev-team', desc: 'React component generation' },
+    { name: 'DevAgent-Backend', status: 'running', team: 'dev-team', desc: 'API & service development' },
+    { name: 'DevAgent-QA', status: 'running', team: 'dev-team', desc: 'test generation & validation' },
+    { name: 'ProductLead-Agent', status: 'running', team: 'product', desc: 'requirements & roadmap' },
+    // Always-on agents
+    { name: 'CredOS-Agent', status: 'active', team: 'production', desc: 'credit analysis pipeline' },
+    { name: 'DocParser-AI', status: 'active', team: 'production', desc: 'document extraction & OCR' },
+    { name: 'WorkflowBot', status: 'active', team: 'production', desc: 'n8n orchestration engine' },
+    { name: 'SlackAssist', status: 'active', team: 'production', desc: 'team comms automation' },
+    { name: 'Claude-Code', status: 'active', team: 'daily', desc: 'daily coding partner' },
+    // More specialized agents
+    { name: 'EmailDraft-AI', status: 'running', team: 'automation', desc: 'smart email composition' },
+    { name: 'MeetingNotes-Agent', status: 'running', team: 'automation', desc: 'transcript summarization' },
+    { name: 'ResearchBot', status: 'running', team: 'research', desc: 'web research & synthesis' },
+    { name: 'DataPipeline-Agent', status: 'running', team: 'data', desc: 'ETL & data transformation' },
+    { name: 'PRReviewer', status: 'running', team: 'dev-team', desc: 'automated code review' },
+    { name: 'TestGen-Agent', status: 'running', team: 'dev-team', desc: 'unit & integration tests' },
+    { name: 'DeployBot', status: 'running', team: 'devops', desc: 'CI/CD orchestration' },
+    { name: 'MonitorAgent', status: 'running', team: 'devops', desc: 'uptime & health checks' },
+    { name: 'ContentWriter-AI', status: 'running', team: 'content', desc: 'blog & docs generation' },
+    { name: 'SchedulerBot', status: 'running', team: 'daily', desc: 'calendar optimization' },
+    { name: 'BugHunter-Agent', status: 'running', team: 'dev-team', desc: 'error detection & fixes' },
+    { name: 'APIIntegrator', status: 'running', team: 'automation', desc: 'third-party API bridges' },
+  ];
+
+  const inner = document.createElement('div');
+  inner.className = 'hero__terminal-scroll-inner';
+  terminalScroll.appendChild(inner);
+
+  let currentIndex = 0;
+  const VISIBLE = 5;
+  const INTERVAL = 2200;
+
+  function createLine(agent, delay) {
+    const div = document.createElement('div');
+    div.className = 'terminal-line';
+    div.style.animationDelay = delay + 'ms';
+    div.innerHTML = `<span class="agent-name">${agent.name}</span> <span class="status">${agent.status}</span> <span class="team">[${agent.team}]</span> <span class="desc">${agent.desc}</span>`;
+    return div;
+  }
+
+  // Initial load — show first batch
+  function showInitialBatch() {
+    for (let i = 0; i < VISIBLE; i++) {
+      const agent = agents[i % agents.length];
+      inner.appendChild(createLine(agent, i * 120));
+    }
+    currentIndex = VISIBLE;
+  }
+
+  // Scroll: remove top line, add new one at bottom
+  function scrollNext() {
+    const lines = inner.querySelectorAll('.terminal-line');
+    if (lines.length > 0) {
+      const first = lines[0];
+      first.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      first.style.opacity = '0';
+      first.style.transform = 'translateY(-10px)';
+
+      setTimeout(() => {
+        first.remove();
+        const agent = agents[currentIndex % agents.length];
+        inner.appendChild(createLine(agent, 0));
+        currentIndex++;
+      }, 400);
+    }
+  }
+
+  // Start after initial typing animation
+  setTimeout(() => {
+    showInitialBatch();
+    setInterval(scrollNext, INTERVAL);
+  }, 1200);
+}
+
+/*=============== LOOM VIDEO LAZY LOAD ===============*/
+document.querySelectorAll('.project-card').forEach(card => {
+  const iframe = card.querySelector('.project-card__loom');
+  if (iframe) {
+    card.addEventListener('mouseenter', () => {
+      if (!iframe.src && iframe.dataset.src) iframe.src = iframe.dataset.src;
+    });
+    card.addEventListener('mouseleave', () => {
+      if (iframe.src) iframe.src = '';
     });
   }
 });
 
-// Video Modal Functionality
+/*=============== VIDEO MODAL ===============*/
 const videoModal = document.getElementById('video-modal');
 const modalVideo = document.getElementById('modal-video');
 const modalClose = document.getElementById('video-modal-close');
-const modalOverlay = document.querySelector('.video-modal__overlay');
-const expandButtons = document.querySelectorAll('.project-card__expand');
+const vmOverlay = document.querySelector('.video-modal__overlay');
 
-// Open modal when expand button is clicked
-expandButtons.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const videoSrc = btn.dataset.video;
-    if (videoSrc) {
-      modalVideo.src = videoSrc;
-      videoModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      modalVideo.play();
-    }
-  });
-});
-
-// Close modal function
-const closeVideoModal = () => {
+const closeVM = () => {
+  if (!videoModal) return;
   videoModal.classList.remove('active');
   document.body.style.overflow = '';
   modalVideo.pause();
   modalVideo.currentTime = 0;
 };
-
-// Close modal on X button click
-if (modalClose) {
-  modalClose.addEventListener('click', closeVideoModal);
-}
-
-// Close modal on overlay click
-if (modalOverlay) {
-  modalOverlay.addEventListener('click', closeVideoModal);
-}
-
-// Close modal on Escape key
+if (modalClose) modalClose.addEventListener('click', closeVM);
+if (vmOverlay) vmOverlay.addEventListener('click', closeVM);
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && videoModal.classList.contains('active')) {
-    closeVideoModal();
-  }
+  if (e.key === 'Escape' && videoModal?.classList.contains('active')) closeVM();
+});
+
+/*=============== SMOOTH SCROLL ===============*/
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      window.scrollTo({
+        top: target.offsetTop - header.offsetHeight - 20,
+        behavior: 'smooth'
+      });
+    }
+  });
 });
