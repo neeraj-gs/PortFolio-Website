@@ -1,993 +1,589 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-      <!--=============== SEO META TAGS ===============-->
-      <meta name="description" content="Full Stack Developer & AI Solutions Engineer. I build intelligent web applications and AI-powered automation systems that solve real business problems. Specializing in full stack development, AI agents, and workflow automation.">
-      <meta name="keywords" content="Neeraj GS, Full Stack Developer, AI Solutions Engineer, Blockchain Developer, Web Developer, React, Next.js, TypeScript, Solidity, AI Agents">
-      <meta name="author" content="Neeraj GS">
-      
-      <!-- Canonical URL -->
-      <link rel="canonical" href="https://neerajgs.dev">
-      
-      <!-- Open Graph / Facebook -->
-      <meta property="og:type" content="website">
-      <meta property="og:url" content="https://neerajgs.dev">
-      <meta property="og:title" content="Neeraj GS | Full Stack Developer & AI Solutions Engineer">
-      <meta property="og:description" content="Full Stack Developer & AI Solutions Engineer. I build intelligent web applications and AI-powered automation systems that solve real business problems.">
-      <meta property="og:image" content="https://neerajgs.dev/assets/img/Nee.JPG">
-      <meta property="og:site_name" content="Neeraj GS">
-      
-      <!-- Twitter Card -->
-      <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:url" content="https://neerajgs.dev">
-      <meta name="twitter:title" content="Neeraj GS | Full Stack Developer & AI Solutions Engineer">
-      <meta name="twitter:description" content="Full Stack Developer & AI Solutions Engineer. I build intelligent web applications and AI-powered automation systems that solve real business problems.">
-      <meta name="twitter:image" content="https://neerajgs.dev/assets/img/Nee.JPG">
-      <meta name="twitter:creator" content="@neeraj_gs_05">
-      
-      <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="assets/img/faviconN.png" type="image/x-icon">
-      
-      <!--=============== REMIXICONS ===============-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" crossorigin="">
-      
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css">
-      
-      <title>Neeraj GS | Full Stack Developer & AI Solutions Engineer</title>
-      
-      <!--=============== STRUCTURED DATA (JSON-LD) ===============-->
-      <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Neeraj GS",
-        "url": "https://neerajgs.dev",
-        "image": "https://neerajgs.dev/assets/img/Nee.JPG",
-        "jobTitle": "Full Stack Developer & AI Solutions Engineer",
-        "description": "Full Stack Developer & AI Solutions Engineer. I build intelligent web applications and AI-powered automation systems that solve real business problems.",
-        "sameAs": [
-          "https://github.com/neeraj-gs",
-          "https://www.linkedin.com/in/neeraj-gs/",
-          "https://twitter.com/neeraj_gs_05",
-          "https://neerajgs.hashnode.dev/"
-        ],
-        "email": "gsneeraj2002@gmail.com",
-        "knowsAbout": [
-          "Full Stack Development",
-          "AI Agents & LLMs",
-          "Blockchain Development",
-          "Smart Contracts",
-          "Web Development",
-          "React.js",
-          "Next.js",
-          "TypeScript",
-          "Solidity"
-        ]
-      }
-      </script>
-   </head>
-   <body>
-      <!--==================== HEADER ====================-->
-      <header class="header" id="header">
-         <nav class="nav container">
-            <a href="#" class="nav__logo">
-               <span class="nav__logo-circle">NGS</span>
-               <span class="nav__logo-name">Neeraj GS</span>
-            </a>
-            <div class="nav__menu" id="nav-menu">
-               <span class="nav__title">Menu</span>
-               <h3 class="nav__name">Neeraj GS</h3>
-               <ul class="nav__list">
-                  <li class="nav__item">
-                     <a href="#home" class="nav__link">Home</a>
-                  </li>
-                  <li class="nav__item">
-                     <a href="#experience" class="nav__link">Experience</a>
-                  </li>
-                  <li class="nav__item">
-                     <a href="#about" class="nav__link">About</a>
-                  </li>
-                  <li class="nav__item">
-                     <a href="#skills" class="nav__link">Skills</a>
-                  </li>
-                  <li class="nav__item">
-                     <a href="#projects" style="background-color: black;" onmouseover="this.style.backgroundColor='hsl(14, 80%, 50%)'" onmouseout="this.style.backgroundColor='black'" class="nav__link nav__link-button">Projects</a>
-                 </li>
-                 
-               </ul>
-               <div class="nav__close" id="nav-close">
-                  <i class="ri-close-line"></i>
-               </div>
-            </div>
-            <div class="nav__buttons">
-               <!-- //dark and light theme -->
-               <i class="ri-moon-line change-theme" id="theme-button"></i>
-               <div class="nav__toggle" id="nav-toggle">
-                  <i class="ri-menu-4-line"></i>
-               </div>
-            </div>
-         </nav>
-      </header>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <!--==================== MAIN ====================-->
-      <main class="main">
-         <!--==================== HOME ====================-->
-         <section class="home section" id="home">
-            <div class="home__container container grid">
-               <div class="home__content">
-                  <span class="home__subtitle">Full Stack Developer & AI Solutions Engineer</span>
-                  <h1 class="home__name">
-                     Neeraj GS
-                  </h1>
-                  <div class="home__info">
-                     <p class="home__description">
-                        I build <b>intelligent web applications</b> and <b>AI-powered automation systems</b> that solve real business problems. Specializing in full stack development, AI agents, and workflow automation to help businesses scale efficiently.
-                     </p>
-                     <div class="home__expertise">
-                        <div class="home__expertise-item">
-                           <i class="ri-code-s-slash-line"></i>
-                           <span>Full Stack Development</span>
-                        </div>
-                        <div class="home__expertise-item">
-                           <i class="ri-robot-line"></i>
-                           <span>AI Agents & LLMs</span>
-                        </div>
-                        <div class="home__expertise-item">
-                           <i class="ri-flow-chart"></i>
-                           <span>Workflow Automation</span>
-                        </div>
-                     </div>
-                     <div class="home__buttons">
-                        <a href="#projects" class="button">
-                           View My Work <i class="ri-arrow-right-line"></i>
-                        </a>
-                        <a href="#contact" class="button__ghost">
-                           <i class="ri-mail-line"></i>
-                        </a>
-                     </div>
-                  </div>
-               </div>
-               <div class="home__perfil">
-                  <div class="home__image">
-                     <img class="home__img" src="assets/img/Nee.JPG" alt="Neeraj GS - Full Stack Developer">
-                     <div class="home__shadow"></div>
-                  </div>
-                  <div class="home__social">
-                     <a href="https://github.com/neeraj-gs" target="_blank" class="home__social-link" title="GitHub"><i class="ri-github-fill"></i></a>
-                     <a href="https://www.linkedin.com/in/neeraj-gs/" target="_blank" class="home__social-link" title="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
-                     <a href="mailto:gsneeraj2002@gmail.com" class="home__social-link" title="Email"><i class="ri-mail-fill"></i></a>
-                     <a href="https://twitter.com/neeraj_gs_05" target="_blank" class="home__social-link" title="X"><i class="ri-twitter-x-line"></i></a>
-                  </div>
-               </div>
-            </div>
-         </section>
+   <meta name="description" content="AI Solutions Engineer & Full Stack Developer. I build autonomous AI agents, intelligent automation systems, and production-grade web applications that solve real business problems.">
+   <meta name="keywords" content="Neeraj GS, AI Solutions Engineer, Full Stack Developer, AI Agents, Automation, LLMs, React, Next.js, TypeScript">
+   <meta name="author" content="Neeraj GS">
+   <link rel="canonical" href="https://neerajgs.dev">
 
-         <!--==================== EXPERIENCE ====================-->
-         <section class="experience section" id="experience">
-            <h2 class="section__title-1"><span>Work Experience</span></h2>
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://neerajgs.dev">
+   <meta property="og:title" content="Neeraj GS | AI Solutions Engineer & Full Stack Developer">
+   <meta property="og:description" content="I build autonomous AI agents, intelligent automation systems, and production-grade web applications.">
+   <meta property="og:image" content="https://neerajgs.dev/assets/img/Nee.JPG">
+   <meta property="og:site_name" content="Neeraj GS">
 
-            <div class="experience__container container">
-               <!-- Company Block -->
-               <div class="experience__company-block">
-                  <!-- Company Header -->
-                  <div class="experience__company-header">
-                     <div class="experience__company-logo-large">
-                        <img src="./assets/img/penomo_logo.jpeg" alt="Penomo logo" class="experience__logo-img-large">
-                     </div>
-                     <div class="experience__company-info">
-                        <h3 class="experience__company-name">Penomo</h3>
-                        <p class="experience__company-desc">Tokenized Finance Platform for Renewable Energy Infrastructure</p>
-                        <div class="experience__company-meta">
-                           <span><i class="ri-calendar-line"></i> Mar 2024 - Present</span>
-                           <span><i class="ri-map-pin-line"></i> Remote</span>
-                           <span><i class="ri-building-line"></i> Fintech / Web3</span>
-                        </div>
-                     </div>
-                  </div>
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:url" content="https://neerajgs.dev">
+   <meta name="twitter:title" content="Neeraj GS | AI Solutions Engineer & Full Stack Developer">
+   <meta name="twitter:description" content="I build autonomous AI agents, intelligent automation systems, and production-grade web applications.">
+   <meta name="twitter:image" content="https://neerajgs.dev/assets/img/Nee.JPG">
+   <meta name="twitter:creator" content="@neeraj_gs_05">
 
-                  <!-- Positions Timeline -->
-                  <div class="experience__positions">
-                     <!-- Position 1 - Current -->
-                     <div class="experience__position experience__position--current">
-                        <div class="experience__position-marker">
-                           <div class="experience__position-dot"></div>
-                           <div class="experience__position-line"></div>
-                        </div>
-                        <div class="experience__position-content">
-                           <div class="experience__position-header">
-                              <h4 class="experience__position-title">Project Development Manager</h4>
-                              <span class="experience__badge">Current</span>
-                           </div>
-                           <div class="experience__position-meta">
-                              <span><i class="ri-calendar-line"></i> Mar 2025 - Present</span>
-                              <span><i class="ri-briefcase-line"></i> Full-time</span>
-                           </div>
-                           <p class="experience__position-desc">
-                              Building CredOS from the ground up - Penomo's AI-powered operating system for infrastructure private credit. Owning the full product lifecycle: customer discovery, requirements gathering, technical architecture, and cross-functional team coordination.
-                           </p>
-                           <div class="experience__position-skills">
-                              <span>Product Development</span>
-                              <span>Product Strategy</span>
-                              <span>LLM</span>
-                              <span>Prompt Engineering</span>
-                              <span>N8N</span>
-                              <span>React.js</span>
-                              <span>TypeScript</span>
-                           </div>
-                        </div>
-                     </div>
+   <link rel="shortcut icon" href="assets/img/faviconN.png" type="image/x-icon">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" crossorigin="">
+   <link rel="stylesheet" href="assets/css/styles.css">
 
-                     <!-- Position 2 -->
-                     <div class="experience__position">
-                        <div class="experience__position-marker">
-                           <div class="experience__position-dot"></div>
-                           <div class="experience__position-line"></div>
-                        </div>
-                        <div class="experience__position-content">
-                           <div class="experience__position-header">
-                              <h4 class="experience__position-title">Full Stack Blockchain Developer</h4>
-                              <span class="experience__duration-badge">9 months</span>
-                           </div>
-                           <div class="experience__position-meta">
-                              <span><i class="ri-calendar-line"></i> Jun 2024 - Feb 2025</span>
-                              <span><i class="ri-briefcase-line"></i> Full-time</span>
-                           </div>
-                           <p class="experience__position-desc">
-                              Led development of Penomo's tokenized finance platform connecting global capital to renewable energy infrastructure. Architected smart contracts for real-world asset tokenization and built RESTful APIs for seamless blockchain integration.
-                           </p>
-                           <div class="experience__position-skills">
-                              <span>React.js</span>
-                              <span>TypeScript</span>
-                              <span>Solidity</span>
-                              <span>Smart Contracts</span>
-                              <span>Tokenization</span>
-                              <span>AWS</span>
-                              <span>Docker</span>
-                           </div>
-                        </div>
-                     </div>
+   <title>Neeraj GS | AI Solutions Engineer & Full Stack Developer</title>
 
-                     <!-- Position 3 -->
-                     <div class="experience__position">
-                        <div class="experience__position-marker">
-                           <div class="experience__position-dot"></div>
-                        </div>
-                        <div class="experience__position-content">
-                           <div class="experience__position-header">
-                              <h4 class="experience__position-title">Full Stack Blockchain Developer Intern</h4>
-                              <span class="experience__duration-badge">3 months</span>
-                           </div>
-                           <div class="experience__position-meta">
-                              <span><i class="ri-calendar-line"></i> Mar 2024 - May 2024</span>
-                              <span><i class="ri-briefcase-line"></i> Internship</span>
-                           </div>
-                           <p class="experience__position-desc">
-                              Contributed to the development of Penomo's decentralized application - a platform enabling on-chain capital financing for real-world renewable energy infrastructure through tokenization. Gained hands-on experience with Web3 technologies and smart contract development.
-                           </p>
-                           <div class="experience__position-skills">
-                              <span>React.js</span>
-                              <span>JavaScript</span>
-                              <span>web3.js</span>
-                              <span>IPFS</span>
-                              <span>Material-UI</span>
-                              <span>Hardhat</span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+   <script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+     "@type": "Person",
+     "name": "Neeraj GS",
+     "url": "https://neerajgs.dev",
+     "image": "https://neerajgs.dev/assets/img/Nee.JPG",
+     "jobTitle": "AI Solutions Engineer & Full Stack Developer",
+     "sameAs": [
+       "https://github.com/neeraj-gs",
+       "https://www.linkedin.com/in/neeraj-gs/",
+       "https://twitter.com/neeraj_gs_05",
+       "https://neerajgs.hashnode.dev/"
+     ],
+     "email": "gsneeraj2002@gmail.com",
+     "knowsAbout": ["AI Agents", "LLMs", "Automation", "Full Stack Development", "React.js", "Next.js", "TypeScript"]
+   }
+   </script>
+</head>
+<body>
 
-               <!-- Experience Summary Stats -->
-               <div class="experience__stats">
-                  <div class="experience__stat-item">
-                     <span class="experience__stat-number">2+</span>
-                     <span class="experience__stat-label">Years Experience</span>
-                  </div>
-                  <div class="experience__stat-item">
-                     <span class="experience__stat-number">3</span>
-                     <span class="experience__stat-label">Positions</span>
-                  </div>
-                  <div class="experience__stat-item">
-                     <span class="experience__stat-number">20+</span>
-                     <span class="experience__stat-label">Projects Delivered</span>
-                  </div>
-               </div>
-            </div>
-         </section>
+   <div class="cursor-glow" id="cursor-glow"></div>
 
-         <!-- Wave Separator -->
-         <div class="wave-separator wave-separator--bottom-inv"></div>
+   <div class="aurora">
+      <div class="aurora__beam aurora__beam--1"></div>
+      <div class="aurora__beam aurora__beam--2"></div>
+      <div class="aurora__beam aurora__beam--3"></div>
+   </div>
 
-         <!--==================== ABOUT ====================-->
-         <section class="about section about--redesigned" id="about">
-            <div class="about__container container">
-               <h2 class="section__title-1"><span>About Me</span></h2>
+   <!--==================== HEADER ====================-->
+   <header class="header" id="header">
+      <nav class="nav container">
+         <a href="#" class="nav__logo">
+            <span class="nav__logo-dot"></span>
+            <span>Neeraj GS</span>
+         </a>
 
-               <div class="about__content">
-                  <!-- Introduction -->
-                  <div class="about__intro">
-                     <div class="about__intro-text">
-                        <h3 class="about__subtitle">Building the Future, One Line of Code at a Time</h3>
-                        <p class="about__lead">
-                           I'm a <strong>Full Stack Developer</strong> and <strong>Project Development Manager</strong> with a passion for creating impactful digital solutions. With expertise spanning web development, blockchain technology, and artificial intelligence, I transform complex ideas into elegant, production-ready applications.
-                        </p>
-                        <p class="about__text">
-                           Currently leading product development at <strong>Penomo</strong>, where I'm building CredOS — an AI-powered operating system revolutionizing infrastructure private credit. I own the complete product lifecycle from customer discovery to deployment, coordinating cross-functional teams to deliver exceptional results.
-                        </p>
-                        <p class="about__text">
-                           My journey in tech has been driven by curiosity and a relentless desire to solve real-world problems. Whether it's architecting smart contracts for tokenized assets, developing AI-powered applications, or building autonomous AI agents, I approach every project with the goal of creating lasting value.
-                        </p>
-                     </div>
-                  </div>
-
-                  <!-- What I Do - 4 Cards -->
-                  <div class="about__specializations">
-                     <h3 class="about__section-title">What I Specialize In</h3>
-                     <div class="about__cards">
-                        <div class="about__card">
-                           <div class="about__card-icon">
-                              <i class="ri-stack-line"></i>
-                           </div>
-                           <h4 class="about__card-title">Full Stack Development</h4>
-                           <p class="about__card-text">
-                              Building end-to-end web applications using React, Next.js, Node.js, and TypeScript. I focus on clean architecture, performance optimization, and delivering seamless user experiences across the entire stack.
-                           </p>
-                           <div class="about__card-tags">
-                              <span>React.js</span>
-                              <span>Next.js</span>
-                              <span>Node.js</span>
-                              <span>TypeScript</span>
-                           </div>
-                        </div>
-
-                        <div class="about__card">
-                           <div class="about__card-icon">
-                              <i class="ri-links-line"></i>
-                           </div>
-                           <h4 class="about__card-title">Blockchain & Web3</h4>
-                           <p class="about__card-text">
-                              Developing smart contracts and decentralized applications on EVM-compatible chains. Specialized in real-world asset tokenization, DeFi protocols, and building secure on-chain solutions for enterprise clients.
-                           </p>
-                           <div class="about__card-tags">
-                              <span>Solidity</span>
-                              <span>Smart Contracts</span>
-                              <span>Tokenization</span>
-                              <span>web3.js</span>
-                           </div>
-                        </div>
-
-                        <div class="about__card">
-                           <div class="about__card-icon">
-                              <i class="ri-robot-line"></i>
-                           </div>
-                           <h4 class="about__card-title">AI Agents & Automation</h4>
-                           <p class="about__card-text">
-                              Designing and deploying autonomous AI agents that can reason, plan, and execute complex tasks. Building intelligent workflows using LLMs, custom tool integrations, and multi-agent orchestration systems.
-                           </p>
-                           <div class="about__card-tags">
-                              <span>AI Agents</span>
-                              <span>LangChain</span>
-                              <span>n8n</span>
-                              <span>Automation</span>
-                           </div>
-                        </div>
-
-                        <div class="about__card">
-                           <div class="about__card-icon">
-                              <i class="ri-sparkling-line"></i>
-                           </div>
-                           <h4 class="about__card-title">AI Integration & LLMs</h4>
-                           <p class="about__card-text">
-                              Integrating cutting-edge AI capabilities into applications using OpenAI, Claude, and other LLM providers. Expert in prompt engineering, RAG systems, and building AI-powered features that enhance user productivity.
-                           </p>
-                           <div class="about__card-tags">
-                              <span>OpenAI API</span>
-                              <span>Prompt Engineering</span>
-                              <span>RAG</span>
-                              <span>LLMs</span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-
-                  <!-- Philosophy & CTA -->
-                  <div class="about__philosophy">
-                     <div class="about__philosophy-content">
-                        <h3 class="about__section-title">My Approach</h3>
-                        <p class="about__text">
-                           I believe great software is built at the intersection of technical excellence and user empathy. Every line of code I write is guided by three principles: <strong>scalability</strong>, <strong>maintainability</strong>, and <strong>impact</strong>. I'm not just building features—I'm solving problems that matter.
-                        </p>
-                        <p class="about__text">
-                           When I'm not coding, you'll find me exploring the latest in AI research, contributing to open-source projects, or writing about technology on my blog.
-                        </p>
-                     </div>
-                     <div class="about__cta">
-                        <a href="#contact" class="button">
-                           <i class="ri-send-plane-line"></i>Let's Work Together
-                        </a>
-                        <a href="mailto:gsneeraj2002@gmail.com" class="button__ghost">
-                           <i class="ri-mail-line"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/neeraj-gs/" target="_blank" class="button__ghost">
-                           <i class="ri-linkedin-box-line"></i>
-                        </a>
-                        <a href="https://github.com/neeraj-gs" target="_blank" class="button__ghost">
-                           <i class="ri-github-line"></i>
-                        </a>
-                        <a href="https://neerajgs.hashnode.dev/" target="_blank" class="button__ghost">
-                           <i class="ri-article-line"></i>
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-
-         <!-- Wave Separator -->
-         <div class="wave-separator wave-separator--top-inv"></div>
-
-         <!--==================== PROJECTS ====================-->
-         <section class="projects-new section section--alt" id="projects">
-            <div class="projects-new__header container">
-               <span class="projects-new__subtitle">Portfolio</span>
-               <h2 class="projects-new__title">Featured Projects</h2>
-               <p class="projects-new__description">A selection of my recent work showcasing full-stack development, AI integration, and blockchain solutions.</p>
-            </div>
-
-            <div class="projects-new__container container">
-               <!-- Project 1: CourseGen AI -->
-               <article class="project-card" data-category="fullstack">
-                  <div class="project-card__media">
-                     <img src="assets/img/CourseGen_AI.png" alt="CourseGen AI" class="project-card__img">
-                     <iframe
-                        class="project-card__loom"
-                        data-src="https://www.loom.com/embed/3fcdcac8857d438e9ef45989bf009f1d?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
-                        frameborder="0"
-                        allowfullscreen>
-                     </iframe>
-                     <div class="project-card__overlay">
-                        <span class="project-card__category">Full-Stack + AI</span>
-                     </div>
-                     <a href="https://www.loom.com/share/3fcdcac8857d438e9ef45989bf009f1d" target="_blank" class="project-card__video-btn" title="Watch Demo">
-                        <i class="ri-play-circle-fill"></i>
-                     </a>
-                  </div>
-                  <div class="project-card__content">
-                     <h3 class="project-card__title">CourseGen AI</h3>
-                     <p class="project-card__text">AI-powered learning platform that creates customized courses from freely available videos, ranked by quality.</p>
-                     <div class="project-card__tech">
-                        <span>Next.js</span>
-                        <span>OpenAI</span>
-                        <span>Prisma</span>
-                        <span>MySQL</span>
-                        <span>Docker</span>
-                     </div>
-                     <div class="project-card__links">
-                        <a href="https://github.com/neeraj-gs/CourseGen-AI" target="_blank" class="project-card__link">
-                           <i class="ri-github-fill"></i> Source Code
-                        </a>
-                     </div>
-                  </div>
-               </article>
-
-               <!-- Project 2: Derma Voice Assistant -->
-               <article class="project-card" data-category="fullstack">
-                  <div class="project-card__media">
-                     <img src="assets/img/DermaVoice.png" alt="Derma Voice Assistant" class="project-card__img">
-                     <iframe
-                        class="project-card__loom"
-                        data-src="https://www.loom.com/embed/09ba34a6e0a74092bdb12c558006629f?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
-                        frameborder="0"
-                        allowfullscreen>
-                     </iframe>
-                     <div class="project-card__overlay">
-                        <span class="project-card__category">Full-Stack + AI</span>
-                     </div>
-                     <a href="https://www.loom.com/share/09ba34a6e0a74092bdb12c558006629f" target="_blank" class="project-card__video-btn" title="Watch Demo">
-                        <i class="ri-play-circle-fill"></i>
-                     </a>
-                  </div>
-                  <div class="project-card__content">
-                     <h3 class="project-card__title">Derma Voice Assistant</h3>
-                     <p class="project-card__text">AI voice assistant for handling bookings, calls, and customer interactions through natural conversation.</p>
-                     <div class="project-card__tech">
-                        <span>TypeScript</span>
-                        <span>Next.js</span>
-                        <span>Supabase</span>
-                        <span>AI Voice</span>
-                     </div>
-                     <div class="project-card__links">
-                        <a href="https://github.com/neeraj-gs/Derma-Whisper-AI-Assistant" target="_blank" class="project-card__link">
-                           <i class="ri-github-fill"></i> Source Code
-                        </a>
-                     </div>
-                  </div>
-               </article>
-
-               <!-- Project 3: CoverMe AI -->
-               <article class="project-card" data-category="frontend">
-                  <div class="project-card__media">
-                     <img src="assets/img/CoverMe.png" alt="CoverMe AI" class="project-card__img">
-                     <iframe
-                        class="project-card__loom"
-                        data-src="https://www.loom.com/embed/d5d2773e69e44d529a245f4d065b62d7?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
-                        frameborder="0"
-                        allowfullscreen>
-                     </iframe>
-                     <div class="project-card__overlay">
-                        <span class="project-card__category">AI Extension</span>
-                     </div>
-                     <a href="https://www.loom.com/share/d5d2773e69e44d529a245f4d065b62d7" target="_blank" class="project-card__video-btn" title="Watch Demo">
-                        <i class="ri-play-circle-fill"></i>
-                     </a>
-                  </div>
-                  <div class="project-card__content">
-                     <h3 class="project-card__title">CoverMe:AI</h3>
-                     <p class="project-card__text">Chrome extension that generates personalized cover letters by analyzing job descriptions and your resume.</p>
-                     <div class="project-card__tech">
-                        <span>React</span>
-                        <span>OpenAI</span>
-                        <span>Chrome API</span>
-                        <span>Tailwind</span>
-                     </div>
-                     <div class="project-card__links">
-                        <a href="https://github.com/neeraj-gs/CoverMe-AI-Chrome-Extension" target="_blank" class="project-card__link">
-                           <i class="ri-github-fill"></i> Source Code
-                        </a>
-                     </div>
-                  </div>
-               </article>
-
-               <!-- Project 4: The Fashion Bot -->
-               <article class="project-card" data-category="fullstack">
-                  <div class="project-card__media">
-                     <img src="assets/img/FashionBot.png" alt="The Fashion Bot" class="project-card__img">
-                     <iframe
-                        class="project-card__loom"
-                        data-src="https://www.loom.com/embed/a49177d17a6f46608673677779ba20a2?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true"
-                        frameborder="0"
-                        allowfullscreen>
-                     </iframe>
-                     <div class="project-card__overlay">
-                        <span class="project-card__category">Full-Stack + AI</span>
-                     </div>
-                     <a href="https://www.loom.com/share/a49177d17a6f46608673677779ba20a2" target="_blank" class="project-card__video-btn" title="Watch Demo">
-                        <i class="ri-play-circle-fill"></i>
-                     </a>
-                  </div>
-                  <div class="project-card__content">
-                     <h3 class="project-card__title">The Fashion Bot</h3>
-                     <p class="project-card__text">AI-powered automated checkout bot that saves your details and completes purchases instantly with one-click shopping.</p>
-                     <div class="project-card__tech">
-                        <span>React</span>
-                        <span>TypeScript</span>
-                        <span>Node.js</span>
-                        <span>Automation</span>
-                     </div>
-                     <div class="project-card__links">
-                        <a href="https://github.com/neeraj-gs/The-Fashion-Bot" target="_blank" class="project-card__link">
-                           <i class="ri-github-fill"></i> Source Code
-                        </a>
-                     </div>
-                  </div>
-               </article>
-
-            </div>
-
-            <!-- More Projects Banner -->
-            <a href="https://github.com/neeraj-gs?tab=repositories" target="_blank" class="more-projects-banner">
-               <div class="more-projects-banner__bg">
-                  <div class="more-projects-banner__circle"></div>
-                  <div class="more-projects-banner__circle more-projects-banner__circle--2"></div>
-               </div>
-               <div class="more-projects-banner__content">
-                  <div class="more-projects-banner__left">
-                     <div class="more-projects-banner__icon">
-                        <i class="ri-github-fill"></i>
-                     </div>
-                     <div class="more-projects-banner__stats">
-                        <div class="more-projects-banner__count">
-                           <span class="more-projects-banner__number">50</span>
-                           <span class="more-projects-banner__plus">+</span>
-                        </div>
-                        <p class="more-projects-banner__label">Projects</p>
-                     </div>
-                  </div>
-                  <div class="more-projects-banner__right">
-                     <p class="more-projects-banner__text">Explore my complete collection on GitHub</p>
-                     <div class="more-projects-banner__cta">
-                        <span>View All</span>
-                        <i class="ri-arrow-right-line"></i>
-                     </div>
-                  </div>
-               </div>
-            </a>
-         </section>
-
-         <!-- Wave Separator -->
-         <div class="wave-separator wave-separator--bottom-inv"></div>
-
-         <!--==================== SKILLS ====================-->
-         <section class="skills section" id="skills">
-            <h2 class="section__title-1"><span>Technical Skills</span></h2>
-
-            <div class="skills__container container">
-               <!-- Skills Categories -->
-               <div class="skills__content">
-                  <!-- Frontend -->
-                  <div class="skills__category">
-                     <h3 class="skills__category-title">
-                        <i class="ri-layout-line"></i> Frontend Development
-                     </h3>
-                     <div class="skills__grid">
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
-                           </div>
-                           <span class="skills__name">React.js</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js">
-                           </div>
-                           <span class="skills__name">Next.js</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
-                           </div>
-                           <span class="skills__name">TypeScript</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-                           </div>
-                           <span class="skills__name">JavaScript</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind">
-                           </div>
-                           <span class="skills__name">Tailwind CSS</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" alt="Material-UI">
-                           </div>
-                           <span class="skills__name">Material-UI</span>
-                        </div>
-                     </div>
-                  </div>
-
-                  <!-- Backend -->
-                  <div class="skills__category">
-                     <h3 class="skills__category-title">
-                        <i class="ri-server-line"></i> Backend Development
-                     </h3>
-                     <div class="skills__grid">
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
-                           </div>
-                           <span class="skills__name">Node.js</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js">
-                           </div>
-                           <span class="skills__name">Express.js</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GraphQL">
-                           </div>
-                           <span class="skills__name">GraphQL</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-                           </div>
-                           <span class="skills__name">Python</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <i class="ri-wireless-charging-line" style="font-size: 40px; color: var(--title-color);"></i>
-                           </div>
-                           <span class="skills__name">WebSockets</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <i class="ri-code-s-slash-line" style="font-size: 40px; color: var(--title-color);"></i>
-                           </div>
-                           <span class="skills__name">REST APIs</span>
-                        </div>
-                     </div>
-                  </div>
-
-                  <!-- Blockchain -->
-                  <div class="skills__category">
-                     <h3 class="skills__category-title">
-                        <i class="ri-links-line"></i> Blockchain & Web3
-                     </h3>
-                     <div class="skills__grid">
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Solidity">
-                           </div>
-                           <span class="skills__name">Solidity</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/hardhat/hardhat-original.svg" alt="Hardhat">
-                           </div>
-                           <span class="skills__name">Hardhat</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <i class="ri-global-line" style="font-size: 40px; color: var(--title-color);"></i>
-                           </div>
-                           <span class="skills__name">web3.js</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <i class="ri-folder-shield-2-line" style="font-size: 40px; color: var(--title-color);"></i>
-                           </div>
-                           <span class="skills__name">IPFS</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <i class="ri-coin-line" style="font-size: 40px; color: var(--title-color);"></i>
-                           </div>
-                           <span class="skills__name">Tokenization</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <i class="ri-file-code-line" style="font-size: 40px; color: var(--title-color);"></i>
-                           </div>
-                           <span class="skills__name">Smart Contracts</span>
-                        </div>
-                     </div>
-                  </div>
-
-                  <!-- Databases -->
-                  <div class="skills__category">
-                     <h3 class="skills__category-title">
-                        <i class="ri-database-2-line"></i> Databases & ORM
-                     </h3>
-                     <div class="skills__grid">
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
-                           </div>
-                           <span class="skills__name">PostgreSQL</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
-                           </div>
-                           <span class="skills__name">MongoDB</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
-                           </div>
-                           <span class="skills__name">MySQL</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">
-                           </div>
-                           <span class="skills__name">Redis</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg" alt="Prisma">
-                           </div>
-                           <span class="skills__name">Prisma ORM</span>
-                        </div>
-                     </div>
-                  </div>
-
-                  <!-- DevOps & Cloud -->
-                  <div class="skills__category">
-                     <h3 class="skills__category-title">
-                        <i class="ri-cloud-line"></i> DevOps & Cloud
-                     </h3>
-                     <div class="skills__grid">
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">
-                           </div>
-                           <span class="skills__name">AWS</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-                           </div>
-                           <span class="skills__name">Docker</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
-                           </div>
-                           <span class="skills__name">Linux</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-                           </div>
-                           <span class="skills__name">Git</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="CI/CD">
-                           </div>
-                           <span class="skills__name">CI/CD</span>
-                        </div>
-                     </div>
-                  </div>
-
-                  <!-- AI & Tools -->
-                  <div class="skills__category">
-                     <h3 class="skills__category-title">
-                        <i class="ri-robot-line"></i> AI & Automation
-                     </h3>
-                     <div class="skills__grid">
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <i class="ri-openai-fill" style="font-size: 40px; color: var(--title-color);"></i>
-                           </div>
-                           <span class="skills__name">OpenAI API</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <i class="ri-robot-fill" style="font-size: 40px; color: var(--title-color);"></i>
-                           </div>
-                           <span class="skills__name">AI Agents</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <i class="ri-chat-3-line" style="font-size: 40px; color: var(--title-color);"></i>
-                           </div>
-                           <span class="skills__name">Prompt Engineering</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <i class="ri-brain-line" style="font-size: 40px; color: var(--title-color);"></i>
-                           </div>
-                           <span class="skills__name">LLMs</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <i class="ri-flow-chart" style="font-size: 40px; color: var(--title-color);"></i>
-                           </div>
-                           <span class="skills__name">n8n</span>
-                        </div>
-                        <div class="skills__item">
-                           <div class="skills__icon">
-                              <i class="ri-link" style="font-size: 40px; color: var(--title-color);"></i>
-                           </div>
-                           <span class="skills__name">LangChain</span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-
-         <!-- Wave Separator -->
-         <div class="wave-separator wave-separator--top-inv"></div>
-
-         <!--==================== CONTACT ====================-->
-         <section class="connect section section--alt" id="contact">
-            <div class="connect__container container">
-               <div class="connect__header">
-                  <h2 class="section__title-1"><span>Let's Connect</span></h2>
-                  <p class="connect__description">
-                     I'm always open to discussing new opportunities, innovative projects, or potential collaborations.
-                     Whether you have a question or just want to say hello, feel free to reach out.
-                  </p>
-               </div>
-
-               <div class="connect__cards">
-                  <a href="mailto:gsneeraj2002@gmail.com" class="connect__card">
-                     <div class="connect__card-icon">
-                        <i class="ri-mail-line"></i>
-                     </div>
-                     <h3 class="connect__card-title">Email</h3>
-                     <p class="connect__card-info">gsneeraj2002@gmail.com</p>
-                     <span class="connect__card-cta">Send an email <i class="ri-arrow-right-up-line"></i></span>
-                  </a>
-
-                  <a href="https://www.linkedin.com/in/neeraj-gs/" target="_blank" class="connect__card">
-                     <div class="connect__card-icon connect__card-icon--linkedin">
-                        <i class="ri-linkedin-box-fill"></i>
-                     </div>
-                     <h3 class="connect__card-title">LinkedIn</h3>
-                     <p class="connect__card-info">neeraj-gs</p>
-                     <span class="connect__card-cta">Connect with me <i class="ri-arrow-right-up-line"></i></span>
-                  </a>
-
-                  <a href="https://github.com/neeraj-gs" target="_blank" class="connect__card">
-                     <div class="connect__card-icon connect__card-icon--github">
-                        <i class="ri-github-fill"></i>
-                     </div>
-                     <h3 class="connect__card-title">GitHub</h3>
-                     <p class="connect__card-info">neeraj-gs</p>
-                     <span class="connect__card-cta">View my work <i class="ri-arrow-right-up-line"></i></span>
-                  </a>
-
-                  <a href="https://twitter.com/neeraj_gs_05" target="_blank" class="connect__card">
-                     <div class="connect__card-icon connect__card-icon--twitter">
-                        <i class="ri-twitter-x-fill"></i>
-                     </div>
-                     <h3 class="connect__card-title">Twitter / X</h3>
-                     <p class="connect__card-info">@neeraj_gs_05</p>
-                     <span class="connect__card-cta">Follow me <i class="ri-arrow-right-up-line"></i></span>
-                  </a>
-               </div>
-
-               <!-- <div class="connect__availability">
-                  <div class="connect__status">
-                     <span class="connect__status-dot"></span>
-                     <span>Available for new opportunities</span>
-                  </div>
-               </div> -->
-            </div>
-         </section>
-      </main>
-
-      <!--==================== FOOTER ====================-->
-      <footer class="footer">
-         <div class="footer__container container grid">
-            <ul class="footer__links">
-               <li>
-                  <a href="#home" class="footer__link">Home</a>
-               </li>
-               <li>
-                  <a href="#experience" class="footer__link">Experience</a>
-               </li>
-               <li>
-                  <a href="#about" class="footer__link">About</a>
-               </li>
-               <li>
-                  <a href="#projects" class="footer__link">Projects</a>
-               </li>
-               <li>
-                  <a href="#skills" class="footer__link">Skills</a>
-               </li>
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li><a href="#home" class="nav__link active-link">Home</a></li>
+               <li><a href="#experience" class="nav__link">Experience</a></li>
+               <li><a href="#about" class="nav__link">About</a></li>
+               <li><a href="#skills" class="nav__link">Skills</a></li>
+               <li><a href="#projects" class="nav__link nav__link--cta">Projects</a></li>
             </ul>
-
-            <span class="footer__copy">
-               Made with <i class="ri-heart-fill" style="color: var(--first-color);"></i> by Neeraj GS
-            </span>
+            <div class="nav__close" id="nav-close"><i class="ri-close-line"></i></div>
          </div>
-      </footer>
 
-      <!--=============== VIDEO MODAL ===============-->
-      <div class="video-modal" id="video-modal">
-         <div class="video-modal__overlay"></div>
-         <div class="video-modal__content">
-            <button class="video-modal__close" id="video-modal-close">
-               <i class="ri-close-line"></i>
+         <div class="nav__buttons">
+            <button class="nav__theme-btn" id="theme-button" aria-label="Toggle theme">
+               <i class="ri-moon-line"></i>
             </button>
-            <video class="video-modal__video" id="modal-video" controls>
-               <source src="" type="video/mp4">
-            </video>
+            <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-4-line"></i></div>
          </div>
+      </nav>
+      <div class="nav__overlay" id="nav-overlay"></div>
+   </header>
+
+   <main>
+      <!--==================== HERO ====================-->
+      <section class="hero section" id="home">
+         <div class="hero__grid container">
+            <div class="hero__content">
+               <span class="hero__label reveal">AI Solutions Engineer</span>
+
+               <h1 class="hero__name text-reveal">
+                  <span class="hero__name-gradient">Neeraj GS</span>
+               </h1>
+
+               <p class="hero__desc reveal">
+                  I build <strong>autonomous AI agents</strong> and <strong>intelligent automation systems</strong> that solve real business problems. From multi-agent orchestration to production-grade full stack apps.
+               </p>
+
+               <!-- Live agent terminal — auto-scrolling through 20+ agents -->
+               <div class="hero__terminal reveal">
+                  <div class="hero__terminal-header">
+                     <div class="hero__terminal-dots">
+                        <span></span><span></span><span></span>
+                     </div>
+                     <span class="hero__terminal-title">agent-dashboard</span>
+                  </div>
+                  <div class="hero__terminal-prompt">
+                     <span class="prompt">~</span> <span class="cmd">agents status --all</span>
+                  </div>
+                  <div class="hero__terminal-scroll" id="terminal-scroll">
+                     <!-- Lines injected by JS — continuously scrolling -->
+                  </div>
+                  <div class="hero__terminal-footer">
+                     <span class="output">20+ AI employees</span> &nbsp;| &nbsp;working on my tasks 24/7 &nbsp;| &nbsp;uptime 47d<span class="hero__terminal-cursor"></span>
+                  </div>
+               </div>
+
+               <div class="hero__buttons reveal">
+                  <a href="#projects" class="btn btn--primary">
+                     View My Work <i class="ri-arrow-right-line"></i>
+                  </a>
+                  <a href="#contact" class="btn btn--outline">
+                     <i class="ri-mail-line"></i> Get in Touch
+                  </a>
+               </div>
+            </div>
+
+            <div class="hero__visual reveal-right">
+               <div class="hero__image">
+                  <div class="hero__image-glow"></div>
+                  <img class="hero__img" src="assets/img/Nee.JPG" alt="Neeraj GS" loading="eager">
+               </div>
+               <div class="hero__social stagger">
+                  <a href="https://github.com/neeraj-gs" target="_blank" class="hero__social-link" title="GitHub"><i class="ri-github-fill"></i></a>
+                  <a href="https://www.linkedin.com/in/neeraj-gs/" target="_blank" class="hero__social-link" title="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
+                  <a href="mailto:gsneeraj2002@gmail.com" class="hero__social-link" title="Email"><i class="ri-mail-fill"></i></a>
+                  <a href="https://twitter.com/neeraj_gs_05" target="_blank" class="hero__social-link" title="X"><i class="ri-twitter-x-line"></i></a>
+               </div>
+            </div>
+         </div>
+
+         <div class="hero__scroll">
+            <span>Scroll</span>
+            <i class="ri-arrow-down-line"></i>
+         </div>
+      </section>
+
+      <!--==================== EXPERIENCE ====================-->
+      <section class="experience section" id="experience">
+         <div class="experience__header container reveal">
+            <span class="section__label">Career</span>
+            <h2 class="section__title">Work Experience</h2>
+         </div>
+
+         <div class="container">
+            <div class="experience__block reveal-scale">
+               <div class="experience__block-header">
+                  <div class="experience__logo">
+                     <img src="./assets/img/penomo_logo.jpeg" alt="Penomo">
+                  </div>
+                  <div>
+                     <h3 class="experience__company-name">Penomo</h3>
+                     <p class="experience__company-desc">Tokenized Finance Platform for Renewable Energy Infrastructure</p>
+                     <div class="experience__meta">
+                        <span><i class="ri-calendar-line"></i> Mar 2024 - Present</span>
+                        <span><i class="ri-map-pin-line"></i> Remote</span>
+                        <span><i class="ri-building-line"></i> Fintech</span>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="experience__positions stagger">
+                  <div class="experience__pos experience__pos--current">
+                     <div class="experience__pos-marker">
+                        <div class="experience__pos-dot"></div>
+                        <div class="experience__pos-line"></div>
+                     </div>
+                     <div class="experience__pos-card">
+                        <div class="experience__pos-header">
+                           <h4 class="experience__pos-title">Project Development Manager</h4>
+                           <span class="experience__badge">Current</span>
+                        </div>
+                        <div class="experience__pos-meta">
+                           <span><i class="ri-calendar-line"></i> Mar 2025 - Present</span>
+                           <span><i class="ri-briefcase-line"></i> Full-time</span>
+                        </div>
+                        <p class="experience__pos-desc">
+                           Building CredOS from the ground up — Penomo's AI-powered operating system for infrastructure private credit. Designing multi-agent pipelines for automated credit analysis, document parsing, and workflow orchestration using LLMs and n8n.
+                        </p>
+                        <div class="experience__tags">
+                           <span>AI Agents</span>
+                           <span>LLM Pipelines</span>
+                           <span>Prompt Engineering</span>
+                           <span>N8N</span>
+                           <span>React.js</span>
+                           <span>TypeScript</span>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="experience__pos">
+                     <div class="experience__pos-marker">
+                        <div class="experience__pos-dot"></div>
+                        <div class="experience__pos-line"></div>
+                     </div>
+                     <div class="experience__pos-card">
+                        <div class="experience__pos-header">
+                           <h4 class="experience__pos-title">Full Stack Developer</h4>
+                           <span class="experience__duration">9 months</span>
+                        </div>
+                        <div class="experience__pos-meta">
+                           <span><i class="ri-calendar-line"></i> Jun 2024 - Feb 2025</span>
+                           <span><i class="ri-briefcase-line"></i> Full-time</span>
+                        </div>
+                        <p class="experience__pos-desc">
+                           Led development of Penomo's tokenized finance platform. Built RESTful APIs, integrated smart contracts for asset tokenization, and developed the full frontend with React and TypeScript. Deployed on AWS with Docker.
+                        </p>
+                        <div class="experience__tags">
+                           <span>React.js</span>
+                           <span>TypeScript</span>
+                           <span>Node.js</span>
+                           <span>Solidity</span>
+                           <span>AWS</span>
+                           <span>Docker</span>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="experience__pos">
+                     <div class="experience__pos-marker">
+                        <div class="experience__pos-dot"></div>
+                     </div>
+                     <div class="experience__pos-card">
+                        <div class="experience__pos-header">
+                           <h4 class="experience__pos-title">Full Stack Developer Intern</h4>
+                           <span class="experience__duration">3 months</span>
+                        </div>
+                        <div class="experience__pos-meta">
+                           <span><i class="ri-calendar-line"></i> Mar 2024 - May 2024</span>
+                           <span><i class="ri-briefcase-line"></i> Internship</span>
+                        </div>
+                        <p class="experience__pos-desc">
+                           Contributed to Penomo's decentralized application for on-chain capital financing. Gained hands-on experience with Web3, smart contract development, and building production React applications.
+                        </p>
+                        <div class="experience__tags">
+                           <span>React.js</span>
+                           <span>JavaScript</span>
+                           <span>web3.js</span>
+                           <span>Material-UI</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="experience__stats stagger">
+               <div class="experience__stat">
+                  <span class="experience__stat-num counter" data-target="20">0</span>
+                  <span class="experience__stat-label">AI Agents Built</span>
+               </div>
+               <div class="experience__stat">
+                  <span class="experience__stat-num counter" data-target="5">0</span>
+                  <span class="experience__stat-label">Always Running</span>
+               </div>
+               <div class="experience__stat">
+                  <span class="experience__stat-num counter" data-target="50">0</span>
+                  <span class="experience__stat-label">Projects Delivered</span>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== ABOUT ====================-->
+      <section class="about section" id="about">
+         <div class="container">
+            <div class="about__header reveal">
+               <span class="section__label">About</span>
+               <h2 class="section__title">About Me</h2>
+            </div>
+
+            <div class="about__intro reveal">
+               <h3 class="about__subtitle">Building Intelligent Systems That Think, Act & Scale</h3>
+               <p class="about__lead">
+                  I'm an <strong>AI Solutions Engineer</strong> and <strong>Full Stack Developer</strong> obsessed with building autonomous systems that actually work in production. I've built <strong>20+ AI agents</strong> and currently run <strong>5 agents 24/7</strong> on my machines to automate my entire daily workflow.
+               </p>
+               <p class="about__text">
+                  Currently leading product development at <strong>Penomo</strong>, where I'm building CredOS — an AI-powered operating system for infrastructure private credit. I architect multi-agent pipelines, design LLM-driven automation flows, and own the complete product lifecycle from discovery to deployment.
+               </p>
+               <p class="about__text">
+                  I run full <strong>AI agent teams</strong> — a Developer Agent, Product Lead Agent, Backend Agent, Frontend Agent, and QA Agent — all orchestrated together to ship faster. I use <strong>Claude Code</strong> as my daily coding partner and build with the <strong>Claude Agent SDK</strong> and <strong>OpenAI Agents SDK</strong> to create production-grade autonomous systems. Every tool I build starts as an agent that solves a real problem.
+               </p>
+            </div>
+
+            <div class="bento reveal">
+               <div class="bento__card bento__card--wide bento__card--highlight">
+                  <div class="bento__icon"><i class="ri-robot-line"></i></div>
+                  <h4 class="bento__title">I don't just build agents — I work with them.</h4>
+                  <p class="bento__text">I run full AI agent teams that work for me 24/7 — a Developer Agent reviewing PRs, a Product Lead Agent writing specs, a Frontend Agent building components, a Backend Agent designing APIs, and a QA Agent catching bugs. They're my AI employees. They don't sleep, they don't take breaks, and they keep my productivity at 10x. Every task I delegate comes back done.</p>
+               </div>
+
+               <div class="bento__card bento__card--stat">
+                  <span class="bento__stat-num">20<span class="bento__stat-plus">+</span></span>
+                  <span class="bento__stat-label">agents built & running across my projects</span>
+               </div>
+
+               <div class="bento__card">
+                  <div class="bento__icon"><i class="ri-flow-chart"></i></div>
+                  <h4 class="bento__title">Always-on automation</h4>
+                  <p class="bento__text">5 agents handle my daily grind — emails, meeting notes, code reviews, deployments. I wake up to work already done.</p>
+               </div>
+
+               <div class="bento__card">
+                  <div class="bento__icon"><i class="ri-stack-line"></i></div>
+                  <h4 class="bento__title">Full stack, production-grade</h4>
+                  <p class="bento__text">React, Next.js, Node, TypeScript. I build the apps that the agents plug into — real products with real users.</p>
+               </div>
+
+               <div class="bento__card">
+                  <div class="bento__icon"><i class="ri-terminal-box-line"></i></div>
+                  <h4 class="bento__title">Claude Code is my co-pilot</h4>
+                  <p class="bento__text">Every day starts with Claude Code open. It's not a tool I use sometimes — it's how I work. Pair programming with AI changed everything.</p>
+               </div>
+            </div>
+
+            <div class="about__cta reveal" style="text-align:center; margin-top:3rem;">
+               <a href="#contact" class="btn btn--primary">
+                  <i class="ri-send-plane-line"></i> Let's Work Together
+               </a>
+               <a href="mailto:gsneeraj2002@gmail.com" class="btn btn--icon"><i class="ri-mail-line"></i></a>
+               <a href="https://www.linkedin.com/in/neeraj-gs/" target="_blank" class="btn btn--icon"><i class="ri-linkedin-box-line"></i></a>
+               <a href="https://github.com/neeraj-gs" target="_blank" class="btn btn--icon"><i class="ri-github-line"></i></a>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== PROJECTS ====================-->
+      <section class="projects section" id="projects">
+         <div class="projects__header container reveal">
+            <span class="section__label">Portfolio</span>
+            <h2 class="section__title">Featured Projects</h2>
+            <p class="section__desc" style="margin-inline:auto;">AI-powered applications, automation systems, and full-stack products I've built.</p>
+         </div>
+
+         <div class="projects__grid container stagger">
+            <article class="project-card tilt-card" data-category="ai">
+               <div class="project-card__media">
+                  <img src="assets/img/CourseGen_AI.png" alt="CourseGen AI" class="project-card__img" loading="lazy">
+                  <iframe class="project-card__loom" data-src="https://www.loom.com/embed/3fcdcac8857d438e9ef45989bf009f1d?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" allowfullscreen></iframe>
+                  <div class="project-card__overlay"><span class="project-card__category">AI + Full-Stack</span></div>
+                  <a href="https://www.loom.com/share/3fcdcac8857d438e9ef45989bf009f1d" target="_blank" class="project-card__video-btn" title="Watch Demo"><i class="ri-play-circle-fill"></i></a>
+               </div>
+               <div class="project-card__content">
+                  <h3 class="project-card__title">CourseGen AI</h3>
+                  <p class="project-card__text">AI-powered learning platform that creates customized courses from freely available videos, ranked by quality using LLMs.</p>
+                  <div class="project-card__tech"><span>Next.js</span><span>OpenAI</span><span>Prisma</span><span>MySQL</span><span>Docker</span></div>
+                  <div class="project-card__links">
+                     <a href="https://github.com/neeraj-gs/CourseGen-AI" target="_blank" class="project-card__link"><i class="ri-github-fill"></i> Code</a>
+                  </div>
+               </div>
+            </article>
+
+            <article class="project-card tilt-card" data-category="ai">
+               <div class="project-card__media">
+                  <img src="assets/img/DermaVoice.png" alt="Derma Voice Assistant" class="project-card__img" loading="lazy">
+                  <iframe class="project-card__loom" data-src="https://www.loom.com/embed/09ba34a6e0a74092bdb12c558006629f?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" allowfullscreen></iframe>
+                  <div class="project-card__overlay"><span class="project-card__category">AI Voice Agent</span></div>
+                  <a href="https://www.loom.com/share/09ba34a6e0a74092bdb12c558006629f" target="_blank" class="project-card__video-btn" title="Watch Demo"><i class="ri-play-circle-fill"></i></a>
+               </div>
+               <div class="project-card__content">
+                  <h3 class="project-card__title">Derma Voice Assistant</h3>
+                  <p class="project-card__text">Autonomous AI voice agent that handles bookings, calls, and customer interactions through natural conversation.</p>
+                  <div class="project-card__tech"><span>TypeScript</span><span>Next.js</span><span>Supabase</span><span>AI Voice</span></div>
+                  <div class="project-card__links">
+                     <a href="https://github.com/neeraj-gs/Derma-Whisper-AI-Assistant" target="_blank" class="project-card__link"><i class="ri-github-fill"></i> Code</a>
+                  </div>
+               </div>
+            </article>
+
+            <article class="project-card tilt-card" data-category="ai">
+               <div class="project-card__media">
+                  <img src="assets/img/CoverMe.png" alt="CoverMe AI" class="project-card__img" loading="lazy">
+                  <iframe class="project-card__loom" data-src="https://www.loom.com/embed/d5d2773e69e44d529a245f4d065b62d7?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" allowfullscreen></iframe>
+                  <div class="project-card__overlay"><span class="project-card__category">AI Chrome Extension</span></div>
+                  <a href="https://www.loom.com/share/d5d2773e69e44d529a245f4d065b62d7" target="_blank" class="project-card__video-btn" title="Watch Demo"><i class="ri-play-circle-fill"></i></a>
+               </div>
+               <div class="project-card__content">
+                  <h3 class="project-card__title">CoverMe:AI</h3>
+                  <p class="project-card__text">Chrome extension that uses AI to analyze job descriptions and generate personalized cover letters instantly.</p>
+                  <div class="project-card__tech"><span>React</span><span>OpenAI</span><span>Chrome API</span><span>Tailwind</span></div>
+                  <div class="project-card__links">
+                     <a href="https://github.com/neeraj-gs/CoverMe-AI-Chrome-Extension" target="_blank" class="project-card__link"><i class="ri-github-fill"></i> Code</a>
+                  </div>
+               </div>
+            </article>
+
+            <article class="project-card tilt-card" data-category="automation">
+               <div class="project-card__media">
+                  <img src="assets/img/FashionBot.png" alt="The Fashion Bot" class="project-card__img" loading="lazy">
+                  <iframe class="project-card__loom" data-src="https://www.loom.com/embed/a49177d17a6f46608673677779ba20a2?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" allowfullscreen></iframe>
+                  <div class="project-card__overlay"><span class="project-card__category">Automation</span></div>
+                  <a href="https://www.loom.com/share/a49177d17a6f46608673677779ba20a2" target="_blank" class="project-card__video-btn" title="Watch Demo"><i class="ri-play-circle-fill"></i></a>
+               </div>
+               <div class="project-card__content">
+                  <h3 class="project-card__title">The Fashion Bot</h3>
+                  <p class="project-card__text">AI-powered automated checkout agent that saves details and completes purchases instantly with one-click automation.</p>
+                  <div class="project-card__tech"><span>React</span><span>TypeScript</span><span>Node.js</span><span>Automation</span></div>
+                  <div class="project-card__links">
+                     <a href="https://github.com/neeraj-gs/The-Fashion-Bot" target="_blank" class="project-card__link"><i class="ri-github-fill"></i> Code</a>
+                  </div>
+               </div>
+            </article>
+         </div>
+
+         <div class="container">
+            <a href="https://github.com/neeraj-gs?tab=repositories" target="_blank" class="more-projects reveal">
+               <div class="more-projects__bg">
+                  <div class="more-projects__circle more-projects__circle--1"></div>
+                  <div class="more-projects__circle more-projects__circle--2"></div>
+               </div>
+               <div class="more-projects__inner">
+                  <div class="more-projects__left">
+                     <div class="more-projects__icon"><i class="ri-github-fill"></i></div>
+                     <div>
+                        <div style="display:flex;align-items:flex-start;">
+                           <span class="more-projects__num">50</span>
+                           <span class="more-projects__plus">+</span>
+                        </div>
+                        <p class="more-projects__label">Projects</p>
+                     </div>
+                  </div>
+                  <div class="more-projects__cta"><span>View All</span><i class="ri-arrow-right-line"></i></div>
+               </div>
+            </a>
+         </div>
+      </section>
+
+      <!--==================== SKILLS ====================-->
+      <section class="skills section" id="skills">
+         <div class="skills__header container reveal">
+            <span class="section__label">Expertise</span>
+            <h2 class="section__title">Technical Skills</h2>
+         </div>
+
+         <div class="skills__grid container stagger">
+            <div class="skills__cat">
+               <h3 class="skills__cat-title"><i class="ri-robot-line"></i> AI & Agents</h3>
+               <div class="skills__items">
+                  <div class="skills__item"><div class="skills__icon"><i class="ri-openai-fill"></i></div><span class="skills__name">OpenAI SDK</span></div>
+                  <div class="skills__item"><div class="skills__icon"><i class="ri-sparkling-line"></i></div><span class="skills__name">Claude SDK</span></div>
+                  <div class="skills__item"><div class="skills__icon"><i class="ri-robot-fill"></i></div><span class="skills__name">Agent SDK</span></div>
+                  <div class="skills__item"><div class="skills__icon"><i class="ri-terminal-box-line"></i></div><span class="skills__name">Claude Code</span></div>
+                  <div class="skills__item"><div class="skills__icon"><i class="ri-link"></i></div><span class="skills__name">LangChain</span></div>
+                  <div class="skills__item"><div class="skills__icon"><i class="ri-brain-line"></i></div><span class="skills__name">LLMs</span></div>
+                  <div class="skills__item"><div class="skills__icon"><i class="ri-flow-chart"></i></div><span class="skills__name">n8n</span></div>
+                  <div class="skills__item"><div class="skills__icon"><i class="ri-chat-3-line"></i></div><span class="skills__name">Prompts</span></div>
+               </div>
+            </div>
+
+            <div class="skills__cat">
+               <h3 class="skills__cat-title"><i class="ri-layout-line"></i> Frontend</h3>
+               <div class="skills__items">
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"></div><span class="skills__name">React.js</span></div>
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"></div><span class="skills__name">Next.js</span></div>
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TS"></div><span class="skills__name">TypeScript</span></div>
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"></div><span class="skills__name">JavaScript</span></div>
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="TW"></div><span class="skills__name">Tailwind</span></div>
+               </div>
+            </div>
+
+            <div class="skills__cat">
+               <h3 class="skills__cat-title"><i class="ri-server-line"></i> Backend</h3>
+               <div class="skills__items">
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node"></div><span class="skills__name">Node.js</span></div>
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"></div><span class="skills__name">Python</span></div>
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express"></div><span class="skills__name">Express</span></div>
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GQL"></div><span class="skills__name">GraphQL</span></div>
+                  <div class="skills__item"><div class="skills__icon"><i class="ri-wireless-charging-line"></i></div><span class="skills__name">WebSocket</span></div>
+               </div>
+            </div>
+
+            <div class="skills__cat">
+               <h3 class="skills__cat-title"><i class="ri-database-2-line"></i> Data</h3>
+               <div class="skills__items">
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PG"></div><span class="skills__name">Postgres</span></div>
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="Mongo"></div><span class="skills__name">MongoDB</span></div>
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis"></div><span class="skills__name">Redis</span></div>
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg" alt="Prisma"></div><span class="skills__name">Prisma</span></div>
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"></div><span class="skills__name">MySQL</span></div>
+               </div>
+            </div>
+
+            <div class="skills__cat">
+               <h3 class="skills__cat-title"><i class="ri-cloud-line"></i> DevOps</h3>
+               <div class="skills__items">
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"></div><span class="skills__name">AWS</span></div>
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"></div><span class="skills__name">Docker</span></div>
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"></div><span class="skills__name">Git</span></div>
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"></div><span class="skills__name">Linux</span></div>
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="CI/CD"></div><span class="skills__name">CI/CD</span></div>
+               </div>
+            </div>
+
+            <div class="skills__cat">
+               <h3 class="skills__cat-title"><i class="ri-links-line"></i> Web3</h3>
+               <div class="skills__items">
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Sol"></div><span class="skills__name">Solidity</span></div>
+                  <div class="skills__item"><div class="skills__icon"><i class="ri-global-line"></i></div><span class="skills__name">web3.js</span></div>
+                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/hardhat/hardhat-original.svg" alt="HH"></div><span class="skills__name">Hardhat</span></div>
+                  <div class="skills__item"><div class="skills__icon"><i class="ri-coin-line"></i></div><span class="skills__name">Tokens</span></div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== CONTACT ====================-->
+      <section class="contact section" id="contact">
+         <div class="container">
+            <div class="contact__header reveal">
+               <span class="section__label">Contact</span>
+               <h2 class="contact__heading">Let's <span class="contact__accent">Connect</span></h2>
+               <p class="contact__desc">Have an AI project in mind? Want to build something autonomous? Let's talk.</p>
+            </div>
+
+            <div class="contact__cards stagger">
+               <a href="mailto:gsneeraj2002@gmail.com" class="contact__card">
+                  <div class="contact__card-icon"><i class="ri-mail-line"></i></div>
+                  <h3 class="contact__card-title">Email</h3>
+                  <p class="contact__card-info">gsneeraj2002@gmail.com</p>
+                  <span class="contact__card-cta">Send an email <i class="ri-arrow-right-up-line"></i></span>
+               </a>
+
+               <a href="https://www.linkedin.com/in/neeraj-gs/" target="_blank" class="contact__card">
+                  <div class="contact__card-icon contact__card-icon--linkedin"><i class="ri-linkedin-box-fill"></i></div>
+                  <h3 class="contact__card-title">LinkedIn</h3>
+                  <p class="contact__card-info">neeraj-gs</p>
+                  <span class="contact__card-cta">Connect <i class="ri-arrow-right-up-line"></i></span>
+               </a>
+
+               <a href="https://github.com/neeraj-gs" target="_blank" class="contact__card">
+                  <div class="contact__card-icon contact__card-icon--github"><i class="ri-github-fill"></i></div>
+                  <h3 class="contact__card-title">GitHub</h3>
+                  <p class="contact__card-info">neeraj-gs</p>
+                  <span class="contact__card-cta">View code <i class="ri-arrow-right-up-line"></i></span>
+               </a>
+
+               <a href="https://twitter.com/neeraj_gs_05" target="_blank" class="contact__card">
+                  <div class="contact__card-icon contact__card-icon--twitter"><i class="ri-twitter-x-fill"></i></div>
+                  <h3 class="contact__card-title">Twitter / X</h3>
+                  <p class="contact__card-info">@neeraj_gs_05</p>
+                  <span class="contact__card-cta">Follow <i class="ri-arrow-right-up-line"></i></span>
+               </a>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <footer class="footer">
+      <div class="footer__inner container">
+         <ul class="footer__links">
+            <li><a href="#home" class="footer__link">Home</a></li>
+            <li><a href="#experience" class="footer__link">Experience</a></li>
+            <li><a href="#about" class="footer__link">About</a></li>
+            <li><a href="#projects" class="footer__link">Projects</a></li>
+            <li><a href="#skills" class="footer__link">Skills</a></li>
+         </ul>
+         <span class="footer__copy">Made with <i class="ri-heart-fill"></i> by Neeraj GS</span>
       </div>
+   </footer>
 
-      <!--=============== SCROLLREVEAL ===============-->
-      <script src="assets/js/scrollreveal.min.js"></script>
-      
+   <div class="video-modal" id="video-modal">
+      <div class="video-modal__overlay"></div>
+      <div class="video-modal__content">
+         <button class="video-modal__close" id="video-modal-close"><i class="ri-close-line"></i></button>
+         <video class="video-modal__video" id="modal-video" controls><source src="" type="video/mp4"></video>
+      </div>
+   </div>
 
-      
-
-      <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js"></script>
-   </body>
+   <script src="assets/js/main.js"></script>
+</body>
 </html>
