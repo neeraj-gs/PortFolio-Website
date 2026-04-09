@@ -277,49 +277,6 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && videoModal?.classList.contains('active')) closeVM();
 });
 
-/*=============== VANTA.JS NET — HERO BACKGROUND ===============*/
-let vantaEffect = null;
-
-function initVanta() {
-  if (typeof VANTA === 'undefined') return;
-
-  const isLight = document.body.classList.contains('light-theme');
-  const isMobile = window.innerWidth < 768;
-
-  if (vantaEffect) vantaEffect.destroy();
-
-  vantaEffect = VANTA.NET({
-    el: '#home',
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200,
-    minWidth: 200,
-    scale: 1.0,
-    scaleMobile: 0.5,
-    color: isLight ? 0xea580c : 0xff6b35,
-    backgroundColor: isLight ? 0xfafafa : 0x06060b,
-    points: isMobile ? 6 : 14,
-    maxDistance: isMobile ? 18 : 22,
-    spacing: isMobile ? 20 : 16,
-    showDots: true,
-  });
-
-  document.getElementById('home').classList.add('vanta-active');
-}
-
-// Init on load
-if (typeof VANTA !== 'undefined') {
-  initVanta();
-}
-
-// Reinit on theme toggle
-const origThemeClick = themeBtn.onclick;
-themeBtn.addEventListener('click', () => {
-  // Small delay so the class toggles first
-  setTimeout(initVanta, 50);
-});
-
 /*=============== SMOOTH SCROLL ===============*/
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
