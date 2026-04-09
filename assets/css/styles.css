@@ -1842,3 +1842,21 @@ body::after {
   transition: transform 0.1s ease;
   transform-style: preserve-3d;
 }
+
+/* Hide dot grid when Vanta is active */
+.hero.vanta-active::before {
+  display: none;
+}
+
+/* Smooth fade from hero into next section */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(transparent, var(--bg-secondary));
+  pointer-events: none;
+  z-index: 3;
+}
