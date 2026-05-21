@@ -388,20 +388,27 @@ body::after {
 }
 
 .nav__theme-btn {
+  width: 40px;
+  height: 40px;
   font-size: 1.15rem;
   color: var(--text-3);
   cursor: pointer;
   transition: color 0.3s, transform 0.3s;
   display: grid;
   place-items: center;
+  border-radius: 10px;
 }
 .nav__theme-btn:hover { color: var(--accent); transform: rotate(20deg); }
 
 .nav__toggle {
   display: none;
+  width: 40px;
+  height: 40px;
   font-size: 1.4rem;
   color: var(--text-1);
   cursor: pointer;
+  place-items: center;
+  border-radius: 10px;
 }
 
 /* Mobile nav */
