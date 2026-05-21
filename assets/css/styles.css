@@ -1359,9 +1359,23 @@ body::after {
 }
 
 @media (max-width: 576px) {
-  .bento { grid-template-columns: 1fr; }
+  .bento { grid-template-columns: 1fr; gap: 0.75rem; }
   .bento__card--wide { grid-column: span 1; }
   .bento__card { padding: 1.25rem; }
+}
+
+@media (max-width: 480px) {
+  .about__intro { margin-bottom: 2rem; }
+  .about__subtitle { margin-bottom: 0.85rem; }
+  .about__lead, .about__text { font-size: 0.9rem; line-height: 1.7; }
+  .bento { margin-top: 1.75rem; }
+  .bento__card { padding: 1.1rem; }
+  .bento__icon { width: 38px; height: 38px; margin-bottom: 0.6rem; }
+  .bento__icon i { font-size: 1.1rem; }
+  .bento__title { font-size: 1rem; margin-bottom: 0.4rem; }
+  .bento__text { font-size: 0.85rem; line-height: 1.6; }
+  .about__cta { gap: 0.5rem; }
+  .about__cta .btn--icon { width: 42px; height: 42px; font-size: 1rem; }
 }
 
 /* Philosophy */
@@ -1648,7 +1662,21 @@ body::after {
 
 @media (max-width: 768px) { .projects__grid { grid-template-columns: 1fr; } }
 @media (max-width: 576px) {
-  .more-projects__inner { flex-direction: column; align-items: flex-start; padding: 1rem 1.25rem; }
+  .projects__header { margin-bottom: 2rem; }
+  .more-projects__inner { flex-direction: column; align-items: flex-start; padding: 1rem 1.25rem; gap: 1rem; }
+  .more-projects__cta { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .project-card__content { padding: 1rem; }
+  .project-card__title { font-size: 1.05rem; }
+  .project-card__text { font-size: 0.85rem; }
+  .project-card__tech span { font-size: 0.65rem; padding: 0.15rem 0.45rem; }
+  .project-card__category { font-size: 0.65rem; padding: 0.25rem 0.6rem; }
+  .project-card__video-btn { width: 38px; height: 38px; font-size: 1.2rem; }
+  .more-projects__num { font-size: 1.85rem; }
+  .more-projects__icon { width: 38px; height: 38px; }
+  .more-projects__icon i { font-size: 1.2rem; }
 }
 
 /*=============== SKILLS ===============*/
