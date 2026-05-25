@@ -168,31 +168,32 @@ if (window.matchMedia('(hover: hover)').matches) {
 const terminalScroll = document.getElementById('terminal-scroll');
 if (terminalScroll) {
   const agents = [
-    // Agent Teams
-    { name: 'DevAgent-Lead', status: 'running', team: 'dev-team', desc: 'code review & architecture' },
-    { name: 'DevAgent-Frontend', status: 'running', team: 'dev-team', desc: 'React component generation' },
-    { name: 'DevAgent-Backend', status: 'running', team: 'dev-team', desc: 'API & service development' },
-    { name: 'DevAgent-QA', status: 'running', team: 'dev-team', desc: 'test generation & validation' },
-    { name: 'ProductLead-Agent', status: 'running', team: 'product', desc: 'requirements & roadmap' },
-    // Always-on agents
-    { name: 'CredOS-Agent', status: 'active', team: 'production', desc: 'credit analysis pipeline' },
-    { name: 'DocParser-AI', status: 'active', team: 'production', desc: 'document extraction & OCR' },
-    { name: 'WorkflowBot', status: 'active', team: 'production', desc: 'n8n orchestration engine' },
-    { name: 'SlackAssist', status: 'active', team: 'production', desc: 'team comms automation' },
-    { name: 'Claude-Code', status: 'active', team: 'daily', desc: 'daily coding partner' },
-    // More specialized agents
-    { name: 'EmailDraft-AI', status: 'running', team: 'automation', desc: 'smart email composition' },
-    { name: 'MeetingNotes-Agent', status: 'running', team: 'automation', desc: 'transcript summarization' },
-    { name: 'ResearchBot', status: 'running', team: 'research', desc: 'web research & synthesis' },
-    { name: 'DataPipeline-Agent', status: 'running', team: 'data', desc: 'ETL & data transformation' },
-    { name: 'PRReviewer', status: 'running', team: 'dev-team', desc: 'automated code review' },
-    { name: 'TestGen-Agent', status: 'running', team: 'dev-team', desc: 'unit & integration tests' },
-    { name: 'DeployBot', status: 'running', team: 'devops', desc: 'CI/CD orchestration' },
-    { name: 'MonitorAgent', status: 'running', team: 'devops', desc: 'uptime & health checks' },
-    { name: 'ContentWriter-AI', status: 'running', team: 'content', desc: 'blog & docs generation' },
-    { name: 'SchedulerBot', status: 'running', team: 'daily', desc: 'calendar optimization' },
-    { name: 'BugHunter-Agent', status: 'running', team: 'dev-team', desc: 'error detection & fixes' },
-    { name: 'APIIntegrator', status: 'running', team: 'automation', desc: 'third-party API bridges' },
+    // CredOS production pipeline — named agents
+    { name: 'Atlas',              status: 'active',  team: 'credos-pipeline', desc: 'canonical attribute extraction · 30 fields' },
+    { name: 'Cipher',             status: 'active',  team: 'credos-pipeline', desc: 'deal classification · 12 taxonomy dimensions' },
+    { name: 'Quill',              status: 'active',  team: 'credos-pipeline', desc: 'IC memo generation · bbox-precise citations' },
+    { name: 'Reducto-Parser',     status: 'active',  team: 'credos-pipeline', desc: 'vision-aware PDF parse · page-level bbox index' },
+    { name: 'Citation-Engine',    status: 'active',  team: 'credos-pipeline', desc: 'source linking · 10/10 numerical accuracy bar' },
+    { name: 'VDR-Ingest',         status: 'active',  team: 'credos-pipeline', desc: 'tus multipart · 1 GB VDR · S3 multi-region' },
+    // Infrastructure — durable + routing layer
+    { name: 'Temporal-US',        status: 'running', team: 'infra',           desc: 'durable workflow engine · us-east-1' },
+    { name: 'Temporal-EU',        status: 'running', team: 'infra',           desc: 'durable workflow engine · eu-central-1' },
+    { name: 'LiteLLM-Gateway',    status: 'running', team: 'infra',           desc: 'multi-tenant LLM routing · BYO inference' },
+    { name: 'Cloudflare-Router',  status: 'running', team: 'infra',           desc: 'residency routing · US → Vercel · EU → Fargate' },
+    // Agent ops & observability
+    { name: 'GEPA-Optimiser',     status: 'active',  team: 'agent-ops',       desc: 'DSPy weekly self-improvement · auto-rollback' },
+    { name: 'Langfuse-Observer',  status: 'active',  team: 'agent-ops',       desc: 'LLM cost · latency · citation-accuracy traces' },
+    { name: 'Braintrust-Eval',    status: 'running', team: 'agent-ops',       desc: 'citation accuracy CI gate · eval golden set' },
+    { name: 'Mem0-Memory',        status: 'active',  team: 'agent-ops',       desc: 'episodic + semantic agent memory · Graphiti' },
+    // nda — 10-agent personal development team
+    { name: 'nda-Planner',        status: 'running', team: 'nda-dev-team',    desc: '3-plan gateway · orchestration · PR creation' },
+    { name: 'nda-Backend',        status: 'running', team: 'nda-dev-team',    desc: 'Hono API · Temporal workflows · LangGraph' },
+    { name: 'nda-Frontend',       status: 'running', team: 'nda-dev-team',    desc: 'React/TS · shadcn/ui · TipTap · Recharts' },
+    { name: 'nda-Tester',         status: 'running', team: 'nda-dev-team',    desc: 'Playwright Tier A + B · Braintrust CI gate' },
+    { name: 'nda-Security',       status: 'running', team: 'nda-dev-team',    desc: 'RLS audit · auth review · blast-radius check' },
+    { name: 'nda-CodeReviewer',   status: 'running', team: 'nda-dev-team',    desc: 'convention · types · service boundary audit' },
+    { name: 'nda-Debugger',       status: 'running', team: 'nda-dev-team',    desc: 'root-cause analysis · evidence-based diagnosis' },
+    { name: 'nda-DocsSync',       status: 'running', team: 'nda-dev-team',    desc: 'keep .claude-shared/5-docs aligned with code' },
   ];
 
   const inner = document.createElement('div');
