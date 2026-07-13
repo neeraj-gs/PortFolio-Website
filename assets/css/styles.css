@@ -561,44 +561,6 @@ body::after {
   font-weight: var(--fw-semi);
 }
 
-/* Hero outcome highlights */
-.hero__highlights {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.75rem;
-  margin-bottom: 2.5rem;
-  justify-content: center;
-}
-
-.hero__highlight {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 0;
-}
-
-.hero__highlight-num {
-  font-family: var(--mono);
-  font-size: clamp(1.6rem, 4vw, 2.1rem);
-  font-weight: var(--fw-black);
-  line-height: 1;
-  color: var(--text-1);
-  letter-spacing: -0.02em;
-}
-
-.hero__highlight-plus {
-  color: var(--accent);
-}
-
-.hero__highlight-label {
-  font-size: var(--xs);
-  color: var(--text-3);
-  line-height: 1.4;
-  margin-top: 0.4rem;
-  max-width: 12ch;
-  text-align: left;
-}
-
 /* Agent status card — the "wow" element */
 .hero__agents {
   display: inline-flex;
