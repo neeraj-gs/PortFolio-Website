@@ -561,6 +561,44 @@ body::after {
   font-weight: var(--fw-semi);
 }
 
+/* Hero outcome highlights */
+.hero__highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+  justify-content: center;
+}
+
+.hero__highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.hero__highlight-num {
+  font-family: var(--mono);
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
+  font-weight: var(--fw-black);
+  line-height: 1;
+  color: var(--text-1);
+  letter-spacing: -0.02em;
+}
+
+.hero__highlight-plus {
+  color: var(--accent);
+}
+
+.hero__highlight-label {
+  font-size: var(--xs);
+  color: var(--text-3);
+  line-height: 1.4;
+  margin-top: 0.4rem;
+  max-width: 12ch;
+  text-align: left;
+}
+
 /* Agent status card — the "wow" element */
 .hero__agents {
   display: inline-flex;
@@ -1501,6 +1539,72 @@ body::after {
 .project-card__video-btn:hover {
   background: var(--accent);
   transform: scale(1.1);
+}
+
+/* Featured project (no video — branded flagship tile) */
+.project-card__media--featured {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(120% 120% at 50% 0%, var(--accent-glow), transparent 60%),
+    linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));
+}
+
+@media (min-width: 769px) {
+  .project-card--featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    align-items: stretch;
+  }
+  .project-card--featured .project-card__media--featured {
+    aspect-ratio: auto;
+    min-height: 260px;
+    height: 100%;
+  }
+  .project-card--featured .project-card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .project-card--featured .project-card__text {
+    -webkit-line-clamp: 4;
+  }
+}
+
+.project-card__featured-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.project-card__featured-inner > i {
+  font-size: 2.6rem;
+  color: var(--accent);
+}
+
+.project-card__featured-name {
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  font-weight: var(--fw-bold);
+  color: var(--text-1);
+  letter-spacing: -0.02em;
+}
+
+.project-card__featured-tag {
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.project-card__link--private {
+  opacity: 0.65;
+  cursor: default;
 }
 
 .project-card__content { padding: 1.25rem; }
