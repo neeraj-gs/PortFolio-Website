@@ -54,9 +54,21 @@ window.addEventListener('scroll', () => {
   });
 });
 
-/*=============== THEME TOGGLE (soft-disabled: dark-only for now, see CLAUDE.md) ===============*/
+/*=============== THEME TOGGLE ===============*/
 const themeBtn = document.getElementById('theme-button');
-localStorage.removeItem('theme');
+const saved = localStorage.getItem('theme');
+if (saved === 'light') {
+  document.body.classList.add('light-theme');
+  themeBtn.querySelector('i').classList.replace('ri-moon-line', 'ri-sun-line');
+}
+
+themeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light-theme');
+  const icon = themeBtn.querySelector('i');
+  icon.classList.toggle('ri-moon-line');
+  icon.classList.toggle('ri-sun-line');
+  localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+});
 
 /*=============== SCROLL REVEAL ===============*/
 const revealObs = new IntersectionObserver(

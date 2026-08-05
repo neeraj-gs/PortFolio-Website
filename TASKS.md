@@ -15,6 +15,8 @@
 
 ## In progress
 
+- [ ] Remove Added Analytics , I dont want the analytics feature , I will build it later remove anything built !high #refine <!-- ph:3238cabf-1bd4-4026-92b1-a3a7c590973a created=1785931069522 updated=1785931074879 session=7a6d995c-9eb0-4bb6-8d74-f13fe8fa1d81 -->
+  Remove Added Analytics , I dont want the analytics feature , I will build it later remove anything built
 - [ ] Not all projects are displayed in my portfolio. #refinement <!-- ph:e71bfe38-806e-455d-8aaf-03ef42eaff72 created=1785777144729 updated=1785835631941 session=21759ef7-ce9e-472e-bb30-123d43119841 -->
   Only two projects are currently displayed. I want at least eight projects to be displayed on my portfolio so that users get to see the more work I have done. If not eight, at least six, two in each line, to make it even better and to get a feel for users who view or visit the app (to basically get an idea of how many projects I worked on).
 
