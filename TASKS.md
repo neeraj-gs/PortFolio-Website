@@ -15,6 +15,8 @@
 
 ## In progress
 
+- [ ] I want to embed posthog analytics tool !high #feature <!-- ph:17778899-3f69-4527-a20d-99422fd856d5 created=1786024939188 updated=1786024945314 session=fa0682e4-4e18-4dfe-a14b-13e98b62b7c2 -->
+  I want to embed posthog analytics tool
 - [ ] Remove Added Analytics , I dont want the analytics feature , I will build it later remove anything built !high #refine <!-- ph:3238cabf-1bd4-4026-92b1-a3a7c590973a created=1785931069522 updated=1785931074879 session=7a6d995c-9eb0-4bb6-8d74-f13fe8fa1d81 -->
   Remove Added Analytics , I dont want the analytics feature , I will build it later remove anything built
 - [ ] Not all projects are displayed in my portfolio. #refinement <!-- ph:e71bfe38-806e-455d-8aaf-03ef42eaff72 created=1785777144729 updated=1785835631941 session=21759ef7-ce9e-472e-bb30-123d43119841 -->

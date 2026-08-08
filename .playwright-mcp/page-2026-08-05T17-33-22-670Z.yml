@@ -1,0 +1,507 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "Neeraj GS" [ref=e4] [cursor=pointer]:
+        - /url: "#"
+      - generic [ref=e7]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Home" [ref=e10] [cursor=pointer]:
+              - /url: "#home"
+          - listitem [ref=e11]:
+            - link "Experience" [ref=e12] [cursor=pointer]:
+              - /url: "#experience"
+          - listitem [ref=e13]:
+            - link "About" [ref=e14] [cursor=pointer]:
+              - /url: "#about"
+          - listitem [ref=e15]:
+            - link "Skills" [ref=e16] [cursor=pointer]:
+              - /url: "#skills"
+          - listitem [ref=e17]:
+            - link "Projects" [ref=e18] [cursor=pointer]:
+              - /url: "#projects"
+        - generic [ref=e19] [cursor=pointer]: 
+      - generic [ref=e21]: 
+  - main [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - generic [ref=e28]: Product Engineer
+          - heading "Neeraj GS" [level=1] [ref=e29]
+          - paragraph [ref=e31]:
+            - text: I build
+            - strong [ref=e32]: AI-native products
+            - text: end to end — from customer discovery and product strategy to shipping the systems that run them. Today I lead product & platform for
+            - strong [ref=e33]: CredOS at Penomo
+            - text: ", the operating system for intelligent private credit, where autonomous agents turn weeks of due diligence into hours."
+          - generic [ref=e34]:
+            - link "View My Work " [ref=e35] [cursor=pointer]:
+              - /url: "#projects"
+              - text: View My Work
+              - generic [ref=e36]: 
+            - link " Get in Touch" [ref=e37] [cursor=pointer]:
+              - /url: "#contact"
+              - generic [ref=e38]: 
+              - text: Get in Touch
+        - generic [ref=e39]:
+          - img "Neeraj GS" [ref=e42]
+          - generic [ref=e43]:
+            - link "" [ref=e44] [cursor=pointer]:
+              - /url: https://github.com/neeraj-gs
+            - link "" [ref=e46] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/neeraj-gs/
+            - link "" [ref=e48] [cursor=pointer]:
+              - /url: mailto:gsneeraj2002@gmail.com
+            - link "" [ref=e50] [cursor=pointer]:
+              - /url: https://twitter.com/neeraj_gs_05
+      - generic [ref=e52]:
+        - generic [ref=e53]: Scroll
+        - generic [ref=e54]: 
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - generic [ref=e58]: Career
+        - heading "Work Experience" [level=2] [ref=e59]
+      - generic [ref=e60]:
+        - generic [ref=e61]:
+          - generic [ref=e62]:
+            - img "Penomo" [ref=e64]
+            - generic [ref=e65]:
+              - heading "Penomo" [level=3] [ref=e66]
+              - paragraph [ref=e67]: The AI-Native Operating System for Intelligent Private Credit
+              - generic [ref=e68]:
+                - generic [ref=e69]:
+                  - generic [ref=e70]: 
+                  - text: Mar 2024 - Present
+                - generic [ref=e71]:
+                  - generic [ref=e72]: 
+                  - text: Remote
+                - generic [ref=e73]:
+                  - generic [ref=e74]: 
+                  - text: Fintech / Infrastructure Credit
+          - generic [ref=e75]:
+            - generic [ref=e80]:
+              - generic [ref=e81]:
+                - heading "Product Manager" [level=4] [ref=e82]
+                - generic [ref=e83]: Current
+              - generic [ref=e84]:
+                - generic [ref=e85]:
+                  - generic [ref=e86]: 
+                  - text: Mar 2025 – Present · 1 yr 2 mos
+                - generic [ref=e87]:
+                  - generic [ref=e88]: 
+                  - text: Full-time
+              - paragraph [ref=e89]: "I own product and platform for CredOS, Penomo's AI-native operating system for intelligent private credit. That means the full arc: customer discovery, roadmap, and the architecture behind a multi-tenant, multi-region agentic system that automates the investment lifecycle from deal sourcing to exit. I've shipped 20+ specialized agents that cut sourcing time by 70% and underwriting by 50%, running across US and EU with full data residency."
+              - generic [ref=e90]:
+                - generic [ref=e91]: Product Strategy
+                - generic [ref=e92]: Roadmap & Delivery
+                - generic [ref=e93]: Agentic Systems
+                - generic [ref=e94]: LangGraph
+                - generic [ref=e95]: DSPy
+                - generic [ref=e96]: Temporal
+                - generic [ref=e97]: Multi-Tenant SaaS
+                - generic [ref=e98]: React.js
+                - generic [ref=e99]: TypeScript
+            - generic [ref=e104]:
+              - generic [ref=e105]:
+                - heading "Full Stack Developer" [level=4] [ref=e106]
+                - generic [ref=e107]: 9 months
+              - generic [ref=e108]:
+                - generic [ref=e109]:
+                  - generic [ref=e110]: 
+                  - text: Jun 2024 - Feb 2025
+                - generic [ref=e111]:
+                  - generic [ref=e112]: 
+                  - text: Full-time
+              - paragraph [ref=e113]: Led development of Penomo's tokenized finance platform connecting global capital to renewable energy infrastructure. Architected smart contracts for real-world asset tokenization, built RESTful APIs for seamless blockchain integration, and engineered the complete frontend. Implemented KYC verification, real-time WebSocket communication, and cloud deployment on AWS.
+              - generic [ref=e114]:
+                - generic [ref=e115]: React.js
+                - generic [ref=e116]: TypeScript
+                - generic [ref=e117]: Solidity
+                - generic [ref=e118]: Node.js
+                - generic [ref=e119]: Hardhat
+                - generic [ref=e120]: MongoDB
+                - generic [ref=e121]: web3.js
+                - generic [ref=e122]: Tokenization
+                - generic [ref=e123]: WebSocket
+                - generic [ref=e124]: Docker
+                - generic [ref=e125]: AWS
+                - generic [ref=e126]: IPFS
+                - generic [ref=e127]: REST APIs
+                - generic [ref=e128]: KYC
+                - generic [ref=e129]: Redis
+            - generic [ref=e133]:
+              - generic [ref=e134]:
+                - heading "Full Stack Developer Intern" [level=4] [ref=e135]
+                - generic [ref=e136]: 3 months
+              - generic [ref=e137]:
+                - generic [ref=e138]:
+                  - generic [ref=e139]: 
+                  - text: Mar 2024 - May 2024
+                - generic [ref=e140]:
+                  - generic [ref=e141]: 
+                  - text: Internship
+              - paragraph [ref=e142]: Contributed to the development of Penomo's decentralized application, a platform enabling on-chain capital financing for real-world renewable energy infrastructure through tokenization. Built frontend components, integrated blockchain APIs, and worked with smart contracts in a production environment.
+              - generic [ref=e143]:
+                - generic [ref=e144]: React.js
+                - generic [ref=e145]: TypeScript
+                - generic [ref=e146]: Solidity
+                - generic [ref=e147]: Node.js
+                - generic [ref=e148]: Hardhat
+                - generic [ref=e149]: MongoDB
+                - generic [ref=e150]: web3.js
+                - generic [ref=e151]: Tokenization
+                - generic [ref=e152]: Docker
+                - generic [ref=e153]: IPFS
+                - generic [ref=e154]: REST APIs
+        - generic [ref=e155]:
+          - generic [ref=e156]:
+            - generic [ref=e157]: "0"
+            - text: AI Agents Shipped
+          - generic [ref=e158]:
+            - generic [ref=e159]: "0"
+            - text: "% Faster Sourcing"
+          - generic [ref=e160]:
+            - generic [ref=e161]: "0"
+            - text: Projects Delivered
+    - generic [ref=e163]:
+      - generic [ref=e164]:
+        - generic [ref=e165]: About
+        - heading "About Me" [level=2] [ref=e166]
+      - generic [ref=e167]:
+        - heading "A product builder who ships end to end" [level=3] [ref=e168]
+        - paragraph [ref=e169]:
+          - text: I'm Neeraj, a
+          - strong [ref=e170]: product manager
+          - text: and
+          - strong [ref=e171]: full-stack engineer
+          - text: "who likes turning ambiguous problems into products people actually use. I care about the whole journey: talking to customers, shaping the roadmap, designing the system, and shipping it to real users."
+        - paragraph [ref=e172]:
+          - text: Today I lead product and platform for
+          - strong [ref=e173]: CredOS at Penomo
+          - text: ", the AI-native operating system for intelligent private credit. I own it end to end, from customer discovery and product strategy to the multi-tenant, multi-region architecture behind it, working across US and EU with full data residency."
+        - paragraph [ref=e174]:
+          - text: Along the way I've designed and shipped
+          - strong [ref=e175]: 20+ specialized AI agents
+          - text: that automate the investment lifecycle, from deal sourcing and document intelligence to underwriting and portfolio monitoring, cutting sourcing time by 70% and underwriting by 50%. I move fast, sweat the details, and care as much about the product experience as the engineering underneath it.
+      - generic [ref=e176]:
+        - generic [ref=e177]:
+          - generic [ref=e178]: 
+          - heading "I think in products, not just features." [level=4] [ref=e180]
+          - paragraph [ref=e181]: "I own the full arc: customer discovery, product strategy, roadmap, and delivery. I took CredOS from an idea to a live platform serving private-credit teams across two continents, obsessing over both the experience users feel and the systems that make it work. My favorite place to be is the seam where product decisions meet the code that ships them."
+        - generic [ref=e182]:
+          - generic [ref=e183]: 20+
+          - generic [ref=e184]: AI agents shipped to production
+        - generic [ref=e185]:
+          - generic [ref=e186]: 
+          - heading "Agentic systems, not demos" [level=4] [ref=e188]
+          - paragraph [ref=e189]: "I design multi-agent systems that do real work: reading data rooms, extracting deal intelligence, drafting investment memos with precise citations, and monitoring portfolios. All of it runs on durable workflows, so nothing fails silently and every step is traceable."
+        - generic [ref=e190]:
+          - generic [ref=e191]: 
+          - heading "Full stack, top to bottom" [level=4] [ref=e193]
+          - paragraph [ref=e194]: React, Next.js, and TypeScript on the front; Node, Python, and durable workflow engines behind. I build the multi-tenant, multi-region platforms that agents live inside, with SSO, EU data residency, and data rooms that handle gigabyte-scale uploads.
+        - generic [ref=e195]:
+          - generic [ref=e196]: 
+          - heading "Ship fast, improve on evidence" [level=4] [ref=e198]
+          - paragraph [ref=e199]: "I ship quickly and iterate on real signal, not vibes: eval gates on every change, full observability into cost and quality, and pipelines that self-improve week over week with automatic rollback when a metric regresses."
+      - generic [ref=e200]:
+        - link " Let's Work Together" [ref=e201] [cursor=pointer]:
+          - /url: "#contact"
+          - generic [ref=e202]: 
+          - text: Let's Work Together
+        - link "" [ref=e203] [cursor=pointer]:
+          - /url: mailto:gsneeraj2002@gmail.com
+        - link "" [ref=e205] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/neeraj-gs/
+        - link "" [ref=e207] [cursor=pointer]:
+          - /url: https://github.com/neeraj-gs
+    - generic [ref=e209]:
+      - generic [ref=e210]:
+        - generic [ref=e211]: Portfolio
+        - heading "Featured Projects" [level=2] [ref=e212]
+        - paragraph [ref=e213]:
+          - text: Here are a few highlights. I've built 40+ projects across AI, automation, and full-stack development. Check out my
+          - link "GitHub" [ref=e214] [cursor=pointer]:
+            - /url: https://github.com/neeraj-gs?tab=repositories
+          - text: for the full collection.
+      - generic [ref=e215]:
+        - article [ref=e216]:
+          - generic [ref=e217]:
+            - img "CourseGen AI" [ref=e218]
+            - iframe [ref=e219]:
+              
+            - generic [ref=e220]: AI + Full-Stack
+            - link "" [ref=e221] [cursor=pointer]:
+              - /url: https://www.loom.com/share/3fcdcac8857d438e9ef45989bf009f1d
+          - generic [ref=e223]:
+            - heading "CourseGen AI" [level=3] [ref=e224]
+            - paragraph [ref=e225]: AI-powered learning platform that curates and generates customized courses from open-source video content, intelligently ranked by quality using large language models.
+            - generic [ref=e226]:
+              - generic [ref=e227]: Next.js
+              - generic [ref=e228]: OpenAI
+              - generic [ref=e229]: Prisma
+              - generic [ref=e230]: MySQL
+              - generic [ref=e231]: Docker
+            - link " Code" [ref=e233] [cursor=pointer]:
+              - /url: https://github.com/neeraj-gs/CourseGen-AI
+              - generic [ref=e234]: 
+              - text: Code
+        - article [ref=e235]:
+          - generic [ref=e236]:
+            - img "Voice Agent One" [ref=e237]
+            - iframe [ref=e238]:
+              
+            - generic [ref=e239]: AI SaaS Platform
+            - link "" [ref=e240] [cursor=pointer]:
+              - /url: https://www.loom.com/share/de74a69d46084de6944eaf6cfc8bce2f
+          - generic [ref=e242]:
+            - heading "Voice Agent One" [level=3] [ref=e243]
+            - paragraph [ref=e244]: AI-powered SaaS platform that generates professional websites and intelligent voice agents for small businesses, complete with 24/7 AI receptionist, lead qualification, and appointment booking.
+            - generic [ref=e245]:
+              - generic [ref=e246]: React
+              - generic [ref=e247]: TypeScript
+              - generic [ref=e248]: OpenAI
+              - generic [ref=e249]: ElevenLabs
+              - generic [ref=e250]: Supabase
+              - generic [ref=e251]: Tailwind
+            - link " Code" [ref=e253] [cursor=pointer]:
+              - /url: https://github.com/neeraj-gs/voice-agent-one
+              - generic [ref=e254]: 
+              - text: Code
+        - article [ref=e255]:
+          - generic [ref=e256]:
+            - img "CoverMe AI" [ref=e257]
+            - iframe [ref=e258]:
+              
+            - generic [ref=e259]: AI Chrome Extension
+            - link "" [ref=e260] [cursor=pointer]:
+              - /url: https://www.loom.com/share/d5d2773e69e44d529a245f4d065b62d7
+          - generic [ref=e262]:
+            - heading "CoverMe:AI" [level=3] [ref=e263]
+            - paragraph [ref=e264]: Chrome extension that analyzes job descriptions in real-time and generates tailored, professional cover letters using AI, directly from any job posting page.
+            - generic [ref=e265]:
+              - generic [ref=e266]: React
+              - generic [ref=e267]: OpenAI
+              - generic [ref=e268]: Chrome API
+              - generic [ref=e269]: Tailwind
+            - link " Code" [ref=e271] [cursor=pointer]:
+              - /url: https://github.com/neeraj-gs/CoverMe-AI-Chrome-Extension
+              - generic [ref=e272]: 
+              - text: Code
+        - article [ref=e273]:
+          - generic [ref=e274]:
+            - img "The Fashion Bot" [ref=e275]
+            - iframe [ref=e276]:
+              
+            - generic [ref=e277]: Automation
+            - link "" [ref=e278] [cursor=pointer]:
+              - /url: https://www.loom.com/share/a49177d17a6f46608673677779ba20a2
+          - generic [ref=e280]:
+            - heading "The Fashion Bot" [level=3] [ref=e281]
+            - paragraph [ref=e282]: Intelligent automation agent that securely stores user preferences and executes one-click purchases, streamlining the entire checkout experience.
+            - generic [ref=e283]:
+              - generic [ref=e284]: React
+              - generic [ref=e285]: TypeScript
+              - generic [ref=e286]: Node.js
+              - generic [ref=e287]: Automation
+            - link " Code" [ref=e289] [cursor=pointer]:
+              - /url: https://github.com/neeraj-gs/The-Fashion-Bot
+              - generic [ref=e290]: 
+              - text: Code
+      - link " 50 + Projects View All " [ref=e292] [cursor=pointer]:
+        - /url: https://github.com/neeraj-gs?tab=repositories
+        - generic [ref=e296]:
+          - generic [ref=e297]:
+            - generic [ref=e298]: 
+            - generic [ref=e300]:
+              - generic [ref=e301]:
+                - generic [ref=e302]: "50"
+                - generic [ref=e303]: +
+              - paragraph [ref=e304]: Projects
+          - generic [ref=e305]:
+            - generic [ref=e306]: View All
+            - generic [ref=e307]: 
+    - generic [ref=e308]:
+      - generic [ref=e309]:
+        - generic [ref=e310]: Expertise
+        - heading "Technical Skills" [level=2] [ref=e311]
+      - generic [ref=e312]:
+        - generic [ref=e313]:
+          - heading " AI & Agents" [level=3] [ref=e314]:
+            - generic [ref=e315]: 
+            - text: AI & Agents
+          - generic [ref=e316]:
+            - generic [ref=e317]:
+              - generic [ref=e318]: 
+              - generic [ref=e320]: LangGraph
+            - generic [ref=e321]:
+              - generic [ref=e322]: 
+              - generic [ref=e324]: DSPy
+            - generic [ref=e325]:
+              - generic [ref=e326]: 
+              - generic [ref=e328]: Temporal
+            - generic [ref=e329]:
+              - generic [ref=e330]: 
+              - generic [ref=e332]: LiteLLM
+            - generic [ref=e333]:
+              - generic [ref=e334]: 
+              - generic [ref=e336]: Mem0
+            - generic [ref=e337]:
+              - generic [ref=e338]: 
+              - generic [ref=e340]: Langfuse
+        - generic [ref=e341]:
+          - heading " Frontend" [level=3] [ref=e342]:
+            - generic [ref=e343]: 
+            - text: Frontend
+          - generic [ref=e344]:
+            - generic [ref=e345]:
+              - img "React" [ref=e347]
+              - generic [ref=e348]: React.js
+            - generic [ref=e349]:
+              - img "Next.js" [ref=e351]
+              - generic [ref=e352]: Next.js
+            - generic [ref=e353]:
+              - img "TS" [ref=e355]
+              - generic [ref=e356]: TypeScript
+            - generic [ref=e357]:
+              - img "JS" [ref=e359]
+              - generic [ref=e360]: JavaScript
+            - generic [ref=e361]:
+              - img "TW" [ref=e363]
+              - generic [ref=e364]: Tailwind
+        - generic [ref=e365]:
+          - heading " Backend" [level=3] [ref=e366]:
+            - generic [ref=e367]: 
+            - text: Backend
+          - generic [ref=e368]:
+            - generic [ref=e369]:
+              - img "Node" [ref=e371]
+              - generic [ref=e372]: Node.js
+            - generic [ref=e373]:
+              - img "Python" [ref=e375]
+              - generic [ref=e376]: Python
+            - generic [ref=e377]:
+              - img "Express" [ref=e379]
+              - generic [ref=e380]: Express
+            - generic [ref=e381]:
+              - img "GQL" [ref=e383]
+              - generic [ref=e384]: GraphQL
+            - generic [ref=e385]:
+              - generic [ref=e386]: 
+              - generic [ref=e388]: WebSocket
+        - generic [ref=e389]:
+          - heading " Data" [level=3] [ref=e390]:
+            - generic [ref=e391]: 
+            - text: Data
+          - generic [ref=e392]:
+            - generic [ref=e393]:
+              - img "PG" [ref=e395]
+              - generic [ref=e396]: Postgres
+            - generic [ref=e397]:
+              - img "Mongo" [ref=e399]
+              - generic [ref=e400]: MongoDB
+            - generic [ref=e401]:
+              - img "Redis" [ref=e403]
+              - generic [ref=e404]: Redis
+            - generic [ref=e405]:
+              - img "Prisma" [ref=e407]
+              - generic [ref=e408]: Prisma
+            - generic [ref=e409]:
+              - img "MySQL" [ref=e411]
+              - generic [ref=e412]: MySQL
+        - generic [ref=e413]:
+          - heading " DevOps" [level=3] [ref=e414]:
+            - generic [ref=e415]: 
+            - text: DevOps
+          - generic [ref=e416]:
+            - generic [ref=e417]:
+              - img "AWS" [ref=e419]
+              - generic [ref=e420]: AWS
+            - generic [ref=e421]:
+              - img "Docker" [ref=e423]
+              - generic [ref=e424]: Docker
+            - generic [ref=e425]:
+              - img "Git" [ref=e427]
+              - generic [ref=e428]: Git
+            - generic [ref=e429]:
+              - img "Linux" [ref=e431]
+              - generic [ref=e432]: Linux
+            - generic [ref=e433]:
+              - img "CI/CD" [ref=e435]
+              - generic [ref=e436]: CI/CD
+        - generic [ref=e437]:
+          - heading " Web3" [level=3] [ref=e438]:
+            - generic [ref=e439]: 
+            - text: Web3
+          - generic [ref=e440]:
+            - generic [ref=e441]:
+              - img "Sol" [ref=e443]
+              - generic [ref=e444]: Solidity
+            - generic [ref=e445]:
+              - generic [ref=e446]: 
+              - generic [ref=e448]: web3.js
+            - generic [ref=e449]:
+              - img "HH" [ref=e451]
+              - generic [ref=e452]: Hardhat
+            - generic [ref=e453]:
+              - generic [ref=e454]: 
+              - generic [ref=e456]: Tokens
+    - generic [ref=e458]:
+      - generic [ref=e459]:
+        - generic [ref=e460]: Contact
+        - heading "Let's Connect" [level=2] [ref=e461]
+        - paragraph [ref=e462]: Building an AI product, exploring agentic systems, or looking for a product-minded engineer? I'd love to hear about it.
+      - generic [ref=e463]:
+        - link " Email gsneeraj2002@gmail.com Send an email " [ref=e464] [cursor=pointer]:
+          - /url: mailto:gsneeraj2002@gmail.com
+          - generic [ref=e465]: 
+          - heading "Email" [level=3] [ref=e467]
+          - paragraph [ref=e468]: gsneeraj2002@gmail.com
+          - generic [ref=e469]:
+            - text: Send an email
+            - generic [ref=e470]: 
+        - link " LinkedIn neeraj-gs Connect " [ref=e471] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/neeraj-gs/
+          - generic [ref=e472]: 
+          - heading "LinkedIn" [level=3] [ref=e474]
+          - paragraph [ref=e475]: neeraj-gs
+          - generic [ref=e476]:
+            - text: Connect
+            - generic [ref=e477]: 
+        - link " GitHub neeraj-gs View code " [ref=e478] [cursor=pointer]:
+          - /url: https://github.com/neeraj-gs
+          - generic [ref=e479]: 
+          - heading "GitHub" [level=3] [ref=e481]
+          - paragraph [ref=e482]: neeraj-gs
+          - generic [ref=e483]:
+            - text: View code
+            - generic [ref=e484]: 
+        - link " X @neeraj_gs_05 Follow " [ref=e485] [cursor=pointer]:
+          - /url: https://twitter.com/neeraj_gs_05
+          - generic [ref=e486]: 
+          - heading "X" [level=3] [ref=e488]
+          - paragraph [ref=e489]: "@neeraj_gs_05"
+          - generic [ref=e490]:
+            - text: Follow
+            - generic [ref=e491]: 
+  - contentinfo [ref=e492]:
+    - generic [ref=e493]:
+      - list [ref=e494]:
+        - listitem [ref=e495]:
+          - link "Home" [ref=e496] [cursor=pointer]:
+            - /url: "#home"
+        - listitem [ref=e497]:
+          - link "Experience" [ref=e498] [cursor=pointer]:
+            - /url: "#experience"
+        - listitem [ref=e499]:
+          - link "About" [ref=e500] [cursor=pointer]:
+            - /url: "#about"
+        - listitem [ref=e501]:
+          - link "Projects" [ref=e502] [cursor=pointer]:
+            - /url: "#projects"
+        - listitem [ref=e503]:
+          - link "Skills" [ref=e504] [cursor=pointer]:
+            - /url: "#skills"
+      - generic [ref=e505]:
+        - text: Made with
+        - generic [ref=e506]: 
+        - text: by Neeraj GS
