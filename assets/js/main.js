@@ -54,22 +54,6 @@ window.addEventListener('scroll', () => {
   });
 });
 
-/*=============== THEME TOGGLE ===============*/
-const themeBtn = document.getElementById('theme-button');
-const saved = localStorage.getItem('theme');
-if (saved === 'light') {
-  document.body.classList.add('light-theme');
-  themeBtn.querySelector('i').classList.replace('ri-moon-line', 'ri-sun-line');
-}
-
-themeBtn.addEventListener('click', () => {
-  document.body.classList.toggle('light-theme');
-  const icon = themeBtn.querySelector('i');
-  icon.classList.toggle('ri-moon-line');
-  icon.classList.toggle('ri-sun-line');
-  localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
-});
-
 /*=============== SCROLL REVEAL ===============*/
 const revealObs = new IntersectionObserver(
   (entries) => entries.forEach(e => {
@@ -202,8 +186,6 @@ let vantaEffect = null;
 function initVanta() {
   if (typeof VANTA === 'undefined') return;
 
-  const isLight = document.body.classList.contains('light-theme');
-
   if (vantaEffect) vantaEffect.destroy();
 
   vantaEffect = VANTA.NET({
@@ -215,8 +197,8 @@ function initVanta() {
     minWidth: 200,
     scale: 1.0,
     scaleMobile: 0.4,
-    color: isLight ? 0xea580c : 0xff6b35,
-    backgroundColor: isLight ? 0xfafafa : 0x06060b,
+    color: 0xff6b35,
+    backgroundColor: 0x06060b,
     points: 4,
     maxDistance: 25,
     spacing: 25,
@@ -227,10 +209,6 @@ function initVanta() {
 }
 
 if (typeof VANTA !== 'undefined') initVanta();
-
-themeBtn.addEventListener('click', () => {
-  setTimeout(initVanta, 50);
-});
 
 /*=============== SMOOTH SCROLL ===============*/
 document.querySelectorAll('a[href^="#"]').forEach(a => {
