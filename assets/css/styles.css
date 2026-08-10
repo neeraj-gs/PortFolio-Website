@@ -1454,7 +1454,8 @@ body::after {
   filter: brightness(0.4);
 }
 
-.project-card__loom {
+.project-card__loom,
+.project-card__video {
   position: absolute;
   inset: 0;
   opacity: 0;
@@ -1462,7 +1463,13 @@ body::after {
   z-index: 2;
   pointer-events: none;
 }
+.project-card__video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  background: #000;
+}
 .project-card:hover .project-card__loom { opacity: 1; pointer-events: auto; }
+.project-card:hover .project-card__video { opacity: 1; }
 .project-card:hover .project-card__img { opacity: 0; }
 
 .project-card__overlay {
