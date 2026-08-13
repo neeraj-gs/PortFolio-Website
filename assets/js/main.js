@@ -159,19 +159,6 @@ document.querySelectorAll('.project-card').forEach(card => {
       if (iframe.src) iframe.src = '';
     });
   }
-
-  /* Self-hosted demo videos — same hover behaviour as the Loom embeds */
-  const video = card.querySelector('.project-card__video');
-  if (video) {
-    card.addEventListener('mouseenter', () => {
-      if (!video.src && video.dataset.src) video.src = video.dataset.src;
-      video.play().catch(() => {});
-    });
-    card.addEventListener('mouseleave', () => {
-      video.pause();
-      video.currentTime = 0;
-    });
-  }
 });
 
 /*=============== VIDEO MODAL ===============*/

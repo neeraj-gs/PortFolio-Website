@@ -1,0 +1,6 @@
+[15732198ms] [WARNING] Multiple versions of FeatureGateClients found on the current page.
+      The currently bound version is 5.7.0 when module version 5.8.0 was loading. @ https://cdn.loom.com/assets/js/vendor-124-34fa73e51f9ae3a0.js:4
+[15732219ms] [WARNING] No storage available for session. We will not send any data. @ https://cdn.loom.com/assets/js/vendor-436-482a2625c557cd4a.js:0
+[15732225ms] [WARNING] {msg: An error has occurred checking the feature gate. Only the first occurrence of this error is logged., gateName: use_frontend_feature_encoding_sdk_platform, error: Error: Client must be initialized before using this method
+    at e.value (https://cdn.loom.com/ass…} @ https://cdn.loom.com/assets/js/vendor-541-fcba28d14bb41ee6.js:5
+[15732340ms] [ERROR] Failed to load resource: net::ERR_FAILED @ chrome-extension://invalid/:0
