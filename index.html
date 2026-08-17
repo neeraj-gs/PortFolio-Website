@@ -28,6 +28,13 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" crossorigin="">
+   <script>
+      (function () {
+         var saved = localStorage.getItem('theme');
+         var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+         if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+      })();
+   </script>
    <link rel="stylesheet" href="assets/css/styles.css">
 
    <title>Neeraj GS | Product Engineer</title>
@@ -81,6 +88,9 @@
          </div>
 
          <div class="nav__buttons">
+            <button class="nav__theme-btn" id="theme-button" aria-label="Toggle theme">
+               <i class="ri-moon-line"></i>
+            </button>
             <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-4-line"></i></div>
          </div>
       </nav>
