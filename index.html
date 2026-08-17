@@ -23,11 +23,25 @@
    <meta name="twitter:image" content="https://neerajgs.dev/assets/img/Nee.JPG">
    <meta name="twitter:creator" content="@neeraj_gs_05">
 
+   <meta name="theme-color" content="#060811">
+
    <link rel="shortcut icon" href="assets/img/faviconN.png" type="image/x-icon">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" crossorigin="">
+   <script>
+      (function () {
+         // Entrance animations start hidden, so gate them on JS being alive.
+         // Without this class every reveal would stay at opacity 0 if a script fails.
+         document.documentElement.classList.add('js');
+
+         var saved = localStorage.getItem('theme');
+         var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+         if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+      })();
+   </script>
    <link rel="stylesheet" href="assets/css/styles.css">
 
    <title>Neeraj GS | Product Engineer</title>
@@ -53,18 +67,42 @@
 </head>
 <body>
 
-   <div class="cursor-glow" id="cursor-glow"></div>
+   <!--==================== BOOT SEQUENCE ====================-->
+   <div class="boot" id="boot" aria-hidden="true">
+      <div class="boot__mark">
+         <span class="boot__diamond"></span>
+      </div>
+      <div class="boot__track"><span class="boot__bar"></span></div>
+   </div>
 
-   <div class="aurora">
-      <div class="aurora__beam aurora__beam--1"></div>
-      <div class="aurora__beam aurora__beam--2"></div>
-      <div class="aurora__beam aurora__beam--3"></div>
+   <!--==================== DEPTH LAYERS ====================-->
+   <canvas class="field" id="field" aria-hidden="true"></canvas>
+
+   <div class="atmos" aria-hidden="true">
+      <div class="atmos__bloom atmos__bloom--1"></div>
+      <div class="atmos__bloom atmos__bloom--2"></div>
+      <div class="atmos__bloom atmos__bloom--3"></div>
+      <div class="atmos__grid"></div>
+      <div class="atmos__vignette"></div>
+   </div>
+
+   <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+   <div class="cursor" id="cursor" aria-hidden="true">
+      <span class="cursor__ring"></span>
+   </div>
+
+   <div class="progress" id="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+
+   <!--==================== HUD ====================-->
+   <div class="hud" aria-hidden="true">
+      <span class="hud__index" id="hud-index">01 / 06 — Home</span>
+      <span class="hud__pct" id="hud-pct">0%</span>
    </div>
 
    <!--==================== HEADER ====================-->
    <header class="header" id="header">
       <nav class="nav container">
-         <a href="#" class="nav__logo">
+         <a href="#" class="nav__logo magnetic">
             <span class="nav__logo-dot"></span>
             <span>Neeraj GS</span>
          </a>
@@ -75,12 +113,15 @@
                <li><a href="#experience" class="nav__link">Experience</a></li>
                <li><a href="#about" class="nav__link">About</a></li>
                <li><a href="#skills" class="nav__link">Skills</a></li>
-               <li><a href="#projects" class="nav__link nav__link--cta">Projects</a></li>
+               <li><a href="#projects" class="nav__link nav__link--cta magnetic">Projects</a></li>
             </ul>
             <div class="nav__close" id="nav-close"><i class="ri-close-line"></i></div>
          </div>
 
          <div class="nav__buttons">
+            <button class="nav__theme-btn magnetic" id="theme-button" aria-label="Toggle theme">
+               <i class="ri-moon-line"></i>
+            </button>
             <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-4-line"></i></div>
          </div>
       </nav>
@@ -94,7 +135,7 @@
             <div class="hero__content">
                <span class="hero__label reveal">Product Engineer</span>
 
-               <h1 class="hero__name text-reveal">
+               <h1 class="hero__name" data-split>
                   <span class="hero__name-gradient">Neeraj GS</span>
                </h1>
 
@@ -103,25 +144,40 @@
                </p>
 
                <div class="hero__buttons reveal">
-                  <a href="#projects" class="btn btn--primary">
+                  <a href="#projects" class="btn btn--primary magnetic">
                      View My Work <i class="ri-arrow-right-line"></i>
                   </a>
-                  <a href="#contact" class="btn btn--outline">
+                  <a href="#contact" class="btn btn--outline magnetic">
                      <i class="ri-mail-line"></i> Get in Touch
                   </a>
                </div>
             </div>
 
             <div class="hero__visual reveal-right">
-               <div class="hero__image">
-                  <div class="hero__image-glow"></div>
-                  <img class="hero__img" src="assets/img/Nee.JPG" alt="Neeraj GS" loading="eager">
+               <div class="hero__stage">
+                  <div class="hero__orbit" aria-hidden="true">
+                     <span class="hero__ring hero__ring--1"><i></i></span>
+                     <span class="hero__ring hero__ring--2"><i></i></span>
+                     <span class="hero__ring hero__ring--3"><i></i></span>
+                  </div>
+
+                  <div class="hero__slab" data-tilt data-tilt-max="13">
+                     <div class="hero__slab-glow" aria-hidden="true"></div>
+                     <div class="hero__frame" data-depth="32">
+                        <img class="hero__img" src="assets/img/Nee.JPG" alt="Neeraj GS" loading="eager">
+                        <span class="hero__scan" aria-hidden="true"></span>
+                        <span class="hero__sheen" aria-hidden="true"></span>
+                        <span class="hero__corner hero__corner--tl" aria-hidden="true"></span>
+                        <span class="hero__corner hero__corner--br" aria-hidden="true"></span>
+                     </div>
+                  </div>
                </div>
+
                <div class="hero__social stagger">
-                  <a href="https://github.com/neeraj-gs" target="_blank" class="hero__social-link" title="GitHub"><i class="ri-github-fill"></i></a>
-                  <a href="https://www.linkedin.com/in/neeraj-gs/" target="_blank" class="hero__social-link" title="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
-                  <a href="mailto:gsneeraj2002@gmail.com" class="hero__social-link" title="Email"><i class="ri-mail-fill"></i></a>
-                  <a href="https://twitter.com/neeraj_gs_05" target="_blank" class="hero__social-link" title="X"><i class="ri-twitter-x-line"></i></a>
+                  <a href="https://github.com/neeraj-gs" target="_blank" class="hero__social-link magnetic" title="GitHub"><i class="ri-github-fill"></i></a>
+                  <a href="https://www.linkedin.com/in/neeraj-gs/" target="_blank" class="hero__social-link magnetic" title="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
+                  <a href="mailto:gsneeraj2002@gmail.com" class="hero__social-link magnetic" title="Email"><i class="ri-mail-fill"></i></a>
+                  <a href="https://twitter.com/neeraj_gs_05" target="_blank" class="hero__social-link magnetic" title="X"><i class="ri-twitter-x-line"></i></a>
                </div>
             </div>
          </div>
@@ -132,131 +188,116 @@
          </div>
       </section>
 
-      <!--==================== EXPERIENCE ====================-->
-      <section class="experience section" id="experience">
-         <div class="experience__header container reveal">
-            <span class="section__label">Career</span>
-            <h2 class="section__title">Work Experience</h2>
-         </div>
-
+      <!--==================== EXPERIENCE — floating deck, editorial rows ====================-->
+      <section class="experience section panel scene" id="experience">
+         <span class="scene__num" aria-hidden="true">02</span>
          <div class="container">
-            <div class="experience__block reveal-scale">
-               <div class="experience__block-header">
-                  <div class="experience__logo">
-                     <img src="./assets/img/penomo_logo.jpeg" alt="Penomo">
-                  </div>
-                  <div>
-                     <h3 class="experience__company-name">Penomo</h3>
-                     <p class="experience__company-desc">The AI-Native Operating System for Intelligent Private Credit</p>
-                     <div class="experience__meta">
-                        <span><i class="ri-calendar-line"></i> Mar 2024 - Present</span>
-                        <span><i class="ri-map-pin-line"></i> Remote</span>
-                        <span><i class="ri-building-line"></i> Fintech / Infrastructure Credit</span>
-                     </div>
+            <div class="experience__header reveal">
+               <span class="section__label">Career</span>
+               <h2 class="section__title" data-split-words>Work Experience</h2>
+            </div>
+
+            <div class="experience__company reveal">
+               <div class="experience__logo">
+                  <img src="./assets/img/penomo_logo.jpeg" alt="Penomo">
+               </div>
+               <div class="experience__company-body">
+                  <h3 class="experience__company-name">Penomo</h3>
+                  <p class="experience__company-desc">The AI-Native Operating System for Intelligent Private Credit</p>
+                  <div class="experience__meta">
+                     <span><i class="ri-calendar-line"></i> Mar 2024 - Present</span>
+                     <span><i class="ri-map-pin-line"></i> Remote</span>
+                     <span><i class="ri-building-line"></i> Fintech / Infrastructure Credit</span>
                   </div>
                </div>
+            </div>
 
-               <div class="experience__positions stagger">
-                  <div class="experience__pos experience__pos--current">
-                     <div class="experience__pos-marker">
-                        <div class="experience__pos-dot"></div>
-                        <div class="experience__pos-line"></div>
-                     </div>
-                     <div class="experience__pos-card">
-                        <div class="experience__pos-header">
-                           <h4 class="experience__pos-title">Product Manager</h4>
-                           <span class="experience__badge">Current</span>
-                        </div>
-                        <div class="experience__pos-meta">
-                           <span><i class="ri-calendar-line"></i> Mar 2025 – Present · 1 yr 2 mos</span>
-                           <span><i class="ri-briefcase-line"></i> Full-time</span>
-                        </div>
-                        <p class="experience__pos-desc">
-                           I own product and platform for CredOS, Penomo's AI-native operating system for intelligent private credit. That means the full arc: customer discovery, roadmap, and the architecture behind a multi-tenant, multi-region agentic system that automates the investment lifecycle from deal sourcing to exit. I've shipped 20+ specialized agents that cut sourcing time by 70% and underwriting by 50%, running across US and EU with full data residency.
-                        </p>
-                        <div class="experience__tags">
-                           <span>Product Strategy</span>
-                           <span>Roadmap &amp; Delivery</span>
-                           <span>Agentic Systems</span>
-                           <span>LangGraph</span>
-                           <span>DSPy</span>
-                           <span>Temporal</span>
-                           <span>Multi-Tenant SaaS</span>
-                           <span>React.js</span>
-                           <span>TypeScript</span>
-                        </div>
+            <div class="xp-list stagger">
+               <article class="xp-row xp-row--current">
+                  <span class="xp-row__ghost" aria-hidden="true">2025</span>
+                  <div class="xp-row__side">
+                     <span class="experience__badge">Current</span>
+                     <span class="xp-row__date"><i class="ri-calendar-line"></i> Mar 2025 – Present · 1 yr 2 mos</span>
+                     <span class="xp-row__date"><i class="ri-briefcase-line"></i> Full-time</span>
+                  </div>
+                  <div class="xp-row__main">
+                     <h4 class="xp-row__title">Product Manager</h4>
+                     <p class="xp-row__desc">
+                        I own product and platform for CredOS, Penomo's AI-native operating system for intelligent private credit. That means the full arc: customer discovery, roadmap, and the architecture behind a multi-tenant, multi-region agentic system that automates the investment lifecycle from deal sourcing to exit. I've shipped 20+ specialized agents that cut sourcing time by 70% and underwriting by 50%, running across US and EU with full data residency.
+                     </p>
+                     <div class="experience__tags">
+                        <span>Product Strategy</span>
+                        <span>Roadmap &amp; Delivery</span>
+                        <span>Agentic Systems</span>
+                        <span>LangGraph</span>
+                        <span>DSPy</span>
+                        <span>Temporal</span>
+                        <span>Multi-Tenant SaaS</span>
+                        <span>React.js</span>
+                        <span>TypeScript</span>
                      </div>
                   </div>
+               </article>
 
-                  <div class="experience__pos">
-                     <div class="experience__pos-marker">
-                        <div class="experience__pos-dot"></div>
-                        <div class="experience__pos-line"></div>
-                     </div>
-                     <div class="experience__pos-card">
-                        <div class="experience__pos-header">
-                           <h4 class="experience__pos-title">Full Stack Developer</h4>
-                           <span class="experience__duration">9 months</span>
-                        </div>
-                        <div class="experience__pos-meta">
-                           <span><i class="ri-calendar-line"></i> Jun 2024 - Feb 2025</span>
-                           <span><i class="ri-briefcase-line"></i> Full-time</span>
-                        </div>
-                        <p class="experience__pos-desc">
-                           Led development of Penomo's tokenized finance platform connecting global capital to renewable energy infrastructure. Architected smart contracts for real-world asset tokenization, built RESTful APIs for seamless blockchain integration, and engineered the complete frontend. Implemented KYC verification, real-time WebSocket communication, and cloud deployment on AWS.
-                        </p>
-                        <div class="experience__tags">
-                           <span>React.js</span>
-                           <span>TypeScript</span>
-                           <span>Solidity</span>
-                           <span>Node.js</span>
-                           <span>Hardhat</span>
-                           <span>MongoDB</span>
-                           <span>web3.js</span>
-                           <span>Tokenization</span>
-                           <span>WebSocket</span>
-                           <span>Docker</span>
-                           <span>AWS</span>
-                           <span>IPFS</span>
-                           <span>REST APIs</span>
-                           <span>KYC</span>
-                           <span>Redis</span>
-                        </div>
+               <article class="xp-row">
+                  <span class="xp-row__ghost" aria-hidden="true">2024</span>
+                  <div class="xp-row__side">
+                     <span class="experience__duration">9 months</span>
+                     <span class="xp-row__date"><i class="ri-calendar-line"></i> Jun 2024 - Feb 2025</span>
+                     <span class="xp-row__date"><i class="ri-briefcase-line"></i> Full-time</span>
+                  </div>
+                  <div class="xp-row__main">
+                     <h4 class="xp-row__title">Full Stack Developer</h4>
+                     <p class="xp-row__desc">
+                        Led development of Penomo's tokenized finance platform connecting global capital to renewable energy infrastructure. Architected smart contracts for real-world asset tokenization, built RESTful APIs for seamless blockchain integration, and engineered the complete frontend. Implemented KYC verification, real-time WebSocket communication, and cloud deployment on AWS.
+                     </p>
+                     <div class="experience__tags">
+                        <span>React.js</span>
+                        <span>TypeScript</span>
+                        <span>Solidity</span>
+                        <span>Node.js</span>
+                        <span>Hardhat</span>
+                        <span>MongoDB</span>
+                        <span>web3.js</span>
+                        <span>Tokenization</span>
+                        <span>WebSocket</span>
+                        <span>Docker</span>
+                        <span>AWS</span>
+                        <span>IPFS</span>
+                        <span>REST APIs</span>
+                        <span>KYC</span>
+                        <span>Redis</span>
                      </div>
                   </div>
+               </article>
 
-                  <div class="experience__pos">
-                     <div class="experience__pos-marker">
-                        <div class="experience__pos-dot"></div>
-                     </div>
-                     <div class="experience__pos-card">
-                        <div class="experience__pos-header">
-                           <h4 class="experience__pos-title">Full Stack Developer Intern</h4>
-                           <span class="experience__duration">3 months</span>
-                        </div>
-                        <div class="experience__pos-meta">
-                           <span><i class="ri-calendar-line"></i> Mar 2024 - May 2024</span>
-                           <span><i class="ri-briefcase-line"></i> Internship</span>
-                        </div>
-                        <p class="experience__pos-desc">
-                           Contributed to the development of Penomo's decentralized application, a platform enabling on-chain capital financing for real-world renewable energy infrastructure through tokenization. Built frontend components, integrated blockchain APIs, and worked with smart contracts in a production environment.
-                        </p>
-                        <div class="experience__tags">
-                           <span>React.js</span>
-                           <span>TypeScript</span>
-                           <span>Solidity</span>
-                           <span>Node.js</span>
-                           <span>Hardhat</span>
-                           <span>MongoDB</span>
-                           <span>web3.js</span>
-                           <span>Tokenization</span>
-                           <span>Docker</span>
-                           <span>IPFS</span>
-                           <span>REST APIs</span>
-                        </div>
+               <article class="xp-row">
+                  <span class="xp-row__ghost" aria-hidden="true">2024</span>
+                  <div class="xp-row__side">
+                     <span class="experience__duration">3 months</span>
+                     <span class="xp-row__date"><i class="ri-calendar-line"></i> Mar 2024 - May 2024</span>
+                     <span class="xp-row__date"><i class="ri-briefcase-line"></i> Internship</span>
+                  </div>
+                  <div class="xp-row__main">
+                     <h4 class="xp-row__title">Full Stack Developer Intern</h4>
+                     <p class="xp-row__desc">
+                        Contributed to the development of Penomo's decentralized application, a platform enabling on-chain capital financing for real-world renewable energy infrastructure through tokenization. Built frontend components, integrated blockchain APIs, and worked with smart contracts in a production environment.
+                     </p>
+                     <div class="experience__tags">
+                        <span>React.js</span>
+                        <span>TypeScript</span>
+                        <span>Solidity</span>
+                        <span>Node.js</span>
+                        <span>Hardhat</span>
+                        <span>MongoDB</span>
+                        <span>web3.js</span>
+                        <span>Tokenization</span>
+                        <span>Docker</span>
+                        <span>IPFS</span>
+                        <span>REST APIs</span>
                      </div>
                   </div>
-               </div>
+               </article>
             </div>
 
             <div class="experience__stats stagger">
@@ -276,12 +317,13 @@
          </div>
       </section>
 
-      <!--==================== ABOUT ====================-->
-      <section class="about section" id="about">
+      <!--==================== ABOUT — stacking cards ====================-->
+      <section class="about section scene" id="about">
+         <span class="scene__num" aria-hidden="true">03</span>
          <div class="container">
             <div class="about__header reveal">
                <span class="section__label">About</span>
-               <h2 class="section__title">About Me</h2>
+               <h2 class="section__title" data-split-words>About Me</h2>
             </div>
 
             <div class="about__intro reveal">
@@ -297,232 +339,245 @@
                </p>
             </div>
 
-            <div class="bento reveal">
-               <div class="bento__card bento__card--wide bento__card--highlight">
-                  <div class="bento__icon"><i class="ri-compass-3-line"></i></div>
-                  <h4 class="bento__title">I think in products, not just features.</h4>
-                  <p class="bento__text">I own the full arc: customer discovery, product strategy, roadmap, and delivery. I took CredOS from an idea to a live platform serving private-credit teams across two continents, obsessing over both the experience users feel and the systems that make it work. My favorite place to be is the seam where product decisions meet the code that ships them.</p>
-               </div>
-
-               <div class="bento__card bento__card--stat">
-                  <span class="bento__stat-num">20<span class="bento__stat-plus">+</span></span>
-                  <span class="bento__stat-label">AI agents shipped to production</span>
-               </div>
-
-               <div class="bento__card">
-                  <div class="bento__icon"><i class="ri-robot-2-line"></i></div>
-                  <h4 class="bento__title">Agentic systems, not demos</h4>
-                  <p class="bento__text">I design multi-agent systems that do real work: reading data rooms, extracting deal intelligence, drafting investment memos with precise citations, and monitoring portfolios. All of it runs on durable workflows, so nothing fails silently and every step is traceable.</p>
-               </div>
-
-               <div class="bento__card">
-                  <div class="bento__icon"><i class="ri-stack-line"></i></div>
-                  <h4 class="bento__title">Full stack, top to bottom</h4>
-                  <p class="bento__text">React, Next.js, and TypeScript on the front; Node, Python, and durable workflow engines behind. I build the multi-tenant, multi-region platforms that agents live inside, with SSO, EU data residency, and data rooms that handle gigabyte-scale uploads.</p>
-               </div>
-
-               <div class="bento__card">
-                  <div class="bento__icon"><i class="ri-loop-right-line"></i></div>
-                  <h4 class="bento__title">Ship fast, improve on evidence</h4>
-                  <p class="bento__text">I ship quickly and iterate on real signal, not vibes: eval gates on every change, full observability into cost and quality, and pipelines that self-improve week over week with automatic rollback when a metric regresses.</p>
-               </div>
+            <div class="about__stat reveal">
+               <span class="about__stat-num">20<span class="about__stat-plus">+</span></span>
+               <span class="about__stat-label">AI agents shipped to production</span>
             </div>
 
-            <div class="about__cta reveal" style="text-align:center; margin-top:3rem;">
-               <a href="#contact" class="btn btn--primary">
+            <div class="stack">
+               <article class="stack__card" style="--i:0">
+                  <div class="stack__body">
+                     <div class="stack__icon"><i class="ri-compass-3-line"></i></div>
+                     <h4 class="stack__title">I think in products, not just features.</h4>
+                     <p class="stack__text">I own the full arc: customer discovery, product strategy, roadmap, and delivery. I took CredOS from an idea to a live platform serving private-credit teams across two continents, obsessing over both the experience users feel and the systems that make it work. My favorite place to be is the seam where product decisions meet the code that ships them.</p>
+                  </div>
+               </article>
+
+               <article class="stack__card" style="--i:1">
+                  <div class="stack__body">
+                     <div class="stack__icon"><i class="ri-robot-2-line"></i></div>
+                     <h4 class="stack__title">Agentic systems, not demos</h4>
+                     <p class="stack__text">I design multi-agent systems that do real work: reading data rooms, extracting deal intelligence, drafting investment memos with precise citations, and monitoring portfolios. All of it runs on durable workflows, so nothing fails silently and every step is traceable.</p>
+                  </div>
+               </article>
+
+               <article class="stack__card" style="--i:2">
+                  <div class="stack__body">
+                     <div class="stack__icon"><i class="ri-stack-line"></i></div>
+                     <h4 class="stack__title">Full stack, top to bottom</h4>
+                     <p class="stack__text">React, Next.js, and TypeScript on the front; Node, Python, and durable workflow engines behind. I build the multi-tenant, multi-region platforms that agents live inside, with SSO, EU data residency, and data rooms that handle gigabyte-scale uploads.</p>
+                  </div>
+               </article>
+
+               <article class="stack__card" style="--i:3">
+                  <div class="stack__body">
+                     <div class="stack__icon"><i class="ri-loop-right-line"></i></div>
+                     <h4 class="stack__title">Ship fast, improve on evidence</h4>
+                     <p class="stack__text">I ship quickly and iterate on real signal, not vibes: eval gates on every change, full observability into cost and quality, and pipelines that self-improve week over week with automatic rollback when a metric regresses.</p>
+                  </div>
+               </article>
+            </div>
+
+            <div class="about__cta reveal">
+               <a href="#contact" class="btn btn--primary magnetic">
                   <i class="ri-send-plane-line"></i> Let's Work Together
                </a>
-               <a href="mailto:gsneeraj2002@gmail.com" class="btn btn--icon"><i class="ri-mail-line"></i></a>
-               <a href="https://www.linkedin.com/in/neeraj-gs/" target="_blank" class="btn btn--icon"><i class="ri-linkedin-box-line"></i></a>
-               <a href="https://github.com/neeraj-gs" target="_blank" class="btn btn--icon"><i class="ri-github-line"></i></a>
+               <a href="mailto:gsneeraj2002@gmail.com" class="btn btn--icon magnetic"><i class="ri-mail-line"></i></a>
+               <a href="https://www.linkedin.com/in/neeraj-gs/" target="_blank" class="btn btn--icon magnetic"><i class="ri-linkedin-box-line"></i></a>
+               <a href="https://github.com/neeraj-gs" target="_blank" class="btn btn--icon magnetic"><i class="ri-github-line"></i></a>
             </div>
          </div>
       </section>
 
-      <!--==================== PROJECTS ====================-->
+      <!--==================== PROJECTS — pinned horizontal gallery ====================-->
       <section class="projects section" id="projects">
+         <span class="scene__num" aria-hidden="true">04</span>
          <div class="projects__header container reveal">
             <span class="section__label">Portfolio</span>
-            <h2 class="section__title">Featured Projects</h2>
-            <p class="section__desc" style="margin-inline:auto;">Here are a few highlights. I've built 40+ projects across AI, automation, and full-stack development. Check out my <a href="https://github.com/neeraj-gs?tab=repositories" target="_blank" style="color:var(--accent);font-weight:var(--fw-semi);">GitHub</a> for the full collection.</p>
+            <h2 class="section__title" data-split-words>Featured Projects</h2>
+            <p class="section__desc">Here are a few highlights. I've built 40+ projects across AI, automation, and full-stack development. Check out my <a href="https://github.com/neeraj-gs?tab=repositories" target="_blank" class="link-accent">GitHub</a> for the full collection.</p>
          </div>
 
-         <div class="projects__grid container stagger">
-            <article class="project-card tilt-card" data-category="ai">
-               <div class="project-card__media">
-                  <img src="assets/img/PowerHouse.png" alt="PowerHouse" class="project-card__img" loading="lazy">
-                  <video class="project-card__video" data-src="assets/videos/powerhouse-demo.mp4" muted loop playsinline preload="none"></video>
-                  <div class="project-card__overlay"><span class="project-card__category">Claude Code Cockpit</span></div>
-                  <a href="https://drive.google.com/file/d/15DkSO7EFN8CooeMw0DzQzFXF4kC1wvkv/view" target="_blank" class="project-card__video-btn" title="Watch Demo"><i class="ri-play-circle-fill"></i></a>
-               </div>
-               <div class="project-card__content">
-                  <h3 class="project-card__title">PowerHouse</h3>
-                  <p class="project-card__text">A cockpit for the Claude Code you already have. Draw a plan as a graph of steps, press Run, and watch real sessions execute it — stopping wherever you asked to make a decision. Runs entirely on your machine, on your own account.</p>
-                  <div class="project-card__tech"><span>Claude Code</span><span>Local Daemon</span><span>Workflow Graphs</span><span>Git Worktrees</span><span>Desktop App</span></div>
-                  <div class="project-card__links">
-                     <a href="https://claude-power-house-daemon.vercel.app/" target="_blank" class="project-card__link"><i class="ri-external-link-line"></i> Live Site</a>
-                  </div>
-               </div>
-            </article>
+         <div class="proj-pin" id="proj-pin">
+            <div class="proj-sticky">
+               <div class="proj-track" id="proj-track">
+                  <article class="project-card slab" data-category="ai">
+                     <span class="slab__sheen" aria-hidden="true"></span>
+                     <div class="project-card__media">
+                        <img src="assets/img/CourseGen_AI.png" alt="CourseGen AI" class="project-card__img" loading="lazy">
+                        <iframe class="project-card__loom" data-src="https://www.loom.com/embed/3fcdcac8857d438e9ef45989bf009f1d?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" allowfullscreen></iframe>
+                        <div class="project-card__overlay"><span class="project-card__category">AI + Full-Stack</span></div>
+                        <a href="https://www.loom.com/share/3fcdcac8857d438e9ef45989bf009f1d" target="_blank" class="project-card__video-btn" title="Watch Demo"><i class="ri-play-circle-fill"></i></a>
+                     </div>
+                     <div class="project-card__content">
+                        <h3 class="project-card__title">CourseGen AI</h3>
+                        <p class="project-card__text">AI-powered learning platform that curates and generates customized courses from open-source video content, intelligently ranked by quality using large language models.</p>
+                        <div class="project-card__tech"><span>Next.js</span><span>OpenAI</span><span>Prisma</span><span>MySQL</span><span>Docker</span></div>
+                        <div class="project-card__links">
+                           <a href="https://github.com/neeraj-gs/CourseGen-AI" target="_blank" class="project-card__link"><i class="ri-github-fill"></i> Code</a>
+                        </div>
+                     </div>
+                  </article>
 
-            <article class="project-card tilt-card" data-category="ai">
-               <div class="project-card__media">
-                  <img src="assets/img/DermaVoice.png" alt="Voice Agent One" class="project-card__img" loading="lazy">
-                  <iframe class="project-card__loom" data-src="https://www.loom.com/embed/de74a69d46084de6944eaf6cfc8bce2f?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" allowfullscreen></iframe>
-                  <div class="project-card__overlay"><span class="project-card__category">AI SaaS Platform</span></div>
-                  <a href="https://www.loom.com/share/de74a69d46084de6944eaf6cfc8bce2f" target="_blank" class="project-card__video-btn" title="Watch Demo"><i class="ri-play-circle-fill"></i></a>
-               </div>
-               <div class="project-card__content">
-                  <h3 class="project-card__title">Voice Agent One</h3>
-                  <p class="project-card__text">AI-powered SaaS platform that generates professional websites and intelligent voice agents for small businesses, complete with 24/7 AI receptionist, lead qualification, and appointment booking.</p>
-                  <div class="project-card__tech"><span>React</span><span>TypeScript</span><span>OpenAI</span><span>ElevenLabs</span><span>Supabase</span><span>Tailwind</span></div>
-                  <div class="project-card__links">
-                     <a href="https://github.com/neeraj-gs/voice-agent-one" target="_blank" class="project-card__link"><i class="ri-github-fill"></i> Code</a>
-                  </div>
-               </div>
-            </article>
+                  <article class="project-card slab" data-category="ai">
+                     <span class="slab__sheen" aria-hidden="true"></span>
+                     <div class="project-card__media">
+                        <img src="assets/img/DermaVoice.png" alt="Voice Agent One" class="project-card__img" loading="lazy">
+                        <iframe class="project-card__loom" data-src="https://www.loom.com/embed/de74a69d46084de6944eaf6cfc8bce2f?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" allowfullscreen></iframe>
+                        <div class="project-card__overlay"><span class="project-card__category">AI SaaS Platform</span></div>
+                        <a href="https://www.loom.com/share/de74a69d46084de6944eaf6cfc8bce2f" target="_blank" class="project-card__video-btn" title="Watch Demo"><i class="ri-play-circle-fill"></i></a>
+                     </div>
+                     <div class="project-card__content">
+                        <h3 class="project-card__title">Voice Agent One</h3>
+                        <p class="project-card__text">AI-powered SaaS platform that generates professional websites and intelligent voice agents for small businesses, complete with 24/7 AI receptionist, lead qualification, and appointment booking.</p>
+                        <div class="project-card__tech"><span>React</span><span>TypeScript</span><span>OpenAI</span><span>ElevenLabs</span><span>Supabase</span><span>Tailwind</span></div>
+                        <div class="project-card__links">
+                           <a href="https://github.com/neeraj-gs/voice-agent-one" target="_blank" class="project-card__link"><i class="ri-github-fill"></i> Code</a>
+                        </div>
+                     </div>
+                  </article>
 
-            <article class="project-card tilt-card" data-category="ai">
-               <div class="project-card__media">
-                  <img src="assets/img/CoverMe.png" alt="CoverMe AI" class="project-card__img" loading="lazy">
-                  <iframe class="project-card__loom" data-src="https://www.loom.com/embed/d5d2773e69e44d529a245f4d065b62d7?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" allowfullscreen></iframe>
-                  <div class="project-card__overlay"><span class="project-card__category">AI Chrome Extension</span></div>
-                  <a href="https://www.loom.com/share/d5d2773e69e44d529a245f4d065b62d7" target="_blank" class="project-card__video-btn" title="Watch Demo"><i class="ri-play-circle-fill"></i></a>
-               </div>
-               <div class="project-card__content">
-                  <h3 class="project-card__title">CoverMe:AI</h3>
-                  <p class="project-card__text">Chrome extension that analyzes job descriptions in real-time and generates tailored, professional cover letters using AI, directly from any job posting page.</p>
-                  <div class="project-card__tech"><span>React</span><span>OpenAI</span><span>Chrome API</span><span>Tailwind</span></div>
-                  <div class="project-card__links">
-                     <a href="https://github.com/neeraj-gs/CoverMe-AI-Chrome-Extension" target="_blank" class="project-card__link"><i class="ri-github-fill"></i> Code</a>
-                  </div>
-               </div>
-            </article>
+                  <article class="project-card slab" data-category="ai">
+                     <span class="slab__sheen" aria-hidden="true"></span>
+                     <div class="project-card__media">
+                        <img src="assets/img/CoverMe.png" alt="CoverMe AI" class="project-card__img" loading="lazy">
+                        <iframe class="project-card__loom" data-src="https://www.loom.com/embed/d5d2773e69e44d529a245f4d065b62d7?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" allowfullscreen></iframe>
+                        <div class="project-card__overlay"><span class="project-card__category">AI Chrome Extension</span></div>
+                        <a href="https://www.loom.com/share/d5d2773e69e44d529a245f4d065b62d7" target="_blank" class="project-card__video-btn" title="Watch Demo"><i class="ri-play-circle-fill"></i></a>
+                     </div>
+                     <div class="project-card__content">
+                        <h3 class="project-card__title">CoverMe:AI</h3>
+                        <p class="project-card__text">Chrome extension that analyzes job descriptions in real-time and generates tailored, professional cover letters using AI, directly from any job posting page.</p>
+                        <div class="project-card__tech"><span>React</span><span>OpenAI</span><span>Chrome API</span><span>Tailwind</span></div>
+                        <div class="project-card__links">
+                           <a href="https://github.com/neeraj-gs/CoverMe-AI-Chrome-Extension" target="_blank" class="project-card__link"><i class="ri-github-fill"></i> Code</a>
+                        </div>
+                     </div>
+                  </article>
 
-            <article class="project-card tilt-card" data-category="ai">
-               <div class="project-card__media">
-                  <img src="assets/img/CourseGen_AI.png" alt="CourseGen AI" class="project-card__img" loading="lazy">
-                  <iframe class="project-card__loom" data-src="https://www.loom.com/embed/3fcdcac8857d438e9ef45989bf009f1d?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" allowfullscreen></iframe>
-                  <div class="project-card__overlay"><span class="project-card__category">AI + Full-Stack</span></div>
-                  <a href="https://www.loom.com/share/3fcdcac8857d438e9ef45989bf009f1d" target="_blank" class="project-card__video-btn" title="Watch Demo"><i class="ri-play-circle-fill"></i></a>
-               </div>
-               <div class="project-card__content">
-                  <h3 class="project-card__title">CourseGen AI</h3>
-                  <p class="project-card__text">AI-powered learning platform that curates and generates customized courses from open-source video content, intelligently ranked by quality using large language models.</p>
-                  <div class="project-card__tech"><span>Next.js</span><span>OpenAI</span><span>Prisma</span><span>MySQL</span><span>Docker</span></div>
-                  <div class="project-card__links">
-                     <a href="https://github.com/neeraj-gs/CourseGen-AI" target="_blank" class="project-card__link"><i class="ri-github-fill"></i> Code</a>
-                  </div>
-               </div>
-            </article>
+                  <article class="project-card slab" data-category="automation">
+                     <span class="slab__sheen" aria-hidden="true"></span>
+                     <div class="project-card__media">
+                        <img src="assets/img/FashionBot.png" alt="The Fashion Bot" class="project-card__img" loading="lazy">
+                        <iframe class="project-card__loom" data-src="https://www.loom.com/embed/a49177d17a6f46608673677779ba20a2?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true" frameborder="0" allowfullscreen></iframe>
+                        <div class="project-card__overlay"><span class="project-card__category">Automation</span></div>
+                        <a href="https://www.loom.com/share/a49177d17a6f46608673677779ba20a2" target="_blank" class="project-card__video-btn" title="Watch Demo"><i class="ri-play-circle-fill"></i></a>
+                     </div>
+                     <div class="project-card__content">
+                        <h3 class="project-card__title">The Fashion Bot</h3>
+                        <p class="project-card__text">Intelligent automation agent that securely stores user preferences and executes one-click purchases, streamlining the entire checkout experience.</p>
+                        <div class="project-card__tech"><span>React</span><span>TypeScript</span><span>Node.js</span><span>Automation</span></div>
+                        <div class="project-card__links">
+                           <a href="https://github.com/neeraj-gs/The-Fashion-Bot" target="_blank" class="project-card__link"><i class="ri-github-fill"></i> Code</a>
+                     </div>
+                     </div>
+                  </article>
 
-         </div>
-
-         <div class="container">
-            <a href="https://github.com/neeraj-gs?tab=repositories" target="_blank" class="more-projects reveal">
-               <div class="more-projects__bg">
-                  <div class="more-projects__circle more-projects__circle--1"></div>
-                  <div class="more-projects__circle more-projects__circle--2"></div>
-               </div>
-               <div class="more-projects__inner">
-                  <div class="more-projects__left">
-                     <div class="more-projects__icon"><i class="ri-github-fill"></i></div>
-                     <div>
-                        <div style="display:flex;align-items:flex-start;">
+                  <a href="https://github.com/neeraj-gs?tab=repositories" target="_blank" class="project-card project-card--more slab">
+                     <span class="slab__sheen" aria-hidden="true"></span>
+                     <div class="more-projects__bg" aria-hidden="true">
+                        <div class="more-projects__circle more-projects__circle--1"></div>
+                        <div class="more-projects__circle more-projects__circle--2"></div>
+                     </div>
+                     <div class="more-projects__inner">
+                        <div class="more-projects__icon"><i class="ri-github-fill"></i></div>
+                        <div class="more-projects__count">
                            <span class="more-projects__num">50</span>
                            <span class="more-projects__plus">+</span>
                         </div>
                         <p class="more-projects__label">Projects</p>
+                        <div class="more-projects__cta"><span>View All</span><i class="ri-arrow-right-line"></i></div>
                      </div>
-                  </div>
-                  <div class="more-projects__cta"><span>View All</span><i class="ri-arrow-right-line"></i></div>
+                  </a>
                </div>
-            </a>
+            </div>
          </div>
       </section>
 
-      <!--==================== SKILLS ====================-->
-      <section class="skills section" id="skills">
+      <!--==================== SKILLS — the instrument deck ====================-->
+      <section class="skills section scene" id="skills">
+         <span class="scene__num" aria-hidden="true">05</span>
          <div class="skills__header container reveal">
             <span class="section__label">Expertise</span>
-            <h2 class="section__title">Technical Skills</h2>
+            <h2 class="section__title" data-split-words>Technical Skills</h2>
          </div>
 
-         <div class="skills__grid container stagger">
-            <div class="skills__cat">
-               <h3 class="skills__cat-title"><i class="ri-robot-line"></i> AI & Agents</h3>
-               <div class="skills__items">
-                  <div class="skills__item"><div class="skills__icon"><i class="ri-git-merge-line"></i></div><span class="skills__name">LangGraph</span></div>
-                  <div class="skills__item"><div class="skills__icon"><i class="ri-code-box-line"></i></div><span class="skills__name">DSPy</span></div>
-                  <div class="skills__item"><div class="skills__icon"><i class="ri-loop-right-line"></i></div><span class="skills__name">Temporal</span></div>
-                  <div class="skills__item"><div class="skills__icon"><i class="ri-shuffle-line"></i></div><span class="skills__name">LiteLLM</span></div>
-                  <div class="skills__item"><div class="skills__icon"><i class="ri-history-line"></i></div><span class="skills__name">Mem0</span></div>
-                  <div class="skills__item"><div class="skills__icon"><i class="ri-bar-chart-2-line"></i></div><span class="skills__name">Langfuse</span></div>
+         <div class="skills__index container stagger">
+            <div class="skills__row">
+               <h3 class="skills__cat-title"><i class="ri-robot-line"></i> AI &amp; Agents</h3>
+               <div class="skills__keys">
+                  <div class="skills__item"><span class="skills__icon"><i class="ri-git-merge-line"></i></span><span class="skills__name">LangGraph</span></div>
+                  <div class="skills__item"><span class="skills__icon"><i class="ri-code-box-line"></i></span><span class="skills__name">DSPy</span></div>
+                  <div class="skills__item"><span class="skills__icon"><i class="ri-loop-right-line"></i></span><span class="skills__name">Temporal</span></div>
+                  <div class="skills__item"><span class="skills__icon"><i class="ri-shuffle-line"></i></span><span class="skills__name">LiteLLM</span></div>
+                  <div class="skills__item"><span class="skills__icon"><i class="ri-history-line"></i></span><span class="skills__name">Mem0</span></div>
+                  <div class="skills__item"><span class="skills__icon"><i class="ri-bar-chart-2-line"></i></span><span class="skills__name">Langfuse</span></div>
                </div>
             </div>
 
-            <div class="skills__cat">
+            <div class="skills__row">
                <h3 class="skills__cat-title"><i class="ri-layout-line"></i> Frontend</h3>
-               <div class="skills__items">
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"></div><span class="skills__name">React.js</span></div>
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"></div><span class="skills__name">Next.js</span></div>
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TS"></div><span class="skills__name">TypeScript</span></div>
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"></div><span class="skills__name">JavaScript</span></div>
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="TW"></div><span class="skills__name">Tailwind</span></div>
+               <div class="skills__keys">
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"></span><span class="skills__name">React.js</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"></span><span class="skills__name">Next.js</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TS"></span><span class="skills__name">TypeScript</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS"></span><span class="skills__name">JavaScript</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="TW"></span><span class="skills__name">Tailwind</span></div>
                </div>
             </div>
 
-            <div class="skills__cat">
+            <div class="skills__row">
                <h3 class="skills__cat-title"><i class="ri-server-line"></i> Backend</h3>
-               <div class="skills__items">
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node"></div><span class="skills__name">Node.js</span></div>
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"></div><span class="skills__name">Python</span></div>
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express"></div><span class="skills__name">Express</span></div>
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GQL"></div><span class="skills__name">GraphQL</span></div>
-                  <div class="skills__item"><div class="skills__icon"><i class="ri-wireless-charging-line"></i></div><span class="skills__name">WebSocket</span></div>
+               <div class="skills__keys">
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node"></span><span class="skills__name">Node.js</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"></span><span class="skills__name">Python</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express"></span><span class="skills__name">Express</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GQL"></span><span class="skills__name">GraphQL</span></div>
+                  <div class="skills__item"><span class="skills__icon"><i class="ri-wireless-charging-line"></i></span><span class="skills__name">WebSocket</span></div>
                </div>
             </div>
 
-            <div class="skills__cat">
+            <div class="skills__row">
                <h3 class="skills__cat-title"><i class="ri-database-2-line"></i> Data</h3>
-               <div class="skills__items">
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PG"></div><span class="skills__name">Postgres</span></div>
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="Mongo"></div><span class="skills__name">MongoDB</span></div>
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis"></div><span class="skills__name">Redis</span></div>
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg" alt="Prisma"></div><span class="skills__name">Prisma</span></div>
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"></div><span class="skills__name">MySQL</span></div>
+               <div class="skills__keys">
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PG"></span><span class="skills__name">Postgres</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="Mongo"></span><span class="skills__name">MongoDB</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis"></span><span class="skills__name">Redis</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg" alt="Prisma"></span><span class="skills__name">Prisma</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"></span><span class="skills__name">MySQL</span></div>
                </div>
             </div>
 
-            <div class="skills__cat">
+            <div class="skills__row">
                <h3 class="skills__cat-title"><i class="ri-cloud-line"></i> DevOps</h3>
-               <div class="skills__items">
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"></div><span class="skills__name">AWS</span></div>
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"></div><span class="skills__name">Docker</span></div>
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"></div><span class="skills__name">Git</span></div>
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"></div><span class="skills__name">Linux</span></div>
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="CI/CD"></div><span class="skills__name">CI/CD</span></div>
+               <div class="skills__keys">
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"></span><span class="skills__name">AWS</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"></span><span class="skills__name">Docker</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"></span><span class="skills__name">Git</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"></span><span class="skills__name">Linux</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="CI/CD"></span><span class="skills__name">CI/CD</span></div>
                </div>
             </div>
 
-            <div class="skills__cat">
+            <div class="skills__row">
                <h3 class="skills__cat-title"><i class="ri-links-line"></i> Web3</h3>
-               <div class="skills__items">
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Sol"></div><span class="skills__name">Solidity</span></div>
-                  <div class="skills__item"><div class="skills__icon"><i class="ri-global-line"></i></div><span class="skills__name">web3.js</span></div>
-                  <div class="skills__item"><div class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/hardhat/hardhat-original.svg" alt="HH"></div><span class="skills__name">Hardhat</span></div>
-                  <div class="skills__item"><div class="skills__icon"><i class="ri-coin-line"></i></div><span class="skills__name">Tokens</span></div>
+               <div class="skills__keys">
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Sol"></span><span class="skills__name">Solidity</span></div>
+                  <div class="skills__item"><span class="skills__icon"><i class="ri-global-line"></i></span><span class="skills__name">web3.js</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/hardhat/hardhat-original.svg" alt="HH"></span><span class="skills__name">Hardhat</span></div>
+                  <div class="skills__item"><span class="skills__icon"><i class="ri-coin-line"></i></span><span class="skills__name">Tokens</span></div>
                </div>
             </div>
          </div>
       </section>
 
-      <!--==================== CONTACT ====================-->
-      <section class="contact section" id="contact">
+      <!--==================== CONTACT — fill rows finale ====================-->
+      <section class="contact section panel scene" id="contact">
+         <span class="scene__num" aria-hidden="true">06</span>
          <div class="container">
             <div class="contact__header reveal">
                <span class="section__label">Contact</span>
-               <h2 class="contact__heading">Let's <span class="contact__accent">Connect</span></h2>
+               <h2 class="contact__heading" data-split-words>Let's <span class="contact__accent">Connect</span></h2>
                <p class="contact__desc">Building an AI product, exploring agentic systems, or looking for a product-minded engineer? I'd love to hear about it.</p>
             </div>
 
@@ -535,21 +590,21 @@
                </a>
 
                <a href="https://www.linkedin.com/in/neeraj-gs/" target="_blank" class="contact__card">
-                  <div class="contact__card-icon contact__card-icon--linkedin"><i class="ri-linkedin-box-fill"></i></div>
+                  <div class="contact__card-icon"><i class="ri-linkedin-box-fill"></i></div>
                   <h3 class="contact__card-title">LinkedIn</h3>
                   <p class="contact__card-info">neeraj-gs</p>
                   <span class="contact__card-cta">Connect <i class="ri-arrow-right-up-line"></i></span>
                </a>
 
                <a href="https://github.com/neeraj-gs" target="_blank" class="contact__card">
-                  <div class="contact__card-icon contact__card-icon--github"><i class="ri-github-fill"></i></div>
+                  <div class="contact__card-icon"><i class="ri-github-fill"></i></div>
                   <h3 class="contact__card-title">GitHub</h3>
                   <p class="contact__card-info">neeraj-gs</p>
                   <span class="contact__card-cta">View code <i class="ri-arrow-right-up-line"></i></span>
                </a>
 
                <a href="https://twitter.com/neeraj_gs_05" target="_blank" class="contact__card">
-                  <div class="contact__card-icon contact__card-icon--twitter"><i class="ri-twitter-x-fill"></i></div>
+                  <div class="contact__card-icon"><i class="ri-twitter-x-fill"></i></div>
                   <h3 class="contact__card-title">X</h3>
                   <p class="contact__card-info">@neeraj_gs_05</p>
                   <span class="contact__card-cta">Follow <i class="ri-arrow-right-up-line"></i></span>
@@ -581,7 +636,7 @@
    </div>
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.net.min.js"></script>
+   <script src="assets/js/field.js"></script>
    <script src="assets/js/main.js"></script>
 </body>
 </html>
