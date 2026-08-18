@@ -480,17 +480,29 @@
     })();
   }
 
-  /*=============== LOOM LAZY LOAD ===============*/
+  /*=============== DEMO MEDIA LAZY LOAD (Loom + self-hosted) ===============*/
   document.querySelectorAll('.project-card').forEach(function (card) {
     var iframe = card.querySelector('.project-card__loom');
-    if (!iframe) return;
+    if (iframe) {
+      card.addEventListener('mouseenter', function () {
+        if (!iframe.src && iframe.dataset.src) iframe.src = iframe.dataset.src;
+      });
+      card.addEventListener('mouseleave', function () {
+        if (iframe.src) iframe.src = '';
+      });
+    }
 
-    card.addEventListener('mouseenter', function () {
-      if (!iframe.src && iframe.dataset.src) iframe.src = iframe.dataset.src;
-    });
-    card.addEventListener('mouseleave', function () {
-      if (iframe.src) iframe.src = '';
-    });
+    var video = card.querySelector('.project-card__video');
+    if (video) {
+      card.addEventListener('mouseenter', function () {
+        if (!video.src && video.dataset.src) video.src = video.dataset.src;
+        video.play().catch(function () {});
+      });
+      card.addEventListener('mouseleave', function () {
+        video.pause();
+        video.currentTime = 0;
+      });
+    }
   });
 
   /*=============== VIDEO MODAL ===============*/
