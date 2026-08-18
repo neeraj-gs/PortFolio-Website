@@ -484,46 +484,116 @@
     })();
   }
 
-  /*=============== DEMO MEDIA LAZY LOAD (Loom + self-hosted) ===============*/
+  /*=============== DEMO MEDIA — hover preview ===============*/
+  // The poster stays visible (dimmed, spinner) until the embed reports
+  // ready, then crossfades — no black hole while a player boots.
   document.querySelectorAll('.project-card').forEach(function (card) {
     var iframe = card.querySelector('.project-card__loom');
-    if (iframe) {
-      card.addEventListener('mouseenter', function () {
-        if (!iframe.src && iframe.dataset.src) iframe.src = iframe.dataset.src;
-      });
-      card.addEventListener('mouseleave', function () {
-        if (iframe.src) iframe.src = '';
-      });
+    var video = card.querySelector('.project-card__video');
+    if (!iframe && !video) return;
+
+    var intent = null;
+
+    function mediaReady() {
+      card.classList.remove('media-loading');
+      card.classList.add('media-live');
     }
 
-    var video = card.querySelector('.project-card__video');
-    if (video) {
-      card.addEventListener('mouseenter', function () {
-        if (!video.src && video.dataset.src) video.src = video.dataset.src;
-        video.play().catch(function () {});
-      });
-      card.addEventListener('mouseleave', function () {
-        video.pause();
-        video.currentTime = 0;
+    if (iframe) {
+      iframe.addEventListener('load', function () {
+        // 'load' also fires for the about:blank unload — only the real
+        // embed counts as ready.
+        if (iframe.getAttribute('src') === iframe.dataset.src) mediaReady();
       });
     }
+    if (video) video.addEventListener('canplay', mediaReady);
+
+    card.addEventListener('mouseenter', function () {
+      // Small intent delay so sweeping the cursor across the gallery
+      // doesn't fire off a stack of embed loads.
+      clearTimeout(intent);
+      intent = setTimeout(function () {
+        card.classList.add('media-loading');
+        if (iframe && iframe.getAttribute('src') !== iframe.dataset.src) {
+          iframe.src = iframe.dataset.src;
+        }
+        if (video) {
+          if (!video.getAttribute('src') && video.dataset.src) video.src = video.dataset.src;
+          video.play().catch(function () {});
+        }
+      }, 120);
+    });
+
+    card.addEventListener('mouseleave', function () {
+      clearTimeout(intent);
+      card.classList.remove('media-loading');
+      card.classList.remove('media-live');
+      // Navigate the embed away (not just removeAttribute) so playback
+      // and audio genuinely stop.
+      if (iframe && iframe.getAttribute('src')) iframe.src = 'about:blank';
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
   });
 
   /*=============== VIDEO MODAL ===============*/
   var videoModal = document.getElementById('video-modal');
   var modalVideo = document.getElementById('modal-video');
+  var modalFrame = document.getElementById('modal-frame');
   var modalClose = document.getElementById('video-modal-close');
   var vmOverlay = document.querySelector('.video-modal__overlay');
 
   function closeModal() {
     if (!videoModal) return;
     videoModal.classList.remove('active');
+    videoModal.classList.remove('video-modal--frame');
     document.body.style.overflow = '';
     if (modalVideo) {
       modalVideo.pause();
       modalVideo.currentTime = 0;
     }
+    // Drop the embed entirely so its playback stops with the modal.
+    if (modalFrame) modalFrame.innerHTML = '';
   }
+
+  function openModal(kind, src) {
+    if (!videoModal) return;
+    if (kind === 'frame' && modalFrame) {
+      videoModal.classList.add('video-modal--frame');
+      var fr = document.createElement('iframe');
+      fr.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+      fr.setAttribute('allowfullscreen', '');
+      fr.src = src;
+      modalFrame.innerHTML = '';
+      modalFrame.appendChild(fr);
+    } else if (modalVideo) {
+      videoModal.classList.remove('video-modal--frame');
+      modalVideo.src = src;
+      modalVideo.play().catch(function () {});
+    }
+    videoModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Watch Demo opens the demo in place instead of leaving the site.
+  // Without JS the buttons stay plain links to the share pages.
+  document.querySelectorAll('.project-card__video-btn').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      var card = btn.closest('.project-card');
+      var loom = card && card.querySelector('.project-card__loom');
+      var vid = card && card.querySelector('.project-card__video');
+      var src = loom ? loom.dataset.src : (vid ? vid.dataset.src : '');
+      if (!src) return; // fall through to the href
+
+      e.preventDefault();
+      // Stop the hover preview so two players don't run at once.
+      if (loom && loom.getAttribute('src')) loom.src = 'about:blank';
+      if (vid) vid.pause();
+      openModal(loom ? 'frame' : 'video', src);
+    });
+  });
 
   if (modalClose) modalClose.addEventListener('click', closeModal);
   if (vmOverlay) vmOverlay.addEventListener('click', closeModal);
