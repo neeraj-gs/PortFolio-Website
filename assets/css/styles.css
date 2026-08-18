@@ -1693,9 +1693,32 @@ body::after {
   border: 0;
 }
 .project-card__video { object-fit: cover; background: #000; }
-.project-card:hover .project-card__loom { opacity: 1; pointer-events: auto; }
-.project-card:hover .project-card__video { opacity: 1; }
-.project-card:hover .project-card__img { opacity: 0; }
+/* The crossfade waits for .media-live (the embed reported ready) so the
+   poster never drops out to a black box while a player boots. */
+.project-card.media-live .project-card__loom { opacity: 1; pointer-events: auto; }
+.project-card.media-live .project-card__video { opacity: 1; }
+.project-card.media-live .project-card__img { opacity: 0; }
+
+/* Boot feedback: dimmed poster + spinner while the demo loads */
+.project-card__media::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 42px; height: 42px;
+  margin: -21px 0 0 -21px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-top-color: var(--amber);
+  opacity: 0;
+  z-index: 3;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.project-card.media-loading .project-card__media::after {
+  opacity: 1;
+  animation: mediaSpin 0.9s linear infinite;
+}
+@keyframes mediaSpin { to { transform: rotate(360deg); } }
 
 .project-card__overlay {
   position: absolute;
@@ -2250,6 +2273,25 @@ body::after {
 .video-modal__close:hover { background: var(--amber); border-color: var(--amber); }
 
 .video-modal__video { width: 100%; border-radius: var(--radius); background: #000; }
+
+/* Frame mode — the modal hosts an embedded player instead of a <video> */
+.video-modal__frame {
+  display: none;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #000;
+}
+.video-modal__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+.video-modal--frame .video-modal__frame { display: block; }
+.video-modal--frame .video-modal__video { display: none; }
 
 /*===============================================================
    REDUCED MOTION — keep the depth, drop the movement
