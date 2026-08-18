@@ -456,15 +456,19 @@
 
   // Keyboard users: when focus lands inside an off-screen card,
   // jump the window scroll so the pinned track brings it into view.
+  // Keyboard focus only — mouse clicks focus links too, and recentering
+  // mid-click would move the control out from under the cursor.
   if (track) {
     track.addEventListener('focusin', function (e) {
       if (!galleryOn || maxShift <= 0) return;
+      if (!e.target.matches(':focus-visible')) return;
       var card = e.target.closest('.project-card');
       if (!card) return;
       var targetP = clamp(
         (card.offsetLeft - (window.innerWidth - card.offsetWidth) / 2) / maxShift, 0, 1);
       var pinTop = pin.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({ top: pinTop + targetP * maxShift, behavior: 'auto' });
+      // 'instant' so the CSS smooth-scroll doesn't animate the jump
+      window.scrollTo({ top: pinTop + targetP * maxShift, behavior: 'instant' });
     });
   }
 
