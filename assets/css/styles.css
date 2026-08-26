@@ -1680,6 +1680,9 @@ body::after {
   transition: transform 0.8s var(--ease), filter 0.6s ease, opacity 0.4s ease;
 }
 .project-card:hover .project-card__img { transform: scale(1.07); filter: brightness(0.42); }
+/* Cards without a demo keep their poster readable on hover — nothing
+   crossfades in behind it, so the deep dim would just black it out. */
+.project-card--still:hover .project-card__img { filter: brightness(0.7); }
 
 .project-card__loom,
 .project-card__video {
