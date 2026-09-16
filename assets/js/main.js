@@ -343,10 +343,15 @@
     });
   }
 
+  // The easing math itself lives in scene-math.js (pure, DOM-free, unit
+  // tested) — this just feeds it live rects and paints the result.
+  var sceneEase = window.SceneMath.sceneEase;
+
   function sceneFrame(vh) {
     for (var i = 0; i < scenes.length; i++) {
       var s = scenes[i];
       var r = s.el.getBoundingClientRect();
+      var m = sceneEase(r.top, r.bottom, r.height, vh);
 
       // Far outside the viewport: settle once, then skip.
       if (r.top > vh * 1.4 || r.bottom < -vh * 0.4) {
