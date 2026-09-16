@@ -1,10 +1,10 @@
 /*===============================================================
    INTERACTION LAYER
-   Boot, cursor, nav, theme, reveals, split type, counters,
+   Boot, cursor, nav, reveals, split type, counters,
    tilt, magnetics — plus the three scroll engines:
      · scenes   — sections fly in and out of depth
      · gallery  — pinned horizontal project track
-     · marquee  — kinetic skill lanes
+     · ledger   — the Edge list lights up as it crosses centre
 ===============================================================*/
 (function () {
   'use strict';
@@ -126,10 +126,10 @@
 
   /*=============== ACTIVE NAV LINK + HUD INDEX ===============*/
   var hudIndex = document.getElementById('hud-index');
-  var SECTION_ORDER = ['home', 'experience', 'about', 'projects', 'skills', 'contact'];
+  var SECTION_ORDER = ['home', 'experience', 'about', 'projects', 'edge', 'skills', 'contact'];
   var SECTION_NAMES = {
-    home: 'Home', experience: 'Experience', about: 'About',
-    projects: 'Projects', skills: 'Skills', contact: 'Contact'
+    home: 'Home', experience: 'Experience', about: 'About', projects: 'Projects',
+    edge: 'The Edge', skills: 'Skills', contact: 'Contact'
   };
 
   var navLinks = {};
@@ -157,32 +157,6 @@
   }, { rootMargin: '-45% 0px -50% 0px' });
 
   document.querySelectorAll('section[id]').forEach(function (s) { sectionObs.observe(s); });
-
-  /*=============== THEME ===============*/
-  var themeBtn = document.getElementById('theme-button');
-
-  function isLight() {
-    return document.documentElement.getAttribute('data-theme') === 'light';
-  }
-  function paintThemeIcon() {
-    if (!themeBtn) return;
-    var icon = themeBtn.querySelector('i');
-    if (icon) icon.className = isLight() ? 'ri-sun-line' : 'ri-moon-line';
-  }
-
-  if (themeBtn) {
-    paintThemeIcon();
-    themeBtn.addEventListener('click', function () {
-      var light = !isLight();
-      if (light) document.documentElement.setAttribute('data-theme', 'light');
-      else document.documentElement.removeAttribute('data-theme');
-
-      localStorage.setItem('theme', light ? 'light' : 'dark');
-      paintThemeIcon();
-      if (window.Field) window.Field.setTheme(light);
-    });
-  }
-  if (window.Field && isLight()) window.Field.setTheme(true);
 
   /*=============== REVEALS ===============*/
   var revealObs = new IntersectionObserver(function (entries) {
@@ -255,9 +229,11 @@
 
       var el = e.target;
       var target = parseInt(el.dataset.target, 10) || 0;
+      // Most stats read as "20+"; data-suffix="" opts a literal count out of it.
+      var suffix = el.dataset.suffix === undefined ? '+' : el.dataset.suffix;
       counterObs.unobserve(el);
 
-      if (reduceMotion) { el.textContent = target + '+'; return; }
+      if (reduceMotion) { el.textContent = target + suffix; return; }
 
       var duration = 1400;
       var start = null;
@@ -266,13 +242,25 @@
         if (start === null) start = now;
         var t = Math.min((now - start) / duration, 1);
         var eased = 1 - Math.pow(1 - t, 3);
-        el.textContent = Math.round(target * eased) + '+';
+        el.textContent = Math.round(target * eased) + suffix;
         if (t < 1) requestAnimationFrame(tick);
       });
     });
   }, { threshold: 0.5 });
 
   document.querySelectorAll('.counter').forEach(function (el) { counterObs.observe(el); });
+
+  /*=============== LEDGER PLAYHEAD ===============*/
+  // The Edge ledger reads like a scanning head: whichever discipline
+  // rows sit in the middle band of the viewport light up. A thin
+  // rootMargin band is enough — no per-frame work on a 25-row list.
+  var ledgerRows = document.querySelectorAll('.ledger__row');
+  if (ledgerRows.length) {
+    var litObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.target.classList.toggle('lit', e.isIntersecting); });
+    }, { rootMargin: '-42% 0px -42% 0px' });
+    ledgerRows.forEach(function (row) { litObs.observe(row); });
+  }
 
   /*=============== SLAB TILT + SHEEN ===============*/
   if (canHover && !reduceMotion) {
@@ -369,13 +357,17 @@
     });
   }
 
+  // The easing math itself lives in scene-math.js (pure, DOM-free, unit
+  // tested) — this just feeds it live rects and paints the result.
+  var sceneEase = window.SceneMath.sceneEase;
+
   function sceneFrame(vh) {
     for (var i = 0; i < scenes.length; i++) {
       var s = scenes[i];
       var r = s.el.getBoundingClientRect();
+      var m = sceneEase(r.top, r.bottom, r.height, vh);
 
-      // Far outside the viewport: settle once, then skip.
-      if (r.top > vh * 1.4 || r.bottom < -vh * 0.4) {
+      if (m.skip) {
         if (s.live) {
           s.el.style.transform = '';
           s.el.style.opacity = '';
@@ -385,25 +377,10 @@
       }
       s.live = true;
 
-      // Entering: rises out of depth, tilting upright.
-      var ein = clamp((vh - r.top) / (vh * 0.85), 0, 1);
-      var e = 1 - Math.pow(1 - ein, 3);
-
-      // Leaving: lifts toward the camera and dissolves.
-      var eout = clamp((vh * 0.45 - r.bottom) / (vh * 0.45), 0, 1);
-      var o = eout * eout;
-
-      var ty = (1 - e) * 90 - o * 70;
-      var rx = (1 - e) * 7;
-      var sc = 0.955 + 0.045 * e + o * 0.03;
-      var op = Math.min(0.25 + 0.75 * e, 1 - o * 0.6);
-
       s.el.style.transform =
-        'perspective(1400px) translate3d(0,' + ty.toFixed(1) + 'px,0) rotateX(' + rx.toFixed(2) + 'deg) scale(' + sc.toFixed(4) + ')';
-      s.el.style.opacity = op.toFixed(3);
-
-      // Drives the ghost numeral's parallax.
-      s.el.style.setProperty('--p', clamp((vh - r.top) / (vh + r.height), 0, 1).toFixed(3));
+        'perspective(1400px) translate3d(0,' + m.ty.toFixed(1) + 'px,0) rotateX(' + m.rx.toFixed(2) + 'deg) scale(' + m.sc.toFixed(4) + ')';
+      s.el.style.opacity = m.op.toFixed(3);
+      s.el.style.setProperty('--p', m.p.toFixed(3));
     }
   }
 

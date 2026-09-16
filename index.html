@@ -4,22 +4,22 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <meta name="description" content="Product Engineer. I build AI-native products end to end, from customer discovery and product strategy to shipping the agentic systems that run them.">
-   <meta name="keywords" content="Neeraj GS, Product Engineer, Full Stack Developer, AI Agents, Agentic Systems, Private Credit, LLMs, React, Next.js, TypeScript">
+   <meta name="description" content="Product Engineer. I design and ship AI agents that do real work — RAG, evals, agentic workflows, guardrails and observability — and lead AI-driven development at Penomo.">
+   <meta name="keywords" content="Neeraj GS, Product Engineer, Full Stack Developer, AI Agents, Agentic Systems, RAG, LLM Evals, LLM Observability, Vector Databases, Guardrails, Private Credit, LLMs, React, Next.js, TypeScript">
    <meta name="author" content="Neeraj GS">
    <link rel="canonical" href="https://neerajgs.dev">
 
    <meta property="og:type" content="website">
    <meta property="og:url" content="https://neerajgs.dev">
    <meta property="og:title" content="Neeraj GS | Product Engineer">
-   <meta property="og:description" content="I build AI-native products end to end, from product strategy to shipping the agentic systems that run them.">
+   <meta property="og:description" content="I design and ship AI agents that do real work — from product strategy to RAG, evals, guardrails and the systems that keep them running.">
    <meta property="og:image" content="https://neerajgs.dev/assets/img/Nee.JPG">
    <meta property="og:site_name" content="Neeraj GS">
 
    <meta name="twitter:card" content="summary_large_image">
    <meta name="twitter:url" content="https://neerajgs.dev">
    <meta name="twitter:title" content="Neeraj GS | Product Engineer">
-   <meta name="twitter:description" content="I build AI-native products end to end, from product strategy to shipping the agentic systems that run them.">
+   <meta name="twitter:description" content="I design and ship AI agents that do real work — from product strategy to RAG, evals, guardrails and the systems that keep them running.">
    <meta name="twitter:image" content="https://neerajgs.dev/assets/img/Nee.JPG">
    <meta name="twitter:creator" content="@neeraj_gs_05">
 
@@ -36,10 +36,6 @@
          // Entrance animations start hidden, so gate them on JS being alive.
          // Without this class every reveal would stay at opacity 0 if a script fails.
          document.documentElement.classList.add('js');
-
-         var saved = localStorage.getItem('theme');
-         var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-         if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
       })();
    </script>
    <link rel="stylesheet" href="assets/css/styles.css">
@@ -61,7 +57,7 @@
        "https://neerajgs.hashnode.dev/"
      ],
      "email": "gsneeraj2002@gmail.com",
-     "knowsAbout": ["AI Agents", "LLMs", "Automation", "Full Stack Development", "React.js", "Next.js", "TypeScript"]
+     "knowsAbout": ["AI Agents", "Agentic Workflows", "Retrieval-Augmented Generation", "LLM Evals", "LLM Observability", "Vector Databases", "Guardrails", "LLMs", "Automation", "Full Stack Development", "React.js", "Next.js", "TypeScript", "Python"]
    }
    </script>
 </head>
@@ -112,6 +108,7 @@
                <li><a href="#home" class="nav__link active-link">Home</a></li>
                <li><a href="#experience" class="nav__link">Experience</a></li>
                <li><a href="#about" class="nav__link">About</a></li>
+               <li><a href="#edge" class="nav__link">The Edge</a></li>
                <li><a href="#skills" class="nav__link">Skills</a></li>
                <li><a href="#projects" class="nav__link nav__link--cta magnetic">Projects</a></li>
             </ul>
@@ -119,9 +116,6 @@
          </div>
 
          <div class="nav__buttons">
-            <button class="nav__theme-btn magnetic" id="theme-button" aria-label="Toggle theme">
-               <i class="ri-moon-line"></i>
-            </button>
             <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-4-line"></i></div>
          </div>
       </nav>
@@ -140,7 +134,7 @@
                </h1>
 
                <p class="hero__desc reveal">
-                  I build <strong>AI-native products</strong> end to end — from customer discovery and product strategy to shipping the systems that run them. Today I lead product &amp; platform for <strong>CredOS at Penomo</strong>, the operating system for intelligent private credit, where autonomous agents turn weeks of due diligence into hours.
+                  I'm a builder. I design and ship <strong>AI agents</strong> that do real work &mdash; and I lead <strong>AI-driven development at Penomo</strong>.
                </p>
 
                <div class="hero__buttons reveal">
@@ -217,24 +211,33 @@
                   <span class="xp-row__ghost" aria-hidden="true">2025</span>
                   <div class="xp-row__side">
                      <span class="experience__badge">Current</span>
-                     <span class="xp-row__date"><i class="ri-calendar-line"></i> Mar 2025 – Present · 1 yr 2 mos</span>
+                     <span class="xp-row__date"><i class="ri-calendar-line"></i> Mar 2025 – Present · 1 yr 6 mos</span>
                      <span class="xp-row__date"><i class="ri-briefcase-line"></i> Full-time</span>
                   </div>
                   <div class="xp-row__main">
                      <h4 class="xp-row__title">Product Manager</h4>
                      <p class="xp-row__desc">
-                        I own product and platform for CredOS, Penomo's AI-native operating system for intelligent private credit. That means the full arc: customer discovery, roadmap, and the architecture behind a multi-tenant, multi-region agentic system that automates the investment lifecycle from deal sourcing to exit. I've shipped 20+ specialized agents that cut sourcing time by 70% and underwriting by 50%, running across US and EU with full data residency.
+                        I own the entire product and roadmap for <strong>CredOS</strong>, Penomo's AI-native operating system for intelligent private credit &mdash; delivery end to end, from customer discovery to production, across US and EU with full data residency.
                      </p>
+                     <ul class="xp-row__points">
+                        <li>Built self-learning agents that improve on real usage &mdash; cutting deal sourcing by <strong>70%</strong> and underwriting by <strong>50%</strong>.</li>
+                        <li>Shipped OCR and data-room intelligence that turns teasers, memorandums and full data rooms into structured, queryable deal intelligence.</li>
+                        <li>Built the RAG and workflow-automation layer behind memo drafting &mdash; every figure traceable to its exact source page.</li>
+                     </ul>
                      <div class="experience__tags">
                         <span>Product Strategy</span>
                         <span>Roadmap &amp; Delivery</span>
                         <span>Agentic Systems</span>
+                        <span>RAG</span>
+                        <span>Document AI &amp; OCR</span>
+                        <span>Evals</span>
                         <span>LangGraph</span>
                         <span>DSPy</span>
                         <span>Temporal</span>
                         <span>Multi-Tenant SaaS</span>
                         <span>React.js</span>
                         <span>TypeScript</span>
+                        <span>Python</span>
                      </div>
                   </div>
                </article>
@@ -306,12 +309,12 @@
                   <span class="experience__stat-label">AI Agents Shipped</span>
                </div>
                <div class="experience__stat">
-                  <span class="experience__stat-num counter" data-target="70">0</span>
-                  <span class="experience__stat-label">% Faster Sourcing</span>
-               </div>
-               <div class="experience__stat">
                   <span class="experience__stat-num counter" data-target="50">0</span>
                   <span class="experience__stat-label">Projects Delivered</span>
+               </div>
+               <div class="experience__stat">
+                  <span class="experience__stat-num counter" data-target="2" data-suffix="">0</span>
+                  <span class="experience__stat-label">Regions Live · US &amp; EU</span>
                </div>
             </div>
          </div>
@@ -329,53 +332,19 @@
             <div class="about__intro reveal">
                <h3 class="about__subtitle">A product builder who ships end to end</h3>
                <p class="about__lead">
-                  I'm Neeraj, a <strong>product manager</strong> and <strong>full-stack engineer</strong> who likes turning ambiguous problems into products people actually use. I care about the whole journey: talking to customers, shaping the roadmap, designing the system, and shipping it to real users.
+                  I'm Neeraj &mdash; a <strong>product manager</strong> and <strong>full-stack engineer</strong>. I turn ambiguous problems into products people actually use.
                </p>
                <p class="about__text">
-                  Today I lead product and platform for <strong>CredOS at Penomo</strong>, the AI-native operating system for intelligent private credit. I own it end to end, from customer discovery and product strategy to the multi-tenant, multi-region architecture behind it, working across US and EU with full data residency.
+                  I like the whole arc: talking to customers, shaping the roadmap, designing the system, shipping it. Today I lead <strong>AI-driven development at Penomo</strong>.
                </p>
                <p class="about__text">
-                  Along the way I've designed and shipped <strong>20+ specialized AI agents</strong> that automate the investment lifecycle, from deal sourcing and document intelligence to underwriting and portfolio monitoring, cutting sourcing time by 70% and underwriting by 50%. I move fast, sweat the details, and care as much about the product experience as the engineering underneath it.
+                  I've put <strong>20+ AI agents</strong> into production. I move fast, sweat the details, and care as much about the product experience as the engineering underneath it.
                </p>
             </div>
 
             <div class="about__stat reveal">
                <span class="about__stat-num">20<span class="about__stat-plus">+</span></span>
                <span class="about__stat-label">AI agents shipped to production</span>
-            </div>
-
-            <div class="stack">
-               <article class="stack__card" style="--i:0">
-                  <div class="stack__body">
-                     <div class="stack__icon"><i class="ri-compass-3-line"></i></div>
-                     <h4 class="stack__title">I think in products, not just features.</h4>
-                     <p class="stack__text">I own the full arc: customer discovery, product strategy, roadmap, and delivery. I took CredOS from an idea to a live platform serving private-credit teams across two continents, obsessing over both the experience users feel and the systems that make it work. My favorite place to be is the seam where product decisions meet the code that ships them.</p>
-                  </div>
-               </article>
-
-               <article class="stack__card" style="--i:1">
-                  <div class="stack__body">
-                     <div class="stack__icon"><i class="ri-robot-2-line"></i></div>
-                     <h4 class="stack__title">Agentic systems, not demos</h4>
-                     <p class="stack__text">I design multi-agent systems that do real work: reading data rooms, extracting deal intelligence, drafting investment memos with precise citations, and monitoring portfolios. All of it runs on durable workflows, so nothing fails silently and every step is traceable.</p>
-                  </div>
-               </article>
-
-               <article class="stack__card" style="--i:2">
-                  <div class="stack__body">
-                     <div class="stack__icon"><i class="ri-stack-line"></i></div>
-                     <h4 class="stack__title">Full stack, top to bottom</h4>
-                     <p class="stack__text">React, Next.js, and TypeScript on the front; Node, Python, and durable workflow engines behind. I build the multi-tenant, multi-region platforms that agents live inside, with SSO, EU data residency, and data rooms that handle gigabyte-scale uploads.</p>
-                  </div>
-               </article>
-
-               <article class="stack__card" style="--i:3">
-                  <div class="stack__body">
-                     <div class="stack__icon"><i class="ri-loop-right-line"></i></div>
-                     <h4 class="stack__title">Ship fast, improve on evidence</h4>
-                     <p class="stack__text">I ship quickly and iterate on real signal, not vibes: eval gates on every change, full observability into cost and quality, and pipelines that self-improve week over week with automatic rollback when a metric regresses.</p>
-                  </div>
-               </article>
             </div>
 
             <div class="about__cta reveal">
@@ -534,9 +503,259 @@
          </div>
       </section>
 
+
+      <!--==================== THE EDGE — the AI engineering ledger ====================-->
+      <section class="edge section scene" id="edge">
+         <span class="scene__num" aria-hidden="true">05</span>
+         <div class="container">
+            <div class="edge__header reveal">
+               <span class="section__label">The Edge</span>
+               <h2 class="section__title" data-split-words>What Sets Me Apart</h2>
+            </div>
+
+            <div class="edge__myths stagger">
+               <span class="edge__myth">&ldquo;Just add AI to the product&rdquo;</span>
+               <span class="edge__myth">&ldquo;Just ask ChatGPT to build it&rdquo;</span>
+               <span class="edge__myth">&ldquo;Let's vibe code something and ship it&rdquo;</span>
+               <span class="edge__myth">&ldquo;Can't we prompt our way to an app?&rdquo;</span>
+            </div>
+
+            <p class="edge__verdict reveal">
+               Most AI work stops at the demo. <strong>Mine starts there.</strong> Prompting gets you a prototype; shipping something people depend on is a different job &mdash; twenty-five of them, in practice. This is the part most AI developers skip.
+            </p>
+
+            <div class="ledger">
+               <div class="ledger__group">
+                  <div class="ledger__rail">
+                     <span class="ledger__rail-idx">Set 01</span>
+                     <h3 class="ledger__rail-title">Context &amp; Retrieval</h3>
+                     <p class="ledger__rail-note">Getting the right facts in front of the model.</p>
+                  </div>
+                  <ol class="ledger__rows stagger">
+                     <li class="ledger__row">
+                        <span class="ledger__num">01</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Retrieval-augmented generation</h4>
+                           <p class="ledger__desc">Answers grounded in your own documents, with a citation behind every claim.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">02</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Vector databases</h4>
+                           <p class="ledger__desc">pgvector and hybrid search, tuned until the right chunk actually ranks first.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">03</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Embeddings</h4>
+                           <p class="ledger__desc">Chunking and embedding strategy decided by recall tests, not by default settings.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">04</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Context window management</h4>
+                           <p class="ledger__desc">I budget the window: what gets in, what gets summarised, what gets dropped.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">05</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Data pipelines</h4>
+                           <p class="ledger__desc">OCR, parsing and enrichment that turn messy PDFs into queryable structure.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+
+               <div class="ledger__group">
+                  <div class="ledger__rail">
+                     <span class="ledger__rail-idx">Set 02</span>
+                     <h3 class="ledger__rail-title">Reasoning &amp; Control</h3>
+                     <p class="ledger__rail-note">Making the model actually do the work.</p>
+                  </div>
+                  <ol class="ledger__rows stagger">
+                     <li class="ledger__row">
+                        <span class="ledger__num">06</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">System prompt design</h4>
+                           <p class="ledger__desc">Prompts written as specs, versioned in the repo and reviewed like code.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">07</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Chain-of-thought prompting</h4>
+                           <p class="ledger__desc">Reasoning where it pays for itself, skipped where it just burns tokens.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">08</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Structured outputs</h4>
+                           <p class="ledger__desc">Typed schemas at every boundary, so downstream code never has to parse prose.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">09</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Tool calling</h4>
+                           <p class="ledger__desc">Models that act: query the database, call the API, write the result back.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">10</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Agentic workflows</h4>
+                           <p class="ledger__desc">Durable multi-step runs on Temporal &mdash; resumable, retryable, never silently stuck.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">11</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Memory management</h4>
+                           <p class="ledger__desc">What an agent carries between runs, and what it&rsquo;s required to forget.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+
+               <div class="ledger__group">
+                  <div class="ledger__rail">
+                     <span class="ledger__rail-idx">Set 03</span>
+                     <h3 class="ledger__rail-title">Quality &amp; Evals</h3>
+                     <p class="ledger__rail-note">Proving it works before anyone depends on it.</p>
+                  </div>
+                  <ol class="ledger__rows stagger">
+                     <li class="ledger__row">
+                        <span class="ledger__num">12</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Model evals</h4>
+                           <p class="ledger__desc">Golden datasets and scored runs. Nothing ships without clearing the gate.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">13</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Hallucination testing</h4>
+                           <p class="ledger__desc">Every figure traced back to its source page, or it never reaches the memo.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">14</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">A/B testing prompts</h4>
+                           <p class="ledger__desc">Two variants, real traffic, one winner &mdash; measured rather than argued about.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">15</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Prompt versioning</h4>
+                           <p class="ledger__desc">Every prompt has a version, a diff and a rollback path.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">16</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Fine-tuning</h4>
+                           <p class="ledger__desc">Reached for last, once retrieval and prompting stop paying for themselves.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">17</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Temperature tuning</h4>
+                           <p class="ledger__desc">Deterministic where accuracy matters, loose where exploration does.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+
+               <div class="ledger__group">
+                  <div class="ledger__rail">
+                     <span class="ledger__rail-idx">Set 04</span>
+                     <h3 class="ledger__rail-title">Production &amp; Cost</h3>
+                     <p class="ledger__rail-note">Keeping it fast, cheap and observable.</p>
+                  </div>
+                  <ol class="ledger__rows stagger">
+                     <li class="ledger__row">
+                        <span class="ledger__num">18</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">LLM observability</h4>
+                           <p class="ledger__desc">Full traces in Langfuse: every call, its cost, its latency, its output.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">19</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Token cost tracking</h4>
+                           <p class="ledger__desc">Cost per run is a product metric I watch as closely as conversion.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">20</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Latency budgets</h4>
+                           <p class="ledger__desc">A time budget per step, with streaming and caching to stay inside it.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">21</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Rate limit handling</h4>
+                           <p class="ledger__desc">Backoff, queueing and failover, so a provider blip isn&rsquo;t an outage.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">22</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Model selection</h4>
+                           <p class="ledger__desc">Routed per task through LiteLLM &mdash; the cheapest model that clears the bar.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+
+               <div class="ledger__group">
+                  <div class="ledger__rail">
+                     <span class="ledger__rail-idx">Set 05</span>
+                     <h3 class="ledger__rail-title">Safety &amp; Trust</h3>
+                     <p class="ledger__rail-note">The part every enterprise asks about first.</p>
+                  </div>
+                  <ol class="ledger__rows stagger">
+                     <li class="ledger__row">
+                        <span class="ledger__num">23</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Guardrails</h4>
+                           <p class="ledger__desc">Validation on the way in and on the way out. Agents get permissions, not free rein.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">24</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Red teaming</h4>
+                           <p class="ledger__desc">I try to break my own agents before a customer finds the way in.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">25</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Security reviews</h4>
+                           <p class="ledger__desc">Multi-tenant isolation, SSO and EU data residency, designed in from day one.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </section>
+
       <!--==================== SKILLS — the instrument deck ====================-->
       <section class="skills section scene" id="skills">
-         <span class="scene__num" aria-hidden="true">05</span>
+         <span class="scene__num" aria-hidden="true">06</span>
          <div class="skills__header container reveal">
             <span class="section__label">Expertise</span>
             <h2 class="section__title" data-split-words>Technical Skills</h2>
@@ -549,9 +768,19 @@
                   <div class="skills__item"><span class="skills__icon"><i class="ri-git-merge-line"></i></span><span class="skills__name">LangGraph</span></div>
                   <div class="skills__item"><span class="skills__icon"><i class="ri-code-box-line"></i></span><span class="skills__name">DSPy</span></div>
                   <div class="skills__item"><span class="skills__icon"><i class="ri-loop-right-line"></i></span><span class="skills__name">Temporal</span></div>
+                  <div class="skills__item"><span class="skills__icon"><i class="ri-plug-line"></i></span><span class="skills__name">MCP</span></div>
                   <div class="skills__item"><span class="skills__icon"><i class="ri-shuffle-line"></i></span><span class="skills__name">LiteLLM</span></div>
-                  <div class="skills__item"><span class="skills__icon"><i class="ri-history-line"></i></span><span class="skills__name">Mem0</span></div>
                   <div class="skills__item"><span class="skills__icon"><i class="ri-bar-chart-2-line"></i></span><span class="skills__name">Langfuse</span></div>
+               </div>
+            </div>
+
+            <div class="skills__row">
+               <h3 class="skills__cat-title"><i class="ri-search-eye-line"></i> RAG &amp; Retrieval</h3>
+               <div class="skills__keys">
+                  <div class="skills__item"><span class="skills__icon"><i class="ri-database-2-line"></i></span><span class="skills__name">pgvector</span></div>
+                  <div class="skills__item"><span class="skills__icon"><i class="ri-book-2-line"></i></span><span class="skills__name">LlamaIndex</span></div>
+                  <div class="skills__item"><span class="skills__icon"><i class="ri-focus-3-line"></i></span><span class="skills__name">Qdrant</span></div>
+                  <div class="skills__item"><span class="skills__icon"><i class="ri-scan-2-line"></i></span><span class="skills__name">Tesseract OCR</span></div>
                </div>
             </div>
 
@@ -571,6 +800,7 @@
                <div class="skills__keys">
                   <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node"></span><span class="skills__name">Node.js</span></div>
                   <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"></span><span class="skills__name">Python</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="FastAPI"></span><span class="skills__name">FastAPI</span></div>
                   <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express"></span><span class="skills__name">Express</span></div>
                   <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GQL"></span><span class="skills__name">GraphQL</span></div>
                   <div class="skills__item"><span class="skills__icon"><i class="ri-wireless-charging-line"></i></span><span class="skills__name">WebSocket</span></div>
@@ -584,7 +814,8 @@
                   <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="Mongo"></span><span class="skills__name">MongoDB</span></div>
                   <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis"></span><span class="skills__name">Redis</span></div>
                   <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg" alt="Prisma"></span><span class="skills__name">Prisma</span></div>
-                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"></span><span class="skills__name">MySQL</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="Supabase"></span><span class="skills__name">Supabase</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg" alt="Kafka"></span><span class="skills__name">Kafka</span></div>
                </div>
             </div>
 
@@ -593,8 +824,9 @@
                <div class="skills__keys">
                   <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"></span><span class="skills__name">AWS</span></div>
                   <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"></span><span class="skills__name">Docker</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg" alt="K8s"></span><span class="skills__name">Kubernetes</span></div>
+                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" alt="Vercel"></span><span class="skills__name">Vercel</span></div>
                   <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"></span><span class="skills__name">Git</span></div>
-                  <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"></span><span class="skills__name">Linux</span></div>
                   <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="CI/CD"></span><span class="skills__name">CI/CD</span></div>
                </div>
             </div>
@@ -603,9 +835,9 @@
                <h3 class="skills__cat-title"><i class="ri-links-line"></i> Web3</h3>
                <div class="skills__keys">
                   <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg" alt="Sol"></span><span class="skills__name">Solidity</span></div>
-                  <div class="skills__item"><span class="skills__icon"><i class="ri-global-line"></i></span><span class="skills__name">web3.js</span></div>
                   <div class="skills__item"><span class="skills__icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/hardhat/hardhat-original.svg" alt="HH"></span><span class="skills__name">Hardhat</span></div>
-                  <div class="skills__item"><span class="skills__icon"><i class="ri-coin-line"></i></span><span class="skills__name">Tokens</span></div>
+                  <div class="skills__item"><span class="skills__icon"><i class="ri-global-line"></i></span><span class="skills__name">web3.js</span></div>
+                  <div class="skills__item"><span class="skills__icon"><i class="ri-node-tree"></i></span><span class="skills__name">IPFS</span></div>
                </div>
             </div>
          </div>
@@ -613,7 +845,7 @@
 
       <!--==================== CONTACT — fill rows finale ====================-->
       <section class="contact section panel scene" id="contact">
-         <span class="scene__num" aria-hidden="true">06</span>
+         <span class="scene__num" aria-hidden="true">07</span>
          <div class="container">
             <div class="contact__header reveal">
                <span class="section__label">Contact</span>
@@ -661,6 +893,7 @@
             <li><a href="#experience" class="footer__link">Experience</a></li>
             <li><a href="#about" class="footer__link">About</a></li>
             <li><a href="#projects" class="footer__link">Projects</a></li>
+            <li><a href="#edge" class="footer__link">The Edge</a></li>
             <li><a href="#skills" class="footer__link">Skills</a></li>
          </ul>
          <span class="footer__copy">Made with <i class="ri-heart-fill"></i> by Neeraj GS</span>
@@ -678,6 +911,7 @@
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
    <script src="assets/js/field.js"></script>
+   <script src="assets/js/scene-math.js"></script>
    <script src="assets/js/main.js"></script>
 </body>
 </html>

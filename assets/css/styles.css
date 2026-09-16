@@ -101,52 +101,6 @@
   --radius-sm: 12px;
 }
 
-/*========== Light theme — blueprint paper, not stark white ==========*/
-:root[data-theme="light"] {
-  --void: #eaeef6;
-  --deep: #f4f6fb;
-  --panel-bg: #ffffff;
-  --raise: #ffffff;
-
-  --surface-a: rgba(255, 255, 255, 0.84);
-  --surface-b: rgba(255, 255, 255, 0.4);
-  --glass: rgba(13, 20, 36, 0.03);
-  --glass-strong: rgba(13, 20, 36, 0.05);
-
-  --amber: #d9531e;
-  --amber-hi: #ef6a33;
-  --amber-glow: rgba(217, 83, 30, 0.13);
-  --amber-dim: rgba(217, 83, 30, 0.05);
-  --amber-line: rgba(217, 83, 30, 0.26);
-  --on-amber: #fff8f4;
-
-  --flux: #0d8f7c;
-  --flux-glow: rgba(13, 143, 124, 0.12);
-  --flux-dim: rgba(13, 143, 124, 0.05);
-  --flux-line: rgba(13, 143, 124, 0.22);
-
-  --violet: #6455e0;
-
-  --ink-1: #0d1424;
-  --ink-2: #4a5570;
-  --ink-3: #7b86a2;
-
-  --line-1: rgba(13, 20, 36, 0.07);
-  --line-2: rgba(13, 20, 36, 0.11);
-  --line-3: rgba(13, 20, 36, 0.18);
-
-  /* Pale extrusion so dark letters lift off the paper */
-  --extrude-1: #c2cadb;
-  --extrude-2: #d3dae6;
-  --extrude-3: #e2e7f0;
-
-  --slab-bg: linear-gradient(160deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.55) 60%, rgba(255, 255, 255, 0.35) 100%);
-  --slab-rim: rgba(255, 255, 255, 0.9);
-  --slab-shadow: 0 22px 46px -22px rgba(13, 20, 36, 0.28), 0 2px 6px -2px rgba(13, 20, 36, 0.1);
-  --slab-shadow-lift: 0 40px 80px -26px rgba(13, 20, 36, 0.34), 0 0 0 1px var(--amber-line), 0 0 50px -22px var(--amber-glow);
-  --sheen: rgba(255, 255, 255, 0.85);
-}
-
 /*=============== RESET ===============*/
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -280,12 +234,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   opacity: 0.85;
 }
 
-/* On paper the blooms only need to tint, not wash */
-:root[data-theme="light"] .atmos__bloom--1 { opacity: 0.07; }
-:root[data-theme="light"] .atmos__bloom--2 { opacity: 0.05; }
-:root[data-theme="light"] .atmos__bloom--3 { opacity: 0.045; }
-:root[data-theme="light"] .atmos__vignette { opacity: 1; }
-
 /* Film grain */
 body::after {
   content: '';
@@ -296,7 +244,6 @@ body::after {
   z-index: 9000;
   opacity: 0.55;
 }
-:root[data-theme="light"] body::after { opacity: 0.22; }
 
 /*===============================================================
    BOOT SEQUENCE — graphical only, always self-dismisses
@@ -472,7 +419,6 @@ body::after {
   box-shadow: 0 40px 100px -40px rgba(0, 0, 0, 0.7);
   overflow: clip;
 }
-:root[data-theme="light"] .panel { box-shadow: 0 40px 90px -44px rgba(13, 20, 36, 0.35); }
 
 /* Open sections sit directly on the field */
 .about, .skills { background: var(--surface-b); }
@@ -553,7 +499,8 @@ body::after {
 }
 .link-accent:hover { background-size: 0% 1px; }
 
-.experience__header, .about__header, .projects__header, .skills__header {
+.experience__header, .about__header, .projects__header,
+.edge__header, .skills__header {
   text-align: center;
   margin-bottom: clamp(2.25rem, 5vw, 3.5rem);
 }
@@ -751,25 +698,6 @@ body::after {
 }
 
 .nav__buttons { display: flex; align-items: center; gap: 0.6rem; }
-
-.nav__theme-btn {
-  width: 38px; height: 38px;
-  display: grid;
-  place-items: center;
-  border-radius: 11px;
-  border: 1px solid var(--line-2);
-  color: var(--ink-2);
-  font-size: 1.05rem;
-  background: var(--glass);
-  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
-}
-.nav__theme-btn:hover {
-  color: var(--amber);
-  border-color: var(--amber-line);
-  background: var(--amber-dim);
-}
-.nav__theme-btn i { transition: transform 0.5s var(--ease-out); }
-.nav__theme-btn:hover i { transform: rotate(-25deg) scale(1.1); }
 
 .nav__toggle {
   display: none;
@@ -1375,9 +1303,35 @@ body::after {
   color: var(--ink-2);
   font-size: var(--body);
   line-height: 1.75;
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
   max-width: 62ch;
 }
+.xp-row__desc strong { color: var(--ink-1); font-weight: var(--fw-semi); }
+
+/* Achievement bullets — hairline markers, not disc glyphs */
+.xp-row__points {
+  list-style: none;
+  max-width: 64ch;
+  margin-bottom: 1.1rem;
+}
+.xp-row__points li {
+  position: relative;
+  padding-left: 1.15rem;
+  margin-bottom: 0.55rem;
+  color: var(--ink-2);
+  font-size: var(--sm);
+  line-height: 1.7;
+}
+.xp-row__points li:last-child { margin-bottom: 0; }
+.xp-row__points li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.66em;
+  width: 6px; height: 1px;
+  background: var(--flux);
+  box-shadow: 0 0 8px var(--flux-glow);
+}
+.xp-row__points strong { color: var(--amber); font-weight: var(--fw-semi); }
 
 .experience__badge {
   padding: 0.18rem 0.65rem;
@@ -1545,79 +1499,6 @@ body::after {
   letter-spacing: 0.18em;
   max-width: 220px;
   line-height: 1.7;
-}
-
-/*=============== STACKING CARDS ===============*/
-.stack {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.stack__card {
-  position: sticky;
-  top: calc(var(--header-height) + 3.5rem + var(--i, 0) * 1.15rem);
-  background: var(--panel-bg);
-  background-image: var(--slab-bg);
-  border: 1px solid var(--line-2);
-  border-radius: 24px;
-  box-shadow: var(--slab-shadow);
-  padding: clamp(1.5rem, 4vw, 2.75rem);
-  min-height: min(44vh, 400px);
-  display: flex;
-  align-items: center;
-}
-
-.stack__body {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto 1fr;
-  align-items: start;
-  column-gap: clamp(1.25rem, 3.5vw, 2.5rem);
-  row-gap: 0.7rem;
-  width: 100%;
-}
-.stack__icon { grid-row: 1 / span 2; }
-.stack__title, .stack__text { grid-column: 2; }
-
-.stack__icon {
-  width: clamp(64px, 9vw, 96px);
-  height: clamp(64px, 9vw, 96px);
-  display: grid;
-  place-items: center;
-  border-radius: 22px;
-  background: var(--flux-dim);
-  border: 1px solid var(--flux-line);
-  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.5s var(--ease);
-}
-.stack__icon i { font-size: clamp(1.7rem, 3vw, 2.4rem); color: var(--flux); transition: color 0.35s ease; }
-.stack__card:hover .stack__icon {
-  background: var(--flux);
-  box-shadow: 0 16px 40px -14px var(--flux-glow);
-  transform: rotate(-5deg) scale(1.05);
-}
-.stack__card:hover .stack__icon i { color: var(--void); }
-
-.stack__title {
-  font-size: clamp(1.35rem, 3.2vw, 2.1rem);
-  font-weight: var(--fw-bold);
-  letter-spacing: -0.03em;
-  margin-bottom: 0.7rem;
-}
-
-.stack__text {
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
-  color: var(--ink-2);
-  line-height: 1.8;
-  max-width: 58ch;
-}
-
-@media (max-width: 576px) {
-  .stack__card { min-height: 0; top: calc(var(--header-height) + 1.5rem + var(--i, 0) * 0.7rem); }
-  .stack__body { grid-template-columns: 1fr; grid-template-rows: none; gap: 1rem; }
-  .stack__icon { grid-row: auto; width: 52px; height: 52px; border-radius: 15px; }
-  .stack__title, .stack__text { grid-column: auto; }
-  .stack__icon i { font-size: 1.4rem; }
 }
 
 .about__cta {
@@ -1956,6 +1837,183 @@ body::after {
 }
 
 /*===============================================================
+   THE EDGE — the AI engineering ledger
+   Twenty-five disciplines read as an editorial index rather than
+   a wall of cards: a sticky group rail on the left, numbered
+   rows on the right. Whichever rows cross the middle of the
+   viewport light up, so scrolling works like a reading playhead.
+===============================================================*/
+.edge { background: var(--surface-b); }
+
+/*=============== MYTH STRIP — the ideas this section throws out ===============*/
+.edge__myths {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  max-width: 880px;
+  margin: 0 auto clamp(1.5rem, 3.5vw, 2.25rem);
+}
+
+.edge__myth {
+  position: relative;
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--ink-3);
+  padding: 0.45rem 0.9rem;
+  border: 1px dashed var(--line-2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.015);
+}
+
+/* Struck through once the strip lands — crossed off, not just dimmed */
+.edge__myth::after {
+  content: '';
+  position: absolute;
+  left: 0.75rem; right: 0.75rem;
+  top: 50%;
+  height: 1px;
+  background: var(--line-3);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.75s var(--ease) 0.5s;
+}
+.edge__myths.visible .edge__myth::after { transform: scaleX(1); }
+
+/* Narrow chips wrap onto two lines, where one ruled line would sit in the
+   gap instead of through the words — hand the job to real text-decoration */
+@media (max-width: 576px) {
+  .edge__myth {
+    text-decoration: line-through;
+    text-decoration-color: var(--line-3);
+  }
+  .edge__myth::after { display: none; }
+}
+
+.edge__verdict {
+  max-width: 720px;
+  margin: 0 auto clamp(2.5rem, 6vw, 4rem);
+  text-align: center;
+  font-size: clamp(1rem, 1.9vw, 1.2rem);
+  line-height: 1.8;
+  color: var(--ink-2);
+}
+.edge__verdict strong { color: var(--ink-1); font-weight: var(--fw-semi); }
+
+/*=============== LEDGER ===============*/
+.ledger { border-top: 1px solid var(--line-1); }
+
+.ledger__group {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  padding-block: clamp(1.75rem, 4vw, 2.75rem);
+  border-bottom: 1px solid var(--line-1);
+  min-width: 0;
+}
+
+/* Sticky rail — the set name stays put while its rows scroll past.
+   Safe here because .edge never clips overflow. */
+.ledger__rail {
+  position: sticky;
+  top: calc(var(--header-height) + 3.25rem);
+  align-self: start;
+}
+
+.ledger__rail-idx {
+  display: block;
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--flux);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  margin-bottom: 0.55rem;
+}
+
+.ledger__rail-title {
+  font-size: var(--h3);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.45rem;
+}
+
+.ledger__rail-note {
+  font-size: var(--xs);
+  line-height: 1.75;
+  color: var(--ink-3);
+  max-width: 25ch;
+}
+
+.ledger__rows { list-style: none; min-width: 0; }
+
+.ledger__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.2rem 1fr;
+  gap: 0.85rem;
+  padding: 0.85rem 0 0.85rem 1.05rem;
+  border-top: 1px solid var(--line-1);
+}
+.ledger__rows > .ledger__row:first-child { border-top: 0; padding-top: 0.15rem; }
+
+/* Playhead rule — grows as the row crosses the middle of the viewport */
+.ledger__row::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.5rem; bottom: 0.5rem;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--amber);
+  box-shadow: 0 0 14px var(--amber-glow);
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+  transition: transform 0.55s var(--ease);
+}
+.ledger__row.lit::before,
+.ledger__row:hover::before { transform: scaleY(1); }
+
+.ledger__num {
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--ink-3);
+  padding-top: 0.3em;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.4s ease;
+}
+.ledger__row.lit .ledger__num,
+.ledger__row:hover .ledger__num { color: var(--amber); }
+
+.ledger__body { min-width: 0; }
+
+.ledger__name {
+  font-size: clamp(0.95rem, 1.7vw, 1.08rem);
+  font-weight: var(--fw-semi);
+  letter-spacing: -0.015em;
+  color: var(--ink-2);
+  margin-bottom: 0.2rem;
+  transition: color 0.4s ease;
+}
+.ledger__row.lit .ledger__name,
+.ledger__row:hover .ledger__name { color: var(--ink-1); }
+
+.ledger__desc {
+  font-size: var(--sm);
+  line-height: 1.7;
+  color: var(--ink-3);
+  max-width: 62ch;
+  transition: color 0.4s ease;
+}
+.ledger__row.lit .ledger__desc,
+.ledger__row:hover .ledger__desc { color: var(--ink-2); }
+
+@media (max-width: 767px) {
+  .ledger__group { grid-template-columns: 1fr; gap: 1.1rem; }
+  .ledger__rail { position: static; }
+  .ledger__rail-note { max-width: none; }
+  .ledger__row { grid-template-columns: 1.9rem 1fr; gap: 0.65rem; padding-left: 0.8rem; }
+}
+
+/*===============================================================
    SKILLS — the instrument deck
    Skills sit as physical keycaps on an editorial index: category
    left, keys right. Each key has a real extruded ledge and
@@ -2021,19 +2079,6 @@ body::after {
 }
 
 :root { --key-ledge: rgba(0, 0, 0, 0.55); }
-:root[data-theme="light"] { --key-ledge: #c9d1e0; }
-:root[data-theme="light"] .skills__item {
-  box-shadow:
-    0 4px 0 var(--key-ledge),
-    0 12px 20px -12px rgba(13, 20, 36, 0.25),
-    inset 0 1px 0 var(--slab-rim);
-}
-:root[data-theme="light"] .skills__item:hover {
-  box-shadow:
-    0 1px 0 var(--key-ledge),
-    0 6px 10px -8px rgba(13, 20, 36, 0.22),
-    inset 0 1px 0 var(--slab-rim);
-}
 
 @media (max-width: 767px) {
   .skills__row { grid-template-columns: 1fr; gap: 0.9rem; }
@@ -2055,12 +2100,9 @@ body::after {
 .skills__icon img[alt="Express"] { filter: invert(1); }
 .skills__icon img[alt="AWS"],
 .skills__icon img[alt="Sol"],
-.skills__icon img[alt="Prisma"] { filter: invert(1) hue-rotate(180deg); }
-
-:root[data-theme="light"] .skills__icon img[alt="Express"],
-:root[data-theme="light"] .skills__icon img[alt="AWS"],
-:root[data-theme="light"] .skills__icon img[alt="Sol"],
-:root[data-theme="light"] .skills__icon img[alt="Prisma"] { filter: none; }
+.skills__icon img[alt="Prisma"],
+.skills__icon img[alt="Vercel"],
+.skills__icon img[alt="Kafka"] { filter: invert(1) hue-rotate(180deg); }
 
 .skills__icon i { font-size: 1.15rem; color: var(--ink-1); transition: color 0.3s ease; }
 .skills__item:hover .skills__icon i { color: var(--amber); }
@@ -2319,6 +2361,10 @@ body::after {
   }
 
   .scene { transform: none !important; opacity: 1 !important; }
+
+  /* Struck through up front — the reveal delay isn't worth waiting out.
+     The ledger playhead still lights rows, it just snaps instead of sliding. */
+  .edge__myth::after { transform: scaleX(1) !important; transition-delay: 0s !important; }
 
   /* Gallery falls back to the vertical stack */
   .proj-sticky { position: static; height: auto; overflow: visible; }
