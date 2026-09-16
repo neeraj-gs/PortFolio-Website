@@ -150,7 +150,7 @@
         var idx = SECTION_ORDER.indexOf(id);
         if (idx >= 0) {
           hudIndex.textContent =
-            '0' + (idx + 1) + ' / 0' + SECTION_ORDER.length + ' — ' + SECTION_NAMES[id];
+            '0' + (idx + 1) + ' / 0' + SECTION_ORDER.length + ' · ' + SECTION_NAMES[id];
         }
       }
     });
