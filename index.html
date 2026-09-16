@@ -504,7 +504,7 @@
       </section>
 
 
-      <!--==================== THE EDGE — the AI engineering ledger ====================-->
+      <!--==================== THE EDGE — the discipline console ====================-->
       <section class="edge section scene" id="edge">
          <span class="scene__num" aria-hidden="true">05</span>
          <div class="container">
@@ -521,233 +521,242 @@
             </div>
 
             <p class="edge__verdict reveal">
-               Most AI work stops at the demo. <strong>Mine starts there.</strong> Prompting gets you a prototype; shipping something people depend on is a different job &mdash; twenty-five of them, in practice. This is the part most AI developers skip.
+               Most AI work stops at the demo. <strong>Mine starts there.</strong> Here is the whole job, all twenty-five parts of it &mdash; hover any one.
             </p>
 
-            <div class="ledger">
-               <div class="ledger__group">
-                  <div class="ledger__rail">
-                     <span class="ledger__rail-idx">Set 01</span>
-                     <h3 class="ledger__rail-title">Context &amp; Retrieval</h3>
-                     <p class="ledger__rail-note">Getting the right facts in front of the model.</p>
-                  </div>
-                  <ol class="ledger__rows stagger">
-                     <li class="ledger__row">
-                        <span class="ledger__num">01</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Retrieval-augmented generation</h4>
-                           <p class="ledger__desc">Answers grounded in your own documents, with a citation behind every claim.</p>
-                        </div>
+            <div class="console reveal">
+               <div class="console__grid">
+               <div class="console__set">
+                  <h3 class="console__set-title">Context &amp; Retrieval</h3>
+                  <ul class="console__list">
+                     <li>
+                        <button class="disc" type="button" data-n="01" data-full="Retrieval-augmented generation" data-desc="Answers grounded in your own documents, with a citation behind every claim." data-lib="LlamaIndex">
+                           <span class="disc__n">01</span>
+                           <span class="disc__name">RAG</span>
+                           <span class="disc__lib">LlamaIndex</span>
+                           <span class="disc__desc">Answers grounded in your own documents, with a citation behind every claim.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">02</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Vector databases</h4>
-                           <p class="ledger__desc">pgvector and hybrid search, tuned until the right chunk actually ranks first.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="02" data-full="Vector databases" data-desc="Hybrid search, tuned until the right chunk actually ranks first." data-lib="pgvector">
+                           <span class="disc__n">02</span>
+                           <span class="disc__name">Vector databases</span>
+                           <span class="disc__lib">pgvector</span>
+                           <span class="disc__desc">Hybrid search, tuned until the right chunk actually ranks first.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">03</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Embeddings</h4>
-                           <p class="ledger__desc">Chunking and embedding strategy decided by recall tests, not by default settings.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="03" data-full="Embeddings" data-desc="Chunking and embedding strategy decided by recall tests, not by default settings." data-lib="OpenAI">
+                           <span class="disc__n">03</span>
+                           <span class="disc__name">Embeddings</span>
+                           <span class="disc__lib">OpenAI</span>
+                           <span class="disc__desc">Chunking and embedding strategy decided by recall tests, not by default settings.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">04</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Context window management</h4>
-                           <p class="ledger__desc">I budget the window: what gets in, what gets summarised, what gets dropped.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="04" data-full="Context window management" data-desc="I budget the window: what gets in, what gets summarised, what gets dropped.">
+                           <span class="disc__n">04</span>
+                           <span class="disc__name">Context windows</span>
+                           <span class="disc__desc">I budget the window: what gets in, what gets summarised, what gets dropped.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">05</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Data pipelines</h4>
-                           <p class="ledger__desc">OCR, parsing and enrichment that turn messy PDFs into queryable structure.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="05" data-full="Data pipelines" data-desc="OCR, parsing and enrichment that turn messy PDFs into queryable structure." data-lib="Tesseract">
+                           <span class="disc__n">05</span>
+                           <span class="disc__name">Data pipelines</span>
+                           <span class="disc__lib">Tesseract</span>
+                           <span class="disc__desc">OCR, parsing and enrichment that turn messy PDFs into queryable structure.</span>
+                        </button>
                      </li>
-                  </ol>
+                  </ul>
                </div>
 
-               <div class="ledger__group">
-                  <div class="ledger__rail">
-                     <span class="ledger__rail-idx">Set 02</span>
-                     <h3 class="ledger__rail-title">Reasoning &amp; Control</h3>
-                     <p class="ledger__rail-note">Making the model actually do the work.</p>
-                  </div>
-                  <ol class="ledger__rows stagger">
-                     <li class="ledger__row">
-                        <span class="ledger__num">06</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">System prompt design</h4>
-                           <p class="ledger__desc">Prompts written as specs, versioned in the repo and reviewed like code.</p>
-                        </div>
+               <div class="console__set">
+                  <h3 class="console__set-title">Reasoning &amp; Control</h3>
+                  <ul class="console__list">
+                     <li>
+                        <button class="disc" type="button" data-n="06" data-full="System prompt design" data-desc="Prompts written as specs, versioned in the repo and reviewed like code." data-lib="DSPy">
+                           <span class="disc__n">06</span>
+                           <span class="disc__name">System prompts</span>
+                           <span class="disc__lib">DSPy</span>
+                           <span class="disc__desc">Prompts written as specs, versioned in the repo and reviewed like code.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">07</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Chain-of-thought prompting</h4>
-                           <p class="ledger__desc">Reasoning where it pays for itself, skipped where it just burns tokens.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="07" data-full="Chain-of-thought prompting" data-desc="Reasoning where it pays for itself, skipped where it just burns tokens." data-lib="DSPy">
+                           <span class="disc__n">07</span>
+                           <span class="disc__name">Chain-of-thought</span>
+                           <span class="disc__lib">DSPy</span>
+                           <span class="disc__desc">Reasoning where it pays for itself, skipped where it just burns tokens.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">08</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Structured outputs</h4>
-                           <p class="ledger__desc">Typed schemas at every boundary, so downstream code never has to parse prose.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="08" data-full="Structured outputs" data-desc="Typed schemas at every boundary, so downstream code never has to parse prose." data-lib="Pydantic">
+                           <span class="disc__n">08</span>
+                           <span class="disc__name">Structured outputs</span>
+                           <span class="disc__lib">Pydantic</span>
+                           <span class="disc__desc">Typed schemas at every boundary, so downstream code never has to parse prose.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">09</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Tool calling</h4>
-                           <p class="ledger__desc">Models that act: query the database, call the API, write the result back.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="09" data-full="Tool calling" data-desc="Models that act: query the database, call the API, write the result back." data-lib="MCP">
+                           <span class="disc__n">09</span>
+                           <span class="disc__name">Tool calling</span>
+                           <span class="disc__lib">MCP</span>
+                           <span class="disc__desc">Models that act: query the database, call the API, write the result back.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">10</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Agentic workflows</h4>
-                           <p class="ledger__desc">Durable multi-step runs on Temporal &mdash; resumable, retryable, never silently stuck.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="10" data-full="Agentic workflows" data-desc="Durable multi-step runs on Temporal &mdash; resumable, retryable, never silently stuck." data-lib="LangGraph">
+                           <span class="disc__n">10</span>
+                           <span class="disc__name">Agentic workflows</span>
+                           <span class="disc__lib">LangGraph</span>
+                           <span class="disc__desc">Durable multi-step runs on Temporal &mdash; resumable, retryable, never silently stuck.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">11</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Memory management</h4>
-                           <p class="ledger__desc">What an agent carries between runs, and what it&rsquo;s required to forget.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="11" data-full="Memory management" data-desc="What an agent carries between runs, and what it&rsquo;s required to forget." data-lib="Mem0">
+                           <span class="disc__n">11</span>
+                           <span class="disc__name">Memory</span>
+                           <span class="disc__lib">Mem0</span>
+                           <span class="disc__desc">What an agent carries between runs, and what it&rsquo;s required to forget.</span>
+                        </button>
                      </li>
-                  </ol>
+                  </ul>
                </div>
 
-               <div class="ledger__group">
-                  <div class="ledger__rail">
-                     <span class="ledger__rail-idx">Set 03</span>
-                     <h3 class="ledger__rail-title">Quality &amp; Evals</h3>
-                     <p class="ledger__rail-note">Proving it works before anyone depends on it.</p>
-                  </div>
-                  <ol class="ledger__rows stagger">
-                     <li class="ledger__row">
-                        <span class="ledger__num">12</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Model evals</h4>
-                           <p class="ledger__desc">Golden datasets and scored runs. Nothing ships without clearing the gate.</p>
-                        </div>
+               <div class="console__set">
+                  <h3 class="console__set-title">Quality &amp; Evals</h3>
+                  <ul class="console__list">
+                     <li>
+                        <button class="disc" type="button" data-n="12" data-full="Model evals" data-desc="Golden datasets and scored runs. Nothing ships without clearing the gate." data-lib="Langfuse">
+                           <span class="disc__n">12</span>
+                           <span class="disc__name">Model evals</span>
+                           <span class="disc__lib">Langfuse</span>
+                           <span class="disc__desc">Golden datasets and scored runs. Nothing ships without clearing the gate.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">13</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Hallucination testing</h4>
-                           <p class="ledger__desc">Every figure traced back to its source page, or it never reaches the memo.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="13" data-full="Hallucination testing" data-desc="Every figure traced back to its source page, or it never reaches the memo.">
+                           <span class="disc__n">13</span>
+                           <span class="disc__name">Hallucination tests</span>
+                           <span class="disc__desc">Every figure traced back to its source page, or it never reaches the memo.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">14</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">A/B testing prompts</h4>
-                           <p class="ledger__desc">Two variants, real traffic, one winner &mdash; measured rather than argued about.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="14" data-full="A/B testing prompts" data-desc="Two variants, real traffic, one winner &mdash; measured rather than argued about." data-lib="Langfuse">
+                           <span class="disc__n">14</span>
+                           <span class="disc__name">Prompt A/B tests</span>
+                           <span class="disc__lib">Langfuse</span>
+                           <span class="disc__desc">Two variants, real traffic, one winner &mdash; measured rather than argued about.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">15</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Prompt versioning</h4>
-                           <p class="ledger__desc">Every prompt has a version, a diff and a rollback path.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="15" data-full="Prompt versioning" data-desc="Every prompt has a version, a diff and a rollback path." data-lib="Langfuse">
+                           <span class="disc__n">15</span>
+                           <span class="disc__name">Prompt versioning</span>
+                           <span class="disc__lib">Langfuse</span>
+                           <span class="disc__desc">Every prompt has a version, a diff and a rollback path.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">16</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Fine-tuning</h4>
-                           <p class="ledger__desc">Reached for last, once retrieval and prompting stop paying for themselves.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="16" data-full="Fine-tuning" data-desc="Reached for last, once retrieval and prompting stop paying for themselves.">
+                           <span class="disc__n">16</span>
+                           <span class="disc__name">Fine-tuning</span>
+                           <span class="disc__desc">Reached for last, once retrieval and prompting stop paying for themselves.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">17</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Temperature tuning</h4>
-                           <p class="ledger__desc">Deterministic where accuracy matters, loose where exploration does.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="17" data-full="Temperature tuning" data-desc="Deterministic where accuracy matters, loose where exploration does.">
+                           <span class="disc__n">17</span>
+                           <span class="disc__name">Temperature</span>
+                           <span class="disc__desc">Deterministic where accuracy matters, loose where exploration does.</span>
+                        </button>
                      </li>
-                  </ol>
+                  </ul>
                </div>
 
-               <div class="ledger__group">
-                  <div class="ledger__rail">
-                     <span class="ledger__rail-idx">Set 04</span>
-                     <h3 class="ledger__rail-title">Production &amp; Cost</h3>
-                     <p class="ledger__rail-note">Keeping it fast, cheap and observable.</p>
-                  </div>
-                  <ol class="ledger__rows stagger">
-                     <li class="ledger__row">
-                        <span class="ledger__num">18</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">LLM observability</h4>
-                           <p class="ledger__desc">Full traces in Langfuse: every call, its cost, its latency, its output.</p>
-                        </div>
+               <div class="console__set">
+                  <h3 class="console__set-title">Production &amp; Cost</h3>
+                  <ul class="console__list">
+                     <li>
+                        <button class="disc" type="button" data-n="18" data-full="LLM observability" data-desc="Full traces: every call, its cost, its latency, its output." data-lib="Langfuse">
+                           <span class="disc__n">18</span>
+                           <span class="disc__name">Observability</span>
+                           <span class="disc__lib">Langfuse</span>
+                           <span class="disc__desc">Full traces: every call, its cost, its latency, its output.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">19</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Token cost tracking</h4>
-                           <p class="ledger__desc">Cost per run is a product metric I watch as closely as conversion.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="19" data-full="Token cost tracking" data-desc="Cost per run is a product metric I watch as closely as conversion." data-lib="Langfuse">
+                           <span class="disc__n">19</span>
+                           <span class="disc__name">Token cost</span>
+                           <span class="disc__lib">Langfuse</span>
+                           <span class="disc__desc">Cost per run is a product metric I watch as closely as conversion.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">20</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Latency budgets</h4>
-                           <p class="ledger__desc">A time budget per step, with streaming and caching to stay inside it.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="20" data-full="Latency budgets" data-desc="A time budget per step, with streaming and caching to stay inside it." data-lib="Redis">
+                           <span class="disc__n">20</span>
+                           <span class="disc__name">Latency budgets</span>
+                           <span class="disc__lib">Redis</span>
+                           <span class="disc__desc">A time budget per step, with streaming and caching to stay inside it.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">21</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Rate limit handling</h4>
-                           <p class="ledger__desc">Backoff, queueing and failover, so a provider blip isn&rsquo;t an outage.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="21" data-full="Rate limit handling" data-desc="Backoff, queueing and failover, so a provider blip isn&rsquo;t an outage." data-lib="LiteLLM">
+                           <span class="disc__n">21</span>
+                           <span class="disc__name">Rate limits</span>
+                           <span class="disc__lib">LiteLLM</span>
+                           <span class="disc__desc">Backoff, queueing and failover, so a provider blip isn&rsquo;t an outage.</span>
+                        </button>
                      </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">22</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Model selection</h4>
-                           <p class="ledger__desc">Routed per task through LiteLLM &mdash; the cheapest model that clears the bar.</p>
-                        </div>
+                     <li>
+                        <button class="disc" type="button" data-n="22" data-full="Model selection" data-desc="Routed per task &mdash; the cheapest model that clears the bar." data-lib="LiteLLM">
+                           <span class="disc__n">22</span>
+                           <span class="disc__name">Model routing</span>
+                           <span class="disc__lib">LiteLLM</span>
+                           <span class="disc__desc">Routed per task &mdash; the cheapest model that clears the bar.</span>
+                        </button>
                      </li>
-                  </ol>
+                  </ul>
                </div>
 
-               <div class="ledger__group">
-                  <div class="ledger__rail">
-                     <span class="ledger__rail-idx">Set 05</span>
-                     <h3 class="ledger__rail-title">Safety &amp; Trust</h3>
-                     <p class="ledger__rail-note">The part every enterprise asks about first.</p>
+               <div class="console__set">
+                  <h3 class="console__set-title">Safety &amp; Trust</h3>
+                  <ul class="console__list">
+                     <li>
+                        <button class="disc" type="button" data-n="23" data-full="Guardrails" data-desc="Validation on the way in and on the way out. Agents get permissions, not free rein." data-lib="Pydantic">
+                           <span class="disc__n">23</span>
+                           <span class="disc__name">Guardrails</span>
+                           <span class="disc__lib">Pydantic</span>
+                           <span class="disc__desc">Validation on the way in and on the way out. Agents get permissions, not free rein.</span>
+                        </button>
+                     </li>
+                     <li>
+                        <button class="disc" type="button" data-n="24" data-full="Red teaming" data-desc="I try to break my own agents before a customer finds the way in.">
+                           <span class="disc__n">24</span>
+                           <span class="disc__name">Red teaming</span>
+                           <span class="disc__desc">I try to break my own agents before a customer finds the way in.</span>
+                        </button>
+                     </li>
+                     <li>
+                        <button class="disc" type="button" data-n="25" data-full="Security reviews" data-desc="Multi-tenant isolation, SSO and EU data residency, designed in from day one.">
+                           <span class="disc__n">25</span>
+                           <span class="disc__name">Security reviews</span>
+                           <span class="disc__desc">Multi-tenant isolation, SSO and EU data residency, designed in from day one.</span>
+                        </button>
+                     </li>
+                  </ul>
+               </div>
+               </div>
+
+               <div class="console__readout" id="edge-readout" aria-live="polite">
+                  <span class="console__readout-n">01</span>
+                  <div class="console__readout-body">
+                     <h4 class="console__readout-name">Retrieval-augmented generation<span class="console__readout-lib">LlamaIndex</span></h4>
+                     <p class="console__readout-desc">Answers grounded in your own documents, with a citation behind every claim.</p>
                   </div>
-                  <ol class="ledger__rows stagger">
-                     <li class="ledger__row">
-                        <span class="ledger__num">23</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Guardrails</h4>
-                           <p class="ledger__desc">Validation on the way in and on the way out. Agents get permissions, not free rein.</p>
-                        </div>
-                     </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">24</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Red teaming</h4>
-                           <p class="ledger__desc">I try to break my own agents before a customer finds the way in.</p>
-                        </div>
-                     </li>
-                     <li class="ledger__row">
-                        <span class="ledger__num">25</span>
-                        <div class="ledger__body">
-                           <h4 class="ledger__name">Security reviews</h4>
-                           <p class="ledger__desc">Multi-tenant isolation, SSO and EU data residency, designed in from day one.</p>
-                        </div>
-                     </li>
-                  </ol>
                </div>
             </div>
          </div>

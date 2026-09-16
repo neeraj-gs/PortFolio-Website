@@ -4,7 +4,7 @@
    tilt, magnetics — plus the three scroll engines:
      · scenes   — sections fly in and out of depth
      · gallery  — pinned horizontal project track
-     · ledger   — the Edge list lights up as it crosses centre
+     · console  — the Edge index feeds one shared readout on hover
 ===============================================================*/
 (function () {
   'use strict';
@@ -250,16 +250,43 @@
 
   document.querySelectorAll('.counter').forEach(function (el) { counterObs.observe(el); });
 
-  /*=============== LEDGER PLAYHEAD ===============*/
-  // The Edge ledger reads like a scanning head: whichever discipline
-  // rows sit in the middle band of the viewport light up. A thin
-  // rootMargin band is enough — no per-frame work on a 25-row list.
-  var ledgerRows = document.querySelectorAll('.ledger__row');
-  if (ledgerRows.length) {
-    var litObs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { e.target.classList.toggle('lit', e.isIntersecting); });
-    }, { rootMargin: '-42% 0px -42% 0px' });
-    ledgerRows.forEach(function (row) { litObs.observe(row); });
+  /*=============== EDGE CONSOLE ===============*/
+  // Twenty-five disciplines share one readout: the index stays a single
+  // screen of names, and only whichever one you point at spends words.
+  // pointerenter covers the mouse, click covers touch, focus covers the
+  // keyboard - all three just repaint the same panel.
+  var readout = document.getElementById('edge-readout');
+  var discs = document.querySelectorAll('.disc');
+
+  if (readout && discs.length) {
+    var outN = readout.querySelector('.console__readout-n');
+    var outName = readout.querySelector('.console__readout-name');
+    var outLib = readout.querySelector('.console__readout-lib');
+    var outDesc = readout.querySelector('.console__readout-desc');
+    var active = null;
+
+    function showDisc(btn) {
+      if (btn === active) return;
+      if (active) active.classList.remove('is-active');
+      active = btn;
+      btn.classList.add('is-active');
+
+      outN.textContent = btn.dataset.n;
+      // The name node also holds the library pill, so write the text
+      // around it rather than replacing the whole subtree.
+      outName.firstChild.nodeValue = btn.dataset.full;
+      outLib.textContent = btn.dataset.lib || '';
+      outDesc.textContent = btn.dataset.desc;
+    }
+
+    discs.forEach(function (btn) {
+      btn.addEventListener('pointerenter', function () { showDisc(btn); });
+      btn.addEventListener('focus', function () { showDisc(btn); });
+      btn.addEventListener('click', function (e) { e.preventDefault(); showDisc(btn); });
+    });
+
+    discs[0].classList.add('is-active');
+    active = discs[0];
   }
 
   /*=============== SLAB TILT + SHEEN ===============*/
