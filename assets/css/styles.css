@@ -499,7 +499,8 @@ body::after {
 }
 .link-accent:hover { background-size: 0% 1px; }
 
-.experience__header, .about__header, .projects__header, .skills__header {
+.experience__header, .about__header, .projects__header,
+.edge__header, .skills__header {
   text-align: center;
   margin-bottom: clamp(2.25rem, 5vw, 3.5rem);
 }
@@ -1836,6 +1837,183 @@ body::after {
 }
 
 /*===============================================================
+   THE EDGE — the AI engineering ledger
+   Twenty-five disciplines read as an editorial index rather than
+   a wall of cards: a sticky group rail on the left, numbered
+   rows on the right. Whichever rows cross the middle of the
+   viewport light up, so scrolling works like a reading playhead.
+===============================================================*/
+.edge { background: var(--surface-b); }
+
+/*=============== MYTH STRIP — the ideas this section throws out ===============*/
+.edge__myths {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  max-width: 880px;
+  margin: 0 auto clamp(1.5rem, 3.5vw, 2.25rem);
+}
+
+.edge__myth {
+  position: relative;
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--ink-3);
+  padding: 0.45rem 0.9rem;
+  border: 1px dashed var(--line-2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.015);
+}
+
+/* Struck through once the strip lands — crossed off, not just dimmed */
+.edge__myth::after {
+  content: '';
+  position: absolute;
+  left: 0.75rem; right: 0.75rem;
+  top: 50%;
+  height: 1px;
+  background: var(--line-3);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.75s var(--ease) 0.5s;
+}
+.edge__myths.visible .edge__myth::after { transform: scaleX(1); }
+
+/* Narrow chips wrap onto two lines, where one ruled line would sit in the
+   gap instead of through the words — hand the job to real text-decoration */
+@media (max-width: 576px) {
+  .edge__myth {
+    text-decoration: line-through;
+    text-decoration-color: var(--line-3);
+  }
+  .edge__myth::after { display: none; }
+}
+
+.edge__verdict {
+  max-width: 720px;
+  margin: 0 auto clamp(2.5rem, 6vw, 4rem);
+  text-align: center;
+  font-size: clamp(1rem, 1.9vw, 1.2rem);
+  line-height: 1.8;
+  color: var(--ink-2);
+}
+.edge__verdict strong { color: var(--ink-1); font-weight: var(--fw-semi); }
+
+/*=============== LEDGER ===============*/
+.ledger { border-top: 1px solid var(--line-1); }
+
+.ledger__group {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  padding-block: clamp(1.75rem, 4vw, 2.75rem);
+  border-bottom: 1px solid var(--line-1);
+  min-width: 0;
+}
+
+/* Sticky rail — the set name stays put while its rows scroll past.
+   Safe here because .edge never clips overflow. */
+.ledger__rail {
+  position: sticky;
+  top: calc(var(--header-height) + 3.25rem);
+  align-self: start;
+}
+
+.ledger__rail-idx {
+  display: block;
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--flux);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  margin-bottom: 0.55rem;
+}
+
+.ledger__rail-title {
+  font-size: var(--h3);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.45rem;
+}
+
+.ledger__rail-note {
+  font-size: var(--xs);
+  line-height: 1.75;
+  color: var(--ink-3);
+  max-width: 25ch;
+}
+
+.ledger__rows { list-style: none; min-width: 0; }
+
+.ledger__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.2rem 1fr;
+  gap: 0.85rem;
+  padding: 0.85rem 0 0.85rem 1.05rem;
+  border-top: 1px solid var(--line-1);
+}
+.ledger__rows > .ledger__row:first-child { border-top: 0; padding-top: 0.15rem; }
+
+/* Playhead rule — grows as the row crosses the middle of the viewport */
+.ledger__row::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.5rem; bottom: 0.5rem;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--amber);
+  box-shadow: 0 0 14px var(--amber-glow);
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+  transition: transform 0.55s var(--ease);
+}
+.ledger__row.lit::before,
+.ledger__row:hover::before { transform: scaleY(1); }
+
+.ledger__num {
+  font-family: var(--mono);
+  font-size: var(--xs);
+  color: var(--ink-3);
+  padding-top: 0.3em;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.4s ease;
+}
+.ledger__row.lit .ledger__num,
+.ledger__row:hover .ledger__num { color: var(--amber); }
+
+.ledger__body { min-width: 0; }
+
+.ledger__name {
+  font-size: clamp(0.95rem, 1.7vw, 1.08rem);
+  font-weight: var(--fw-semi);
+  letter-spacing: -0.015em;
+  color: var(--ink-2);
+  margin-bottom: 0.2rem;
+  transition: color 0.4s ease;
+}
+.ledger__row.lit .ledger__name,
+.ledger__row:hover .ledger__name { color: var(--ink-1); }
+
+.ledger__desc {
+  font-size: var(--sm);
+  line-height: 1.7;
+  color: var(--ink-3);
+  max-width: 62ch;
+  transition: color 0.4s ease;
+}
+.ledger__row.lit .ledger__desc,
+.ledger__row:hover .ledger__desc { color: var(--ink-2); }
+
+@media (max-width: 767px) {
+  .ledger__group { grid-template-columns: 1fr; gap: 1.1rem; }
+  .ledger__rail { position: static; }
+  .ledger__rail-note { max-width: none; }
+  .ledger__row { grid-template-columns: 1.9rem 1fr; gap: 0.65rem; padding-left: 0.8rem; }
+}
+
+/*===============================================================
    SKILLS — the instrument deck
    Skills sit as physical keycaps on an editorial index: category
    left, keys right. Each key has a real extruded ledge and
@@ -2182,6 +2360,10 @@ body::after {
   }
 
   .scene { transform: none !important; opacity: 1 !important; }
+
+  /* Struck through up front — the reveal delay isn't worth waiting out.
+     The ledger playhead still lights rows, it just snaps instead of sliding. */
+  .edge__myth::after { transform: scaleX(1) !important; transition-delay: 0s !important; }
 
   /* Gallery falls back to the vertical stack */
   .proj-sticky { position: static; height: auto; overflow: visible; }

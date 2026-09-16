@@ -4,7 +4,7 @@
    tilt, magnetics — plus the three scroll engines:
      · scenes   — sections fly in and out of depth
      · gallery  — pinned horizontal project track
-     · marquee  — kinetic skill lanes
+     · ledger   — the Edge list lights up as it crosses centre
 ===============================================================*/
 (function () {
   'use strict';
@@ -126,10 +126,10 @@
 
   /*=============== ACTIVE NAV LINK + HUD INDEX ===============*/
   var hudIndex = document.getElementById('hud-index');
-  var SECTION_ORDER = ['home', 'experience', 'about', 'projects', 'skills', 'contact'];
+  var SECTION_ORDER = ['home', 'experience', 'about', 'projects', 'edge', 'skills', 'contact'];
   var SECTION_NAMES = {
-    home: 'Home', experience: 'Experience', about: 'About',
-    projects: 'Projects', skills: 'Skills', contact: 'Contact'
+    home: 'Home', experience: 'Experience', about: 'About', projects: 'Projects',
+    edge: 'The Edge', skills: 'Skills', contact: 'Contact'
   };
 
   var navLinks = {};
@@ -249,6 +249,18 @@
   }, { threshold: 0.5 });
 
   document.querySelectorAll('.counter').forEach(function (el) { counterObs.observe(el); });
+
+  /*=============== LEDGER PLAYHEAD ===============*/
+  // The Edge ledger reads like a scanning head: whichever discipline
+  // rows sit in the middle band of the viewport light up. A thin
+  // rootMargin band is enough — no per-frame work on a 25-row list.
+  var ledgerRows = document.querySelectorAll('.ledger__row');
+  if (ledgerRows.length) {
+    var litObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.target.classList.toggle('lit', e.isIntersecting); });
+    }, { rootMargin: '-42% 0px -42% 0px' });
+    ledgerRows.forEach(function (row) { litObs.observe(row); });
+  }
 
   /*=============== SLAB TILT + SHEEN ===============*/
   if (canHover && !reduceMotion) {

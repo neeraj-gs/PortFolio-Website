@@ -108,6 +108,7 @@
                <li><a href="#home" class="nav__link active-link">Home</a></li>
                <li><a href="#experience" class="nav__link">Experience</a></li>
                <li><a href="#about" class="nav__link">About</a></li>
+               <li><a href="#edge" class="nav__link">The Edge</a></li>
                <li><a href="#skills" class="nav__link">Skills</a></li>
                <li><a href="#projects" class="nav__link nav__link--cta magnetic">Projects</a></li>
             </ul>
@@ -502,9 +503,259 @@
          </div>
       </section>
 
+
+      <!--==================== THE EDGE — the AI engineering ledger ====================-->
+      <section class="edge section scene" id="edge">
+         <span class="scene__num" aria-hidden="true">05</span>
+         <div class="container">
+            <div class="edge__header reveal">
+               <span class="section__label">The Edge</span>
+               <h2 class="section__title" data-split-words>What Sets Me Apart</h2>
+            </div>
+
+            <div class="edge__myths stagger">
+               <span class="edge__myth">&ldquo;Just add AI to the product&rdquo;</span>
+               <span class="edge__myth">&ldquo;Just ask ChatGPT to build it&rdquo;</span>
+               <span class="edge__myth">&ldquo;Let's vibe code something and ship it&rdquo;</span>
+               <span class="edge__myth">&ldquo;Can't we prompt our way to an app?&rdquo;</span>
+            </div>
+
+            <p class="edge__verdict reveal">
+               Most AI work stops at the demo. <strong>Mine starts there.</strong> Prompting gets you a prototype; shipping something people depend on is a different job &mdash; twenty-five of them, in practice. This is the part most AI developers skip.
+            </p>
+
+            <div class="ledger">
+               <div class="ledger__group">
+                  <div class="ledger__rail">
+                     <span class="ledger__rail-idx">Set 01</span>
+                     <h3 class="ledger__rail-title">Context &amp; Retrieval</h3>
+                     <p class="ledger__rail-note">Getting the right facts in front of the model.</p>
+                  </div>
+                  <ol class="ledger__rows stagger">
+                     <li class="ledger__row">
+                        <span class="ledger__num">01</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Retrieval-augmented generation</h4>
+                           <p class="ledger__desc">Answers grounded in your own documents, with a citation behind every claim.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">02</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Vector databases</h4>
+                           <p class="ledger__desc">pgvector and hybrid search, tuned until the right chunk actually ranks first.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">03</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Embeddings</h4>
+                           <p class="ledger__desc">Chunking and embedding strategy decided by recall tests, not by default settings.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">04</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Context window management</h4>
+                           <p class="ledger__desc">I budget the window: what gets in, what gets summarised, what gets dropped.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">05</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Data pipelines</h4>
+                           <p class="ledger__desc">OCR, parsing and enrichment that turn messy PDFs into queryable structure.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+
+               <div class="ledger__group">
+                  <div class="ledger__rail">
+                     <span class="ledger__rail-idx">Set 02</span>
+                     <h3 class="ledger__rail-title">Reasoning &amp; Control</h3>
+                     <p class="ledger__rail-note">Making the model actually do the work.</p>
+                  </div>
+                  <ol class="ledger__rows stagger">
+                     <li class="ledger__row">
+                        <span class="ledger__num">06</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">System prompt design</h4>
+                           <p class="ledger__desc">Prompts written as specs, versioned in the repo and reviewed like code.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">07</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Chain-of-thought prompting</h4>
+                           <p class="ledger__desc">Reasoning where it pays for itself, skipped where it just burns tokens.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">08</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Structured outputs</h4>
+                           <p class="ledger__desc">Typed schemas at every boundary, so downstream code never has to parse prose.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">09</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Tool calling</h4>
+                           <p class="ledger__desc">Models that act: query the database, call the API, write the result back.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">10</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Agentic workflows</h4>
+                           <p class="ledger__desc">Durable multi-step runs on Temporal &mdash; resumable, retryable, never silently stuck.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">11</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Memory management</h4>
+                           <p class="ledger__desc">What an agent carries between runs, and what it&rsquo;s required to forget.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+
+               <div class="ledger__group">
+                  <div class="ledger__rail">
+                     <span class="ledger__rail-idx">Set 03</span>
+                     <h3 class="ledger__rail-title">Quality &amp; Evals</h3>
+                     <p class="ledger__rail-note">Proving it works before anyone depends on it.</p>
+                  </div>
+                  <ol class="ledger__rows stagger">
+                     <li class="ledger__row">
+                        <span class="ledger__num">12</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Model evals</h4>
+                           <p class="ledger__desc">Golden datasets and scored runs. Nothing ships without clearing the gate.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">13</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Hallucination testing</h4>
+                           <p class="ledger__desc">Every figure traced back to its source page, or it never reaches the memo.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">14</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">A/B testing prompts</h4>
+                           <p class="ledger__desc">Two variants, real traffic, one winner &mdash; measured rather than argued about.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">15</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Prompt versioning</h4>
+                           <p class="ledger__desc">Every prompt has a version, a diff and a rollback path.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">16</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Fine-tuning</h4>
+                           <p class="ledger__desc">Reached for last, once retrieval and prompting stop paying for themselves.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">17</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Temperature tuning</h4>
+                           <p class="ledger__desc">Deterministic where accuracy matters, loose where exploration does.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+
+               <div class="ledger__group">
+                  <div class="ledger__rail">
+                     <span class="ledger__rail-idx">Set 04</span>
+                     <h3 class="ledger__rail-title">Production &amp; Cost</h3>
+                     <p class="ledger__rail-note">Keeping it fast, cheap and observable.</p>
+                  </div>
+                  <ol class="ledger__rows stagger">
+                     <li class="ledger__row">
+                        <span class="ledger__num">18</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">LLM observability</h4>
+                           <p class="ledger__desc">Full traces in Langfuse: every call, its cost, its latency, its output.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">19</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Token cost tracking</h4>
+                           <p class="ledger__desc">Cost per run is a product metric I watch as closely as conversion.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">20</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Latency budgets</h4>
+                           <p class="ledger__desc">A time budget per step, with streaming and caching to stay inside it.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">21</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Rate limit handling</h4>
+                           <p class="ledger__desc">Backoff, queueing and failover, so a provider blip isn&rsquo;t an outage.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">22</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Model selection</h4>
+                           <p class="ledger__desc">Routed per task through LiteLLM &mdash; the cheapest model that clears the bar.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+
+               <div class="ledger__group">
+                  <div class="ledger__rail">
+                     <span class="ledger__rail-idx">Set 05</span>
+                     <h3 class="ledger__rail-title">Safety &amp; Trust</h3>
+                     <p class="ledger__rail-note">The part every enterprise asks about first.</p>
+                  </div>
+                  <ol class="ledger__rows stagger">
+                     <li class="ledger__row">
+                        <span class="ledger__num">23</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Guardrails</h4>
+                           <p class="ledger__desc">Validation on the way in and on the way out. Agents get permissions, not free rein.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">24</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Red teaming</h4>
+                           <p class="ledger__desc">I try to break my own agents before a customer finds the way in.</p>
+                        </div>
+                     </li>
+                     <li class="ledger__row">
+                        <span class="ledger__num">25</span>
+                        <div class="ledger__body">
+                           <h4 class="ledger__name">Security reviews</h4>
+                           <p class="ledger__desc">Multi-tenant isolation, SSO and EU data residency, designed in from day one.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </section>
+
       <!--==================== SKILLS — the instrument deck ====================-->
       <section class="skills section scene" id="skills">
-         <span class="scene__num" aria-hidden="true">05</span>
+         <span class="scene__num" aria-hidden="true">06</span>
          <div class="skills__header container reveal">
             <span class="section__label">Expertise</span>
             <h2 class="section__title" data-split-words>Technical Skills</h2>
@@ -581,7 +832,7 @@
 
       <!--==================== CONTACT — fill rows finale ====================-->
       <section class="contact section panel scene" id="contact">
-         <span class="scene__num" aria-hidden="true">06</span>
+         <span class="scene__num" aria-hidden="true">07</span>
          <div class="container">
             <div class="contact__header reveal">
                <span class="section__label">Contact</span>
@@ -629,6 +880,7 @@
             <li><a href="#experience" class="footer__link">Experience</a></li>
             <li><a href="#about" class="footer__link">About</a></li>
             <li><a href="#projects" class="footer__link">Projects</a></li>
+            <li><a href="#edge" class="footer__link">The Edge</a></li>
             <li><a href="#skills" class="footer__link">Skills</a></li>
          </ul>
          <span class="footer__copy">Made with <i class="ri-heart-fill"></i> by Neeraj GS</span>
