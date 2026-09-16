@@ -14,8 +14,8 @@ Open `index.html` directly in a browser to preview. No build step or dev server 
 
 - **`index.html`** — Single-page site with all sections (home, experience, about, projects, skills, contact)
 - **`assets/css/styles.css`** — All styles; CSS custom properties in `:root` drive color, type, spacing, and slab lighting
-- **`assets/js/field.js`** — The WebGL background ("the orchestration field"). Builds a 3D agent graph with Three.js and exposes `window.Field` (`setTheme`, `setScroll`)
-- **`assets/js/main.js`** — All interactive behavior: boot overlay, custom cursor, mobile nav, scroll progress, active-link tracking, theme toggle, scroll reveals, split-text animation, counters, slab tilt, magnetic controls, Loom lazy-load, video modal, smooth scroll
+- **`assets/js/field.js`** — The WebGL background ("the orchestration field"). Builds a 3D agent graph with Three.js and exposes `window.Field` (`setScroll`)
+- **`assets/js/main.js`** — All interactive behavior: boot overlay, custom cursor, mobile nav, scroll progress, active-link tracking, scroll reveals, split-text animation, counters, ledger playhead, slab tilt, magnetic controls, Loom lazy-load, video modal, smooth scroll
 - **`assets/img/`** — Images; **`assets/videos/`** — Project demo videos
 - Three.js r134 is loaded from cdnjs; fonts (Bricolage Grotesque / Inter Tight / JetBrains Mono) and RemixIcon come from CDNs
 
@@ -36,7 +36,7 @@ The page is one continuous depth-space traversed as a six-stop scroll journey (m
 ### Key patterns
 
 - **Two-signal color**: `--amber` means human/actionable (CTAs, links, the person); `--flux` (teal) means machine/telemetry (mono labels, tags, the graph). Don't swap them. `--violet` is depth glow only — never text.
-- **Theming**: Dark (default) and light, toggled via `data-theme="light"` on `<html>`. An inline script in `<head>` sets it before first paint from `localStorage` (falling back to `prefers-color-scheme`). Light theme is "blueprint paper", not stark white. Overrides live under `:root[data-theme="light"]`; a handful of effects (bloom opacity, grain, dark-artwork logos) need explicit light-theme rules. `main.js` also calls `Field.setTheme()` — the graph swaps to `NormalBlending` on light because additive blending washes out on a pale ground.
+- **Theming**: Dark only — there is no light theme or toggle. Don't reintroduce one without an explicit request.
 - **`html.js` guard**: every reveal's *hidden* state is scoped to `.js` (set by the inline head script). Without JS the content renders plainly visible instead of a page of `opacity: 0`. Keep this guard on any new entrance animation.
 - **Slabs must not set a resting `transform`** — it would out-specify the `.reveal-*` / `.stagger` entrance transforms. The tilt script supplies its own `perspective()` while hovering, which is what makes `[data-depth]` children pop.
 - **`[data-depth]` only on inset elements.** A child with a visible background that reaches its slab's edge will scale past the rounded corner. Put depth on padded/inset content instead.

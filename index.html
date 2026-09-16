@@ -36,10 +36,6 @@
          // Entrance animations start hidden, so gate them on JS being alive.
          // Without this class every reveal would stay at opacity 0 if a script fails.
          document.documentElement.classList.add('js');
-
-         var saved = localStorage.getItem('theme');
-         var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-         if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
       })();
    </script>
    <link rel="stylesheet" href="assets/css/styles.css">
@@ -119,9 +115,6 @@
          </div>
 
          <div class="nav__buttons">
-            <button class="nav__theme-btn magnetic" id="theme-button" aria-label="Toggle theme">
-               <i class="ri-moon-line"></i>
-            </button>
             <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-4-line"></i></div>
          </div>
       </nav>

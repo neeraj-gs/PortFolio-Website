@@ -158,32 +158,6 @@
 
   document.querySelectorAll('section[id]').forEach(function (s) { sectionObs.observe(s); });
 
-  /*=============== THEME ===============*/
-  var themeBtn = document.getElementById('theme-button');
-
-  function isLight() {
-    return document.documentElement.getAttribute('data-theme') === 'light';
-  }
-  function paintThemeIcon() {
-    if (!themeBtn) return;
-    var icon = themeBtn.querySelector('i');
-    if (icon) icon.className = isLight() ? 'ri-sun-line' : 'ri-moon-line';
-  }
-
-  if (themeBtn) {
-    paintThemeIcon();
-    themeBtn.addEventListener('click', function () {
-      var light = !isLight();
-      if (light) document.documentElement.setAttribute('data-theme', 'light');
-      else document.documentElement.removeAttribute('data-theme');
-
-      localStorage.setItem('theme', light ? 'light' : 'dark');
-      paintThemeIcon();
-      if (window.Field) window.Field.setTheme(light);
-    });
-  }
-  if (window.Field && isLight()) window.Field.setTheme(true);
-
   /*=============== REVEALS ===============*/
   var revealObs = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {

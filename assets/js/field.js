@@ -7,7 +7,7 @@
    work moving through the system — the literal shape of what
    this portfolio is about, not decorative particles.
 
-   Exposes window.Field: { setTheme, setScroll, destroy }
+   Exposes window.Field: { setScroll, destroy }
 ===============================================================*/
 (function () {
   'use strict';
@@ -112,30 +112,16 @@
     if (t % 2 === 0) addEdge(hubIndex[t], hubIndex[(t + 3) % hubIndex.length], true);
   }
 
-  /*---------- palettes ----------*/
-  var PALETTE = {
-    dark: {
-      node: new THREE.Color(0x8f9bc4),
-      hub: new THREE.Color(0xff7a45),
-      packet: new THREE.Color(0x4fd8c4),
-      line: new THREE.Color(0x5a6890),
-      trunk: new THREE.Color(0xff7a45),
-      lineOpacity: 0.34,
-      blending: THREE.AdditiveBlending
-    },
-    light: {
-      node: new THREE.Color(0x54607e),
-      hub: new THREE.Color(0xd9531e),
-      packet: new THREE.Color(0x0d8f7c),
-      line: new THREE.Color(0x8994b0),
-      trunk: new THREE.Color(0xd9531e),
-      lineOpacity: 0.5,
-      blending: THREE.NormalBlending
-    }
+  /*---------- palette ----------*/
+  var pal = {
+    node: new THREE.Color(0x8f9bc4),
+    hub: new THREE.Color(0xff7a45),
+    packet: new THREE.Color(0x4fd8c4),
+    line: new THREE.Color(0x5a6890),
+    trunk: new THREE.Color(0xff7a45),
+    lineOpacity: 0.34,
+    blending: THREE.AdditiveBlending
   };
-
-  var isLight = document.documentElement.getAttribute('data-theme') === 'light';
-  var pal = isLight ? PALETTE.light : PALETTE.dark;
 
   /*---------- nodes ----------*/
   var nodePos = new Float32Array(nodes.length * 3);
@@ -417,25 +403,6 @@
 
   /*---------- public API ----------*/
   window.Field = {
-    setTheme: function (light) {
-      pal = light ? PALETTE.light : PALETTE.dark;
-
-      nodeMat.uniforms.uColorA.value.copy(pal.node);
-      nodeMat.uniforms.uColorB.value.copy(pal.hub);
-      packetMat.uniforms.uColorA.value.copy(pal.packet);
-      packetMat.uniforms.uColorB.value.copy(pal.packet);
-      edgeMat.uniforms.uOpacity.value = pal.lineOpacity;
-
-      // Additive blending washes out on a light ground — swap to normal.
-      nodeMat.blending = packetMat.blending = edgeMat.blending = pal.blending;
-      nodeMat.needsUpdate = packetMat.needsUpdate = edgeMat.needsUpdate = true;
-
-      writeEdgeColors();
-      edgeGeo.attributes.aColor.needsUpdate = true;
-
-      if (reduceMotion) render();
-    },
-
     setScroll: function (p) {
       scrollP = p;
     }
