@@ -2100,8 +2100,9 @@ body::after {
 .skills__icon img[alt="Express"] { filter: invert(1); }
 .skills__icon img[alt="AWS"],
 .skills__icon img[alt="Sol"],
-.skills__icon img[alt="Prisma"] { filter: invert(1) hue-rotate(180deg); }
-
+.skills__icon img[alt="Prisma"],
+.skills__icon img[alt="Vercel"],
+.skills__icon img[alt="Kafka"] { filter: invert(1) hue-rotate(180deg); }
 
 .skills__icon i { font-size: 1.15rem; color: var(--ink-1); transition: color 0.3s ease; }
 .skills__item:hover .skills__icon i { color: var(--amber); }
