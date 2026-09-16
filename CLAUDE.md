@@ -12,7 +12,7 @@ Open `index.html` directly in a browser to preview. No build step or dev server 
 
 ## Architecture
 
-- **`index.html`** — Single-page site with all sections (home, experience, about, projects, skills, contact)
+- **`index.html`** — Single-page site with all sections (home, experience, about, projects, the edge, skills, contact)
 - **`assets/css/styles.css`** — All styles; CSS custom properties in `:root` drive color, type, spacing, and slab lighting
 - **`assets/js/field.js`** — The WebGL background ("the orchestration field"). Builds a 3D agent graph with Three.js and exposes `window.Field` (`setScroll`)
 - **`assets/js/main.js`** — All interactive behavior: boot overlay, custom cursor, mobile nav, scroll progress, active-link tracking, scroll reveals, split-text animation, counters, ledger playhead, slab tilt, magnetic controls, Loom lazy-load, video modal, smooth scroll
@@ -21,7 +21,7 @@ Open `index.html` directly in a browser to preview. No build step or dev server 
 
 ## Design system — "The Orchestration Field"
 
-The page is one continuous depth-space traversed as a six-stop scroll journey (mirrored by the fixed `.hud` readout). Three strata:
+The page is one continuous depth-space traversed as a seven-stop scroll journey (mirrored by the fixed `.hud` readout). Three strata:
 
 1. **back** — `#field` (WebGL agent graph) plus `.atmos` (bloom, perspective floor grid, vignette). Both are `position: fixed`; section backgrounds are *translucent* so the field reads through the whole page.
 2. **mid** — `.panel` decks (Experience, Contact: rounded floating panels with `margin-inline`) and `.slab` cards. The **scene engine** in `main.js` transforms every `.scene` section per frame: entering sections rise out of depth (translate + rotateX + scale), leaving sections lift toward the camera and dissolve. `.scene__num` ghost numerals parallax via the `--p` variable the engine sets.
@@ -44,5 +44,6 @@ The page is one continuous depth-space traversed as a six-stop scroll journey (m
 - **Section numerals are wayfinding, not decoration**: `.scene__num` values match the HUD index (`02`–`06`). Don't number non-sequential content (e.g. the About stack cards are unnumbered on purpose).
 - **Split text**: `data-split` (per character) and `data-split-words` (per word) are wired in `main.js`. `.split` must not set `display` — the headings it's applied to are block-level.
 - **Project cards**: `data-category` on `.project-card`; Loom videos use `data-src` for hover lazy-load.
+- **Counters**: `.counter` renders `data-target` with a trailing `+`. `data-suffix=""` opts a literal count (e.g. the "2 regions live" stat) out of it.
 - **Responsive**: Mobile-first. Breakpoints at `360px`, `480px`, `576px`, `768px`, `1024px`/`1025px`. Verified down to 320px with no horizontal overflow.
 - **Motion budget**: `prefers-reduced-motion` disables the boot overlay, cursor, and all transitions, and renders the field as a single static frame. The field also pauses on tab hide and caps DPR at 1.75.

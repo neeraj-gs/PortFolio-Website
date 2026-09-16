@@ -1302,9 +1302,35 @@ body::after {
   color: var(--ink-2);
   font-size: var(--body);
   line-height: 1.75;
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
   max-width: 62ch;
 }
+.xp-row__desc strong { color: var(--ink-1); font-weight: var(--fw-semi); }
+
+/* Achievement bullets — hairline markers, not disc glyphs */
+.xp-row__points {
+  list-style: none;
+  max-width: 64ch;
+  margin-bottom: 1.1rem;
+}
+.xp-row__points li {
+  position: relative;
+  padding-left: 1.15rem;
+  margin-bottom: 0.55rem;
+  color: var(--ink-2);
+  font-size: var(--sm);
+  line-height: 1.7;
+}
+.xp-row__points li:last-child { margin-bottom: 0; }
+.xp-row__points li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.66em;
+  width: 6px; height: 1px;
+  background: var(--flux);
+  box-shadow: 0 0 8px var(--flux-glow);
+}
+.xp-row__points strong { color: var(--amber); font-weight: var(--fw-semi); }
 
 .experience__badge {
   padding: 0.18rem 0.65rem;

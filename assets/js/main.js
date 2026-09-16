@@ -1,6 +1,6 @@
 /*===============================================================
    INTERACTION LAYER
-   Boot, cursor, nav, theme, reveals, split type, counters,
+   Boot, cursor, nav, reveals, split type, counters,
    tilt, magnetics — plus the three scroll engines:
      · scenes   — sections fly in and out of depth
      · gallery  — pinned horizontal project track
@@ -229,9 +229,11 @@
 
       var el = e.target;
       var target = parseInt(el.dataset.target, 10) || 0;
+      // Most stats read as "20+"; data-suffix="" opts a literal count out of it.
+      var suffix = el.dataset.suffix === undefined ? '+' : el.dataset.suffix;
       counterObs.unobserve(el);
 
-      if (reduceMotion) { el.textContent = target + '+'; return; }
+      if (reduceMotion) { el.textContent = target + suffix; return; }
 
       var duration = 1400;
       var start = null;
@@ -240,7 +242,7 @@
         if (start === null) start = now;
         var t = Math.min((now - start) / duration, 1);
         var eased = 1 - Math.pow(1 - t, 3);
-        el.textContent = Math.round(target * eased) + '+';
+        el.textContent = Math.round(target * eased) + suffix;
         if (t < 1) requestAnimationFrame(tick);
       });
     });
@@ -353,8 +355,7 @@
       var r = s.el.getBoundingClientRect();
       var m = sceneEase(r.top, r.bottom, r.height, vh);
 
-      // Far outside the viewport: settle once, then skip.
-      if (r.top > vh * 1.4 || r.bottom < -vh * 0.4) {
+      if (m.skip) {
         if (s.live) {
           s.el.style.transform = '';
           s.el.style.opacity = '';
@@ -364,25 +365,10 @@
       }
       s.live = true;
 
-      // Entering: rises out of depth, tilting upright.
-      var ein = clamp((vh - r.top) / (vh * 0.85), 0, 1);
-      var e = 1 - Math.pow(1 - ein, 3);
-
-      // Leaving: lifts toward the camera and dissolves.
-      var eout = clamp((vh * 0.45 - r.bottom) / (vh * 0.45), 0, 1);
-      var o = eout * eout;
-
-      var ty = (1 - e) * 90 - o * 70;
-      var rx = (1 - e) * 7;
-      var sc = 0.955 + 0.045 * e + o * 0.03;
-      var op = Math.min(0.25 + 0.75 * e, 1 - o * 0.6);
-
       s.el.style.transform =
-        'perspective(1400px) translate3d(0,' + ty.toFixed(1) + 'px,0) rotateX(' + rx.toFixed(2) + 'deg) scale(' + sc.toFixed(4) + ')';
-      s.el.style.opacity = op.toFixed(3);
-
-      // Drives the ghost numeral's parallax.
-      s.el.style.setProperty('--p', clamp((vh - r.top) / (vh + r.height), 0, 1).toFixed(3));
+        'perspective(1400px) translate3d(0,' + m.ty.toFixed(1) + 'px,0) rotateX(' + m.rx.toFixed(2) + 'deg) scale(' + m.sc.toFixed(4) + ')';
+      s.el.style.opacity = m.op.toFixed(3);
+      s.el.style.setProperty('--p', m.p.toFixed(3));
     }
   }
 
